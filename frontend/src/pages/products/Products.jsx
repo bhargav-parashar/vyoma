@@ -60,6 +60,39 @@ const Products = () => {
               </label>
             </div>
           </div>
+           <div className="p-4">
+            <h3 className="text-xs font-bold mb-4">COLORS</h3>
+            <div>
+              <label className="inline-flex items-center text-sm">
+                <input type="checkbox" />
+                <span className="ml-2">Black</span>
+              </label>
+            </div>
+            <div>
+              <label className="inline-flex items-center text-sm">
+                <input type="checkbox" />
+                <span className="ml-2">Blue</span>
+              </label>
+            </div>
+            <div>
+              <label className="inline-flex items-center text-sm">
+                <input type="checkbox" />
+                <span className="ml-2">White</span>
+              </label>
+            </div>
+            <div>
+              <label className="inline-flex items-center text-sm">
+                <input type="checkbox" />
+                <span className="ml-2">Green</span>
+              </label>
+            </div>
+            <div>
+              <label className="inline-flex items-center text-sm">
+                <input type="checkbox" />
+                <span className="ml-2">Navy</span>
+              </label>
+            </div>
+          </div>
         </aside>
 
         <main className="w-4/5 p-4 overflow-y-auto">
