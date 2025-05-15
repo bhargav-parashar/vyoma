@@ -7,8 +7,8 @@ const Products = () => {
         <p>Header</p>
         <p>Header</p>
       </div>
-      <div className="flex flex-1 overflow-hidden">
-        <aside className="w-1/5 border-r border-gray-400">
+      <div className="flex flex-1 overflow-hidden ">
+        <aside className="w-1/5 border-r border-gray-400 overflow-scroll">
           <h2 className="text-sm font-bold  p-4 ">FILTERS</h2>
           <hr className="text-gray-400 " />
           <div className="p-4">
