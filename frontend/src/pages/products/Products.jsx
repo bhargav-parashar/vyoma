@@ -1,6 +1,49 @@
 import React from "react";
+import ProductCard from "../../components/ProductCard/ProductCard";
 
 const Products = () => {
+  const items = [
+    {
+      id: 1,
+      name: "product 5",
+    },
+    {
+      id: 2,
+      name: "product 5",
+    },
+    {
+      id: 3,
+      name: "product 5",
+    },
+    {
+      id: 4,
+      name: "product 5",
+    },
+    {
+      id: 5,
+      name: "product 5",
+    },
+    {
+      id: 6,
+      name: "product 5",
+    },
+    {
+      id: 7,
+      name: "product 5",
+    },
+    {
+      id: 8,
+      name: "product 5",
+    },
+    {
+      id: 9,
+      name: "product 5",
+    },
+    {
+      id: 10,
+      name: "product 5",
+    },
+  ];
   return (
     <div className="h-screen flex flex-col">
       <div className="flex justify-between bg-pink-100 h-12 ">
@@ -60,7 +103,7 @@ const Products = () => {
               </label>
             </div>
           </div>
-           <div className="p-4">
+          <div className="p-4">
             <h3 className="text-xs font-bold mb-4">COLORS</h3>
             <div>
               <label className="inline-flex items-center text-sm">
@@ -97,6 +140,13 @@ const Products = () => {
 
         <main className="w-4/5 p-4 overflow-y-auto">
           <h2 className="text-xl font-semibold mb-4">Products</h2>
+          <div className="flex flex-wrap gap-4">
+            {items.map((item) => (
+              <div key={item.id}>
+                <ProductCard />
+              </div>
+            ))}
+          </div>
         </main>
       </div>
     </div>
