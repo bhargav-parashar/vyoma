@@ -1,5 +1,6 @@
 import React from "react";
 import ProductCard from "../../components/ProductCard/ProductCard";
+import Header from "../../components/Header/Header";
 
 const Products = () => {
   const items = [
@@ -46,10 +47,7 @@ const Products = () => {
   ];
   return (
     <div className="h-screen flex flex-col">
-      <div className="flex justify-between bg-pink-100 h-12 ">
-        <p>Header</p>
-        <p>Header</p>
-      </div>
+      <Header/>
       <div className="flex flex-1 overflow-hidden ">
         <aside className="w-1/5 border-r border-gray-400 overflow-scroll">
           <h2 className="text-sm font-bold  p-4 ">FILTERS</h2>
