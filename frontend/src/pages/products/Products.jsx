@@ -1,6 +1,9 @@
 import React from "react";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import Header from "../../components/Header/Header";
+import Filters from "../../components/Filters/Filters";
+import Pill from "../../components/Pill/Pill";
+import SortHover from "../../components/SortHover/SortHover";
 
 const Products = () => {
   const items = [
@@ -47,105 +50,33 @@ const Products = () => {
   ];
   return (
     <div className="h-screen flex flex-col">
-      <Header/>
-      <div className="flex flex-1 overflow-hidden ">
-        <aside className="w-1/5 border-r border-gray-400 overflow-scroll">
-          <h2 className="text-sm font-bold  p-4 ">FILTERS</h2>
-          <hr className="text-gray-400 " />
-          <div className="p-4">
-            <h3 className="text-xs font-bold mb-4">CATEGORIES</h3>
-            <div>
-              <label className="inline-flex items-center text-sm">
-                <input type="checkbox" />
-                <span className="ml-2">Tshirts</span>
-              </label>
+      <Header />
+      <div className="h-screen bg-gray-100 flex flex-col  items-center">
+        <div className="flex  overflow-hidden z-10 max-w-400 h-[100%] ">
+          <aside className="w-1/6 ">
+            <div className="h-13 ">
+              <h2 className="text-sm font-bold  p-4 ">FILTERS</h2>
             </div>
-            <div>
-              <label className="inline-flex items-center text-sm">
-                <input type="checkbox" />
-                <span className="ml-2">Lounge Tshirts</span>
-              </label>
-            </div>
-          </div>
-          <hr className="text-gray-400 " />
-          <div className="p-4">
-            <h3 className="text-xs font-bold mb-4">BRANDS</h3>
-            <div>
-              <label className="inline-flex items-center text-sm">
-                <input type="checkbox" />
-                <span className="ml-2">Allen Solly</span>
-              </label>
-            </div>
-            <div>
-              <label className="inline-flex items-center text-sm">
-                <input type="checkbox" />
-                <span className="ml-2">ADIDAS</span>
-              </label>
-            </div>
-            <div>
-              <label className="inline-flex items-center text-sm">
-                <input type="checkbox" />
-                <span className="ml-2">Blackberrys</span>
-              </label>
-            </div>
-            <div>
-              <label className="inline-flex items-center text-sm">
-                <input type="checkbox" />
-                <span className="ml-2">Being Human</span>
-              </label>
-            </div>
-            <div>
-              <label className="inline-flex items-center text-sm">
-                <input type="checkbox" />
-                <span className="ml-2">Cantabil</span>
-              </label>
-            </div>
-          </div>
-          <div className="p-4">
-            <h3 className="text-xs font-bold mb-4">COLORS</h3>
-            <div>
-              <label className="inline-flex items-center text-sm">
-                <input type="checkbox" />
-                <span className="ml-2">Black</span>
-              </label>
-            </div>
-            <div>
-              <label className="inline-flex items-center text-sm">
-                <input type="checkbox" />
-                <span className="ml-2">Blue</span>
-              </label>
-            </div>
-            <div>
-              <label className="inline-flex items-center text-sm">
-                <input type="checkbox" />
-                <span className="ml-2">White</span>
-              </label>
-            </div>
-            <div>
-              <label className="inline-flex items-center text-sm">
-                <input type="checkbox" />
-                <span className="ml-2">Green</span>
-              </label>
-            </div>
-            <div>
-              <label className="inline-flex items-center text-sm">
-                <input type="checkbox" />
-                <span className="ml-2">Navy</span>
-              </label>
-            </div>
-          </div>
-        </aside>
+            <Filters />
+          </aside>
 
-        <main className="w-4/5 p-4 overflow-y-auto">
-          <h2 className="text-xl font-semibold mb-4">Products</h2>
-          <div className="flex flex-wrap gap-4">
-            {items.map((item) => (
-              <div key={item.id}>
-                <ProductCard />
+          <main className="w-5/6  overflow-y-auto ">
+            <div className="h-13 flex justify-start items-center gap-1 px-4">
+              <div className="flex justify-start w-[100%]" >
+                <Pill label="Country of Origin" />
+                <Pill label="Size" />
               </div>
-            ))}
-          </div>
-        </main>
+              <SortHover />
+            </div>
+            <div className="flex flex-wrap gap-4  border-gray-300 border-t p-4">
+              {items.map((item) => (
+                <div key={item.id}>
+                  <ProductCard />
+                </div>
+              ))}
+            </div>
+          </main>
+        </div>
       </div>
     </div>
   );

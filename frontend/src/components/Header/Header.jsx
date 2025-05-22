@@ -3,11 +3,9 @@ import logo from "../../assets/logo.png";
 
 const Header = () => {
   return (
-    <div className="flex justify-between bg-pink-100 h-12 ">
-      <div>
-        <img src={logo} className="h-15" />
-
-
+    <div className="flex items-center justify-between bg-white h-20 px-10 shadow-lg z-20 ">
+      <div className="h-[70%]">
+        <img src={logo} className="h-[100%]" />
       </div>
       <p>Header</p>
     </div>
