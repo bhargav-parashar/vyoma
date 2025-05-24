@@ -47,6 +47,18 @@ const Products = () => {
       id: 10,
       name: "product 5",
     },
+    {
+      id: 11,
+      name: "product 5",
+    },
+    {
+      id: 12,
+      name: "product 5",
+    },
+    {
+      id: 13,
+      name: "product 5",
+    },
   ];
   return (
     <div className="h-screen flex flex-col">
