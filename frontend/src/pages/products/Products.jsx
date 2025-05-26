@@ -61,10 +61,10 @@ const Products = () => {
     },
   ];
   return (
-    <div className="h-screen flex flex-col">
+    <div className="h-screen flex flex-col overflow-y-auto">
       <Header />
-      <div className="h-screen bg-gray-100 flex flex-col  items-center">
-        <div className="flex  overflow-hidden z-10 max-w-400 h-[100%] ">
+      <div className="h-screen bg-gray-100 flex flex-col  items-center mt-20  ">
+        <div className="flex  overflow-hidden z-10 max-w-400 h-[100%]  ">
           <aside className="w-1/6 ">
             <div className="h-13 ">
               <h2 className="text-sm font-bold  p-4 ">FILTERS</h2>
@@ -72,7 +72,7 @@ const Products = () => {
             <Filters />
           </aside>
 
-          <main className="w-5/6  overflow-y-auto ">
+          <main className="w-5/6  ">
             <div className="h-13 flex justify-start items-center gap-1 px-4">
               <div className="flex justify-start w-[100%]" >
                 <Pill label="Country of Origin" />
