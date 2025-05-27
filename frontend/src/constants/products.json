@@ -1,7 +1,16 @@
 {
     "section" : {
-        "men" : {},
-        "women" : {},
-        "kids" : {}
+        "men" : {
+            "Tshirts" :[],
+            "Overshirts" :[]
+        },
+        "women" : {
+            "Sweatshirts":[],
+            "Jackets":[]
+        },
+        "kids" : {
+            "Tshirts":[],
+            "Sweatshirts":[]
+        }
     }
 }

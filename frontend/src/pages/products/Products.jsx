@@ -61,7 +61,7 @@ const Products = () => {
     },
   ];
   return (
-    <div className="h-screen flex flex-col overflow-y-auto">
+    <div className="h-screen flex flex-col overflow-y-auto ">
       <Header />
       <div className="h-screen bg-gray-100 flex flex-col  items-center mt-20  ">
         <div className="flex  overflow-hidden z-10 max-w-400 h-[100%]  ">
