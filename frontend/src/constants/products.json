@@ -1,7 +1,128 @@
 {
     "section" : {
         "men" : {
-            "Tshirts" :[],
+            "Tshirts" :[
+                {
+                    "id": 1,
+                    "name": "Men Pure Cotton T-shirt",
+                    "brand": "CULT",
+                    "price":{
+                        "original": 1399,
+                        "discounted": 755,
+                        "discount":46
+                    },
+                    "rating" :{
+                        "average": 4.5,
+                        "count": 120
+                    },
+                    "images":["product-image.jpg", "product-image-1.jpg"]
+                },
+                {
+                    "id": 2,
+                    "name": "Train All Fly Dry T-shirt",
+                    "brand": "CULT",
+                    "price":{
+                        "original": 1099,
+                        "discounted": 494,
+                        "discount":55
+                    },
+                    "rating" :{
+                        "average": 4.2,
+                        "count": 147
+                    },
+                    "images":["product-2.jpg", "product-2.1.jpg"]
+                },
+                {
+                    "id": 3,
+                    "name": "Men Colourblocked",
+                    "brand": "CULT",
+                    "price":{
+                        "original": 1299,
+                        "discounted": 519,
+                        "discount":60
+                    },
+                    "rating" :{
+                        "average": 4.3,
+                        "count": 112
+                    },
+                    "images":["product-3.jpg","product-3.1.jpg"]
+                },
+                {
+                    "id": 4,
+                    "name": "Pure Cotton T-shirt",
+                    "brand": "ADIDAS",
+                    "price":{
+                        "original": 999,
+                        "discounted": 599,
+                        "discount":40
+                    },
+                    "rating" :{
+                        "average": 4.3,
+                        "count": 112
+                    },
+                    "images":["product-4.jpg","product-4.1.jpg"]
+                },
+                {
+                    "id": 5,
+                    "name": "Court Graphic T-shirt",
+                    "brand": "ADIDAS",
+                    "price":{
+                        "original": 2999,
+                        "discounted": 1739,
+                        "discount":42
+                    },
+                    "rating" :{
+                        "average": 4.7,
+                        "count": 200
+                    },
+                    "images":["product-5.jpg","product-5.1.jpg"]
+                },
+                {
+                    "id": 6,
+                    "name": "LIN Printed Cotton T-shirt",
+                    "brand": "ADIDAS",
+                    "price":{
+                        "original": 1999,
+                        "discounted": 979,
+                        "discount":51
+                    },
+                    "rating" :{
+                        "average": 4.5,
+                        "count": 136
+                    },
+                    "images":["product-6.jpg","product-6.1.jpg"]
+                },
+                {
+                    "id": 7,
+                    "name": "Men SJ Pure Cotton T-shirt",
+                    "brand": "ADIDAS",
+                    "price":{
+                        "original": 1799,
+                        "discounted": 1223,
+                        "discount":21
+                    },
+                    "rating" :{
+                        "average": 4,
+                        "count": 253
+                    },
+                    "images":["product-7.jpg","product-7.1.jpg"]
+                },
+                {
+                    "id": 8,
+                    "name": "Logo Print R Fi T-shirt",
+                    "brand": "ADIDAS",
+                    "price":{
+                        "original": 1799,
+                        "discounted": 1079,
+                        "discount":40
+                    },
+                    "rating" :{
+                        "average": 4.7,
+                        "count": 200
+                    },
+                    "images":["product-8.jpg","product-8.1.jpg"]
+                }
+            ],
             "Overshirts" :[]
         },
         "women" : {

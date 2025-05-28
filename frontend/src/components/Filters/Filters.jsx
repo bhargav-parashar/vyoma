@@ -1,8 +1,10 @@
-import React from "react";
+import {useState} from "react";
 
-const Filters = () => {
+const Filters = ({products, setFilteredProducts}) => {
+  const [selectedBrand, setSelectedBrand] = useState("");
+
   return (
-    <div className="h-[100%] border-gray-300 border-r">
+    <div className="h-screen flex flex-col">
       <hr className="text-gray-300 " />
       <div className="p-4 ">
         <h3 className="text-xs font-bold mb-4">CATEGORIES</h3>
@@ -15,7 +17,7 @@ const Filters = () => {
         <div>
           <label className="inline-flex items-center text-sm">
             <input className="cursor-pointer" type="checkbox" />
-            <span className="ml-2 cursor-pointer">Lounge Tshirts</span>
+            <span className="ml-2 cursor-pointer">Overshirts</span>
           </label>
         </div>
       </div>
@@ -24,7 +26,7 @@ const Filters = () => {
         <h3 className="text-xs font-bold mb-4">BRANDS</h3>
         <div>
           <label className="inline-flex items-center text-sm">
-            <input className="cursor-pointer" type="checkbox" />
+            <input className="cursor-pointer" type="checkbox"  />
             <span className="ml-2 cursor-pointer">Allen Solly</span>
           </label>
         </div>
@@ -49,7 +51,7 @@ const Filters = () => {
         <div>
           <label className="inline-flex items-center text-sm">
             <input className="cursor-pointer" type="checkbox" />
-            <span className="ml-2 cursor-pointer">Cantabil</span>
+            <span className="ml-2 cursor-pointer">CULT</span>
           </label>
         </div>
       </div>
@@ -83,7 +85,7 @@ const Filters = () => {
         <div>
           <label className="inline-flex items-center text-sm">
             <input className="cursor-pointer" type="checkbox" />
-            <span className="ml-2 cursor-pointer">Navy</span>
+            <span className="ml-2 cursor-pointer">Gray</span>
           </label>
         </div>
       </div>
