@@ -1,94 +1,58 @@
-import {useState} from "react";
+import { useEffect, useState } from "react";
+import FilterGroup from "./FilterGroup";
+import filters from "../../constants/filters.json";
 
-const Filters = ({products, setFilteredProducts}) => {
-  const [selectedBrand, setSelectedBrand] = useState("");
+const Filters = ({ products, setFilteredProducts }) => {
+  const [appliedFilters, setAppliedFilters] = useState({
+    categories: [],
+    brands: [],
+    colors: [],
+  });
 
+  const handleChange = (group, value) => {
+    //add option to group keyed array of appliedFilters
+    //if it is already present, remove it
+
+    const updatedFilter = appliedFilters[group].includes(value)
+      ? appliedFilters[group].filter((item) => item != value)
+      : [...appliedFilters[group], value];
+    
+     setAppliedFilters(prev =>({...prev, [group] : updatedFilter }));
+  };
+
+  // useEffect(()=>{
+  //   setFilteredProducts(
+
+  //   )
+  // }, [appliedFilters])
+ 
   return (
     <div className="h-screen flex flex-col">
       <hr className="text-gray-300 " />
-      <div className="p-4 ">
-        <h3 className="text-xs font-bold mb-4">CATEGORIES</h3>
-        <div>
-          <label className="inline-flex items-center text-sm">
-            <input className="cursor-pointer" type="checkbox" />
-            <span className="ml-2 cursor-pointer">Tshirts</span>
-          </label>
-        </div>
-        <div>
-          <label className="inline-flex items-center text-sm">
-            <input className="cursor-pointer" type="checkbox" />
-            <span className="ml-2 cursor-pointer">Overshirts</span>
-          </label>
-        </div>
-      </div>
+
+      <FilterGroup
+        title={"CATEGORIES"}
+        options={filters.men.categories}
+        group={"categories"}
+        selectedValues={appliedFilters.categories}
+        handleChange={handleChange}
+      />
       <hr className="text-gray-300 " />
-      <div className="p-4 ">
-        <h3 className="text-xs font-bold mb-4">BRANDS</h3>
-        <div>
-          <label className="inline-flex items-center text-sm">
-            <input className="cursor-pointer" type="checkbox"  />
-            <span className="ml-2 cursor-pointer">Allen Solly</span>
-          </label>
-        </div>
-        <div>
-          <label className="inline-flex items-center text-sm">
-            <input className="cursor-pointer" type="checkbox" />
-            <span className="ml-2 cursor-pointer">ADIDAS</span>
-          </label>
-        </div>
-        <div>
-          <label className="inline-flex items-center text-sm">
-            <input className="cursor-pointer" type="checkbox" />
-            <span className="ml-2 cursor-pointer">Blackberrys</span>
-          </label>
-        </div>
-        <div>
-          <label className="inline-flex items-center text-sm">
-            <input className="cursor-pointer" type="checkbox" />
-            <span className="ml-2 cursor-pointer">Being Human</span>
-          </label>
-        </div>
-        <div>
-          <label className="inline-flex items-center text-sm">
-            <input className="cursor-pointer" type="checkbox" />
-            <span className="ml-2 cursor-pointer">CULT</span>
-          </label>
-        </div>
-      </div>
+      <FilterGroup
+        title={"BRANDS"}
+        options={filters.men.brands}
+        group={"brands"}
+        selectedValues={appliedFilters.brands}
+        handleChange={handleChange}
+      />
       <hr className="text-gray-300 " />
-      <div className="p-4 ">
-        <h3 className="text-xs font-bold mb-4">COLORS</h3>
-        <div>
-          <label className="inline-flex items-center text-sm">
-            <input className="cursor-pointer" type="checkbox" />
-            <span className="ml-2 cursor-pointer">Black</span>
-          </label>
-        </div>
-        <div>
-          <label className="inline-flex items-center text-sm">
-            <input className="cursor-pointer" type="checkbox" />
-            <span className="ml-2 cursor-pointer">Blue</span>
-          </label>
-        </div>
-        <div>
-          <label className="inline-flex items-center text-sm">
-            <input className="cursor-pointer" type="checkbox" />
-            <span className="ml-2 cursor-pointer">White</span>
-          </label>
-        </div>
-        <div>
-          <label className="inline-flex items-center text-sm">
-            <input className="cursor-pointer" type="checkbox" />
-            <span className="ml-2 cursor-pointer">Green</span>
-          </label>
-        </div>
-        <div>
-          <label className="inline-flex items-center text-sm">
-            <input className="cursor-pointer" type="checkbox" />
-            <span className="ml-2 cursor-pointer">Gray</span>
-          </label>
-        </div>
-      </div>
+      <FilterGroup
+        title={"COLORS"}
+        options={filters.men.colors}
+        group={"colors"}
+        selectedValues={appliedFilters.colors}
+        handleChange={handleChange}
+      />
     </div>
   );
 };
