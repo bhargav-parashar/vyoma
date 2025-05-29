@@ -16,16 +16,23 @@ const Filters = ({ products, setFilteredProducts }) => {
     const updatedFilter = appliedFilters[group].includes(value)
       ? appliedFilters[group].filter((item) => item != value)
       : [...appliedFilters[group], value];
-    
-     setAppliedFilters(prev =>({...prev, [group] : updatedFilter }));
+
+    setAppliedFilters((prev) => ({ ...prev, [group]: updatedFilter }));
   };
 
-  // useEffect(()=>{
-  //   setFilteredProducts(
+  useEffect(() => {
+    const filteredProducts = products.filter((product) => {
 
-  //   )
-  // }, [appliedFilters])
- 
+      const matchColor     = appliedFilters.colors.length == 0  ||  appliedFilters.colors.includes(product.color);
+      const matchBrand     = appliedFilters.brands.length == 0  ||  appliedFilters.brands.includes(product.brand);
+      const matchCategory  = appliedFilters.categories.length == 0 ||  appliedFilters.categories.includes(product.category);
+
+      return matchColor && matchBrand && matchCategory;
+    });
+
+    setFilteredProducts(filteredProducts);
+  }, [appliedFilters]);
+
   return (
     <div className="h-screen flex flex-col">
       <hr className="text-gray-300 " />

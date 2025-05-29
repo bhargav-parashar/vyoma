@@ -1,11 +1,12 @@
 {
-    "section" : {
-        "men" : {
-            "Tshirts" :[
-                {
+    "availableProducts" :[
+        {
                     "id": 1,
                     "name": "Men Pure Cotton T-shirt",
+                    "section" : "men",
+                    "category" : "T-shirt",
                     "brand": "CULT",
+                    "color":"white",
                     "price":{
                         "original": 1399,
                         "discounted": 755,
@@ -20,7 +21,10 @@
                 {
                     "id": 2,
                     "name": "Train All Fly Dry T-shirt",
+                    "section" : "men",
+                    "category" : "T-shirt",
                     "brand": "CULT",
+                     "color":"blue",
                     "price":{
                         "original": 1099,
                         "discounted": 494,
@@ -35,7 +39,10 @@
                 {
                     "id": 3,
                     "name": "Men Colourblocked",
+                    "section" : "men",
+                    "category" : "T-shirt",
                     "brand": "CULT",
+                     "color":"black",
                     "price":{
                         "original": 1299,
                         "discounted": 519,
@@ -50,7 +57,10 @@
                 {
                     "id": 4,
                     "name": "Pure Cotton T-shirt",
+                    "section" : "men",
+                    "category" : "T-shirt",
                     "brand": "ADIDAS",
+                     "color":"gray",
                     "price":{
                         "original": 999,
                         "discounted": 599,
@@ -65,7 +75,10 @@
                 {
                     "id": 5,
                     "name": "Court Graphic T-shirt",
+                    "section" : "men",
+                    "category" : "T-shirt",
                     "brand": "ADIDAS",
+                     "color":"green",
                     "price":{
                         "original": 2999,
                         "discounted": 1739,
@@ -80,7 +93,10 @@
                 {
                     "id": 6,
                     "name": "LIN Printed Cotton T-shirt",
+                    "section" : "men",
+                    "category" : "T-shirt",
                     "brand": "ADIDAS",
+                     "color":"blue",
                     "price":{
                         "original": 1999,
                         "discounted": 979,
@@ -95,7 +111,10 @@
                 {
                     "id": 7,
                     "name": "Men SJ Pure Cotton T-shirt",
+                    "section" : "men",
+                    "category" : "T-shirt",
                     "brand": "ADIDAS",
+                    "color":"white",
                     "price":{
                         "original": 1799,
                         "discounted": 1223,
@@ -110,7 +129,10 @@
                 {
                     "id": 8,
                     "name": "Logo Print R Fi T-shirt",
+                    "section" : "men",
+                    "category" : "T-shirt",
                     "brand": "ADIDAS",
+                     "color":"black",
                     "price":{
                         "original": 1799,
                         "discounted": 1079,
@@ -122,16 +144,7 @@
                     },
                     "images":["product-8.jpg","product-8.1.jpg"]
                 }
-            ],
-            "Overshirts" :[]
-        },
-        "women" : {
-            "Sweatshirts":[],
-            "Jackets":[]
-        },
-        "kids" : {
-            "Tshirts":[],
-            "Sweatshirts":[]
-        }
-    }
+    ]
+    
+    
 }

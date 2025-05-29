@@ -1,4 +1,4 @@
-import {useState, useEffect} from "react";
+import {useState} from "react";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import Header from "../../components/Header/Header";
 import Filters from "../../components/Filters/Filters";
@@ -7,8 +7,8 @@ import SortHover from "../../components/SortHover/SortHover";
 import allProducts from "../../constants/products.json";
 
 const Products = () => {
-  const [products, setProducts] = useState(allProducts);
-  const [filteredProducts, setFilteredProducts] = useState(allProducts);
+  const [products, setProducts] = useState(allProducts.availableProducts);
+  const [filteredProducts, setFilteredProducts] = useState(allProducts.availableProducts);
 
   return (
     <div className="h-screen flex flex-col overflow-y-auto bg-gray-50">
@@ -30,7 +30,7 @@ const Products = () => {
             <SortHover />
           </div>
           <div class="grid grid-cols-[repeat(auto-fit,_minmax(200px,200px))] gap-7 p-4  ">
-            {filteredProducts.section.men.Tshirts.map((item) => (
+            {filteredProducts.map((item) => (
               <div key={item.id}>
                 <ProductCard item={item} />
               </div>
