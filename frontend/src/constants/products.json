@@ -143,6 +143,60 @@
                         "count": 200
                     },
                     "images":["product-8.jpg","product-8.1.jpg"]
+                },
+                {
+                    "id": 9,
+                    "name": "Textured Slim Fit T-shirt",
+                    "section" : "men",
+                    "category" : "T-shirt",
+                    "brand": "Blackberrys",
+                     "color":"blue",
+                    "price":{
+                        "original": 1495,
+                        "discounted": 717,
+                        "discount":52
+                    },
+                    "rating" :{
+                        "average": 4.5,
+                        "count": 11
+                    },
+                    "images":["product-9.jpg","product-9.1.jpg"]
+                },
+                {
+                    "id": 10,
+                    "name": "Printed Slim Fit T-shirt",
+                    "section" : "men",
+                    "category" : "T-shirt",
+                    "brand": "Blackberrys",
+                     "color":"green",
+                    "price":{
+                        "original": 1295,
+                        "discounted": 569,
+                        "discount":56
+                    },
+                    "rating" :{
+                        "average": 4.8,
+                        "count": 16
+                    },
+                    "images":["product-10.jpg","product-10.1.jpg"]
+                },
+                {
+                    "id": 11,
+                    "name": "Polo Slim Fit T-shirt",
+                    "section" : "men",
+                    "category" : "T-shirt",
+                    "brand": "Blackberrys",
+                     "color":"white",
+                    "price":{
+                        "original": 1495,
+                        "discounted": 717,
+                        "discount":52
+                    },
+                    "rating" :{
+                        "average": 4.8,
+                        "count": 9
+                    },
+                    "images":["product-11.jpg","product-11.1.jpg"]
                 }
     ]
     
