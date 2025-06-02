@@ -1,6 +1,6 @@
 {
     "men":{
-        "categories" : ["T-shirt", "Overshirts"],
+        "categories" : ["T-shirt", "Casual Trousers"],
         "brands" : ["Allen Solly", "ADIDAS", "Blackberrys", "Being Human", "CULT"],
         "colors" : ["black", "blue", "white", "green", "gray"]
     }

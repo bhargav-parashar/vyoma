@@ -197,6 +197,222 @@
                         "count": 9
                     },
                     "images":["product-11.jpg","product-11.1.jpg"]
+                },
+                {
+                    "id": 12,
+                    "name": "Printed Round Neck T-shirt",
+                    "section" : "men",
+                    "category" : "T-shirt",
+                    "brand": "Blackberrys",
+                     "color":"black",
+                    "price":{
+                        "original": 1499,
+                        "discounted": 1124,
+                        "discount":25
+                    },
+                    "rating" :{
+                        "average": 4.9,
+                        "count": 20
+                    },
+                    "images":["product-12.jpg","product-12.1.jpg"]
+                },
+                {
+                    "id": 13,
+                    "name": "Printed Slim Fit T-shirt",
+                    "section" : "men",
+                    "category" : "T-shirt",
+                    "brand": "Blackberrys",
+                     "color":"gray",
+                    "price":{
+                        "original": 2295,
+                        "discounted": 2246,
+                        "discount":25
+                    },
+                    "rating" :{
+                        "average": 4.6,
+                        "count": 30
+                    },
+                    "images":["product-13.jpg","product-13.1.jpg"]
+                },
+                {
+                    "id": 14,
+                    "name": "Printed Polo Cotton T-shirt",
+                    "section" : "men",
+                    "category" : "T-shirt",
+                    "brand": "Allen Solly",
+                     "color":"white",
+                    "price":{
+                        "original": 2199,
+                        "discounted": 1759,
+                        "discount":20
+                    },
+                    "rating" :{
+                        "average": 4,
+                        "count": 10
+                    },
+                    "images":["product-14.jpg","product-14.1.jpg"]
+                },
+                {
+                    "id": 15,
+                    "name": "Polo Collar Cotton T-shirt",
+                    "section" : "men",
+                    "category" : "T-shirt",
+                    "brand": "Allen Solly",
+                     "color":"blue",
+                    "price":{
+                        "original": 1599,
+                        "discounted": 687,
+                        "discount":57
+                    },
+                    "rating" :{
+                        "average": 4.5,
+                        "count": 78
+                    },
+                    "images":["product-15.jpg","product-15.1.jpg"]
+                },
+                {
+                    "id": 16,
+                    "name": "Men Polo Collar T-shirt",
+                    "section" : "men",
+                    "category" : "T-shirt",
+                    "brand": "Allen Solly",
+                     "color":"black",
+                    "price":{
+                        "original": 1999,
+                        "discounted": 899,
+                        "discount":55
+                    },
+                    "rating" :{
+                        "average": 4.8,
+                        "count": 34
+                    },
+                    "images":["product-16.jpg","product-16.1.jpg"]
+                },
+                {
+                    "id": 17,
+                    "name": "Cotton Relaxed Fit T-shirt",
+                    "section" : "men",
+                    "category" : "T-shirt",
+                    "brand": "Being Human",
+                     "color":"white",
+                    "price":{
+                        "original": 1199,
+                        "discounted": 455,
+                        "discount":62
+                    },
+                    "rating" :{
+                        "average": 4.7,
+                        "count": 50
+                    },
+                    "images":["product-17.jpg","product-17.1.jpg"]
+                },
+                {
+                    "id": 18,
+                    "name": "Printed Pure Cotton T-shirt",
+                    "section" : "men",
+                    "category" : "T-shirt",
+                    "brand": "Being Human",
+                     "color":"green",
+                    "price":{
+                        "original": 899,
+                        "discounted": 278,
+                        "discount":69
+                    },
+                    "rating" :{
+                        "average": 4.4,
+                        "count": 73
+                    },
+                    "images":["product-18.jpg","product-18.1.jpg"]
+                },
+                {
+                    "id": 19,
+                    "name": "Men Mid Rise Trousers",
+                    "section" : "men",
+                    "category" : "Casual Trousers",
+                    "brand": "Allen Solly",
+                     "color":"blue",
+                    "price":{
+                        "original": 2499,
+                        "discounted": 1249,
+                        "discount":50
+                    },
+                    "rating" :{
+                        "average": 4.1,
+                        "count": 11
+                    },
+                    "images":["product-19.jpg","product-19.1.jpg"]
+                },
+                {
+                    "id": 20,
+                    "name": "Men Cotton Trousers",
+                    "section" : "men",
+                    "category" : "Casual Trousers",
+                    "brand": "Allen Solly",
+                     "color":"gray",
+                    "price":{
+                        "original": 3499,
+                        "discounted": 1749,
+                        "discount":50
+                    },
+                    "rating" :{
+                        "average": 4,
+                        "count": 15
+                    },
+                    "images":["product-20.jpg","product-20.1.jpg"]
+                },
+                {
+                    "id": 21,
+                    "name": "Men Regular Fit Trousers",
+                    "section" : "men",
+                    "category" : "Casual Trousers",
+                    "brand": "Allen Solly",
+                     "color":"green",
+                    "price":{
+                        "original": 2999,
+                        "discounted": 1649,
+                        "discount":45
+                    },
+                    "rating" :{
+                        "average": 4.3,
+                        "count": 20
+                    },
+                    "images":["product-21.jpg","product-21.1.jpg"]
+                },
+                {
+                    "id": 22,
+                    "name": "Men Skinny Fit Trousers",
+                    "section" : "men",
+                    "category" : "Casual Trousers",
+                    "brand": "Allen Solly",
+                     "color":"white",
+                    "price":{
+                        "original": 2799,
+                        "discounted": 1539,
+                        "discount":45
+                    },
+                    "rating" :{
+                        "average": 4.2,
+                        "count": 15
+                    },
+                    "images":["product-22.jpg","product-22.1.jpg"]
+                },
+                 {
+                    "id": 23,
+                    "name": "Men Textured Chinos",
+                    "section" : "men",
+                    "category" : "Casual Trousers",
+                    "brand": "Allen Solly",
+                     "color":"black",
+                    "price":{
+                        "original": 2499,
+                        "discounted": 1249,
+                        "discount":50
+                    },
+                    "rating" :{
+                        "average": 4,
+                        "count": 9
+                    },
+                    "images":["product-23.jpg","product-23.1.jpg"]
                 }
     ]
     
