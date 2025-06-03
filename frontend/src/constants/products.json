@@ -413,6 +413,204 @@
                         "count": 9
                     },
                     "images":["product-23.jpg","product-23.1.jpg"]
+                },
+                {
+                    "id": 24,
+                    "name": "Men SPW Track Pants",
+                    "section" : "men",
+                    "category" : "Casual Trousers",
+                    "brand": "ADIDAS",
+                     "color":"gray",
+                    "price":{
+                        "original": 2999,
+                        "discounted": 1649,
+                        "discount":45
+                    },
+                    "rating" :{
+                        "average": 4.2,
+                        "count": 5
+                    },
+                    "images":["product-24.jpg","product-24.1.jpg"]
+                },
+                {
+                    "id": 25,
+                    "name": "Men 3-Striped Track Pants",
+                    "section" : "men",
+                    "category" : "Casual Trousers",
+                    "brand": "ADIDAS",
+                     "color":"black",
+                    "price":{
+                        "original": 1599,
+                        "discounted": 879,
+                        "discount":45
+                    },
+                    "rating" :{
+                        "average": 4.2,
+                        "count": 695
+                    },
+                    "images":["product-25.jpg","product-25.1.jpg"]
+                },
+                {
+                    "id": 26,
+                    "name": "Men Self Design Pants",
+                    "section" : "men",
+                    "category" : "Casual Trousers",
+                    "brand": "ADIDAS",
+                     "color":"green",
+                    "price":{
+                        "original": 6999,
+                        "discounted": 4199,
+                        "discount":40
+                    },
+                    "rating" :{
+                        "average": 4.7,
+                        "count": 5
+                    },
+                    "images":["product-26.jpg","product-26.1.jpg"]
+                },
+                {
+                    "id": 27,
+                    "name": "Men Jersey Track Pants",
+                    "section" : "men",
+                    "category" : "Casual Trousers",
+                    "brand": "ADIDAS",
+                     "color":"blue",
+                    "price":{
+                        "original": 2999,
+                        "discounted": 1559,
+                        "discount":48
+                    },
+                    "rating" :{
+                        "average": 4.8,
+                        "count": 35
+                    },
+                    "images":["product-27.jpg","product-27.1.jpg"]
+                },
+                {
+                    "id": 28,
+                    "name": "Men 3-Striped Joggers",
+                    "section" : "men",
+                    "category" : "Casual Trousers",
+                    "brand": "ADIDAS",
+                     "color":"white",
+                    "price":{
+                        "original": 2999,
+                        "discounted": 1799,
+                        "discount":40
+                    },
+                    "rating" :{
+                        "average": 5,
+                        "count": 5
+                    },
+                    "images":["product-28.jpg","product-28.1.jpg"]
+                },
+                {
+                    "id": 29,
+                    "name": "Men Urban pleated Chinos",
+                    "section" : "men",
+                    "category" : "Casual Trousers",
+                    "brand": "Blackberrys",
+                     "color":"black",
+                    "price":{
+                        "original": 2995,
+                        "discounted": 2246,
+                        "discount":25
+                    },
+                    "rating" :{
+                        "average": 4.8,
+                        "count": 10
+                    },
+                    "images":["product-29.jpg","product-29.1.jpg"]
+                },
+                {
+                    "id": 30,
+                    "name": "Men Slim Fit Chinos",
+                    "section" : "men",
+                    "category" : "Casual Trousers",
+                    "brand": "Blackberrys",
+                     "color":"gray",
+                    "price":{
+                        "original": 2399,
+                        "discounted": 1463,
+                        "discount":39
+                    },
+                    "rating" :{
+                        "average": 4.3,
+                        "count": 30
+                    },
+                    "images":["product-30.jpg","product-30.1.jpg"]
+                },
+                {
+                    "id": 31,
+                    "name": "Men Solid Techpro Trouser",
+                    "section" : "men",
+                    "category" : "Casual Trousers",
+                    "brand": "Blackberrys",
+                     "color":"white",
+                    "price":{
+                        "original": 3999,
+                        "discounted": 2999,
+                        "discount":25
+                    },
+                    "rating" :{
+                        "average": 4.6,
+                        "count": 49
+                    },
+                    "images":["product-31.jpg","product-31.1.jpg"]
+                },
+                {
+                    "id": 32,
+                    "name": "Men Solid Casual Trouser",
+                    "section" : "men",
+                    "category" : "Casual Trousers",
+                    "brand": "Blackberrys",
+                     "color":"blue",
+                    "price":{
+                        "original": 2799,
+                        "discounted": 2099,
+                        "discount":25
+                    },
+                    "rating" :{
+                        "average": 4.5,
+                        "count": 30
+                    },
+                    "images":["product-32.jpg","product-32.1.jpg"]
+                },
+                {
+                    "id": 33,
+                    "name": "Men Chinos Trousers",
+                    "section" : "men",
+                    "category" : "Casual Trousers",
+                    "brand": "Being Human",
+                     "color":"blue",
+                    "price":{
+                        "original": 2899,
+                        "discounted": 1043,
+                        "discount": 64
+                    },
+                    "rating" :{
+                        "average": 4.2,
+                        "count": 6
+                    },
+                    "images":["product-33.jpg","product-33.1.jpg"]
+                },
+                {
+                    "id": 34,
+                    "name": "Men Slim-Fit Stretch Joggers",
+                    "section" : "men",
+                    "category" : "Casual Trousers",
+                    "brand": "CULT",
+                     "color":"blue",
+                    "price":{
+                        "original": 2799,
+                        "discounted": 811,
+                        "discount": 71
+                    },
+                    "rating" :{
+                        "average": 3.3,
+                        "count": 13
+                    },
+                    "images":["product-34.jpg","product-34.1.jpg"]
                 }
     ]
     

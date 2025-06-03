@@ -3,7 +3,7 @@ import React from "react";
 
 const ProductCard = ({item}) => {
    const imageSrc = new URL(`/src/assets/${item.images[0]}`, import.meta.url).href;
-  return (
+  return (  
     <div className="hover:shadow-xl w-[100%] h-[100%] bg-white cursor-pointer relative">
       <img alt="product" src={imageSrc} className="h-[77%]" />
       <div className="px-4 py-2">
