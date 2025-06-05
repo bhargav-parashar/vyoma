@@ -7,12 +7,12 @@ const Header = () => {
       <div className="h-[70%] flex justify-start items-center gap-10">
         <img src={logo} className="h-[100%]" />
         <div className=" flex justify-start gap-8 text-sm font-bold text-gray-700">
-          <p>MEN</p>
-          <p>WOMEN</p>
-          <p>KIDS</p>
-          <p>HOME</p>
-          <p>BEAUTY</p>
-          <p>GENZ</p>
+          <p  className="cursor-pointer">MEN</p>
+          <p className="cursor-pointer"> WOMEN</p>
+          <p className="cursor-pointer">KIDS</p>
+          <p className="cursor-pointer">HOME</p>
+          <p className="cursor-pointer">BEAUTY</p>
+          <p className="cursor-pointer">GENZ</p>
         </div>
       </div>
       
