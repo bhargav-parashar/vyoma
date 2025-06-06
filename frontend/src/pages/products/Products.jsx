@@ -1,4 +1,4 @@
-import {useState} from "react";
+import { useState } from "react";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import Header from "../../components/Header/Header";
 import Filters from "../../components/Filters/Filters";
@@ -8,17 +8,24 @@ import allProducts from "../../constants/products.json";
 
 const Products = () => {
   const [products, setProducts] = useState(allProducts.availableProducts);
-  const [filteredProducts, setFilteredProducts] = useState(allProducts.availableProducts);
+  const [filteredProducts, setFilteredProducts] = useState(
+    allProducts.availableProducts
+  );
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <div className="h-screen flex flex-col overflow-y-auto bg-gray-50">
-      <Header />
+      <Header setIsModlaOpen={setIsModalOpen} />
+
       <div className="mt-20 px-[5%] flex  overflow-hidden z-10 w-[100%]  h-screen overflow-y-auto ">
         <aside className="w-1/6 h-screen border-r border-gray-300 ">
           <div className="h-13 ">
             <h2 className="text-sm font-bold  p-4 ">FILTERS</h2>
           </div>
-          <Filters products={products} setFilteredProducts={setFilteredProducts} />
+          <Filters
+            products={products}
+            setFilteredProducts={setFilteredProducts}
+          />
         </aside>
 
         <main className="w-5/6 h-cover">
@@ -38,6 +45,7 @@ const Products = () => {
           </div>
         </main>
       </div>
+      {isModalOpen && <div className="fixed inset-0 bg-black/50 z-10"></div>}
     </div>
   );
 };
