@@ -12,10 +12,15 @@ const Products = () => {
     allProducts.availableProducts
   );
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [hoveredTab, setHoveredTab] = useState(-1);
 
   return (
     <div className="h-screen flex flex-col overflow-y-auto bg-gray-50">
-      <Header setIsModlaOpen={setIsModalOpen} />
+      <Header
+        setIsModlaOpen={setIsModalOpen}
+        setHoveredTab={setHoveredTab}
+        hoveredTab={hoveredTab}
+      />
 
       <div className="mt-20 px-[5%] flex  overflow-hidden z-10 w-[100%]  h-screen overflow-y-auto ">
         <aside className="w-1/6 h-screen border-r border-gray-300 ">
