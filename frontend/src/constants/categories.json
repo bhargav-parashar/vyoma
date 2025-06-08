@@ -1,0 +1,138 @@
+{
+"categoryList" :[
+    {
+        "id" : 1,
+        "items" :[
+            {
+                
+                "id": 1,
+                "header": "Topwear",
+                "categories": ["T-Shirts"]
+            },
+            {
+                "id": 2,
+                "header": "Bottomwear",
+                "categories": ["Casual Trousers"]
+            },
+            {
+                "id": 3,
+                "header": "",
+                "categories": [""]
+            },
+            {
+                "id": 4,
+                "header": "",
+                "categories": []
+            },
+            {
+                "id": 5,
+                "header": "",
+                "categories": [""]
+            }
+    ]
+    
+    
+
+    },
+    {
+        "id" : 2,
+        "items" :[
+            {
+                "id": 1,
+                "header": "Indian & Fusion Wear",
+                "categories": ["Kurtis, Tunics & Tops"]
+            },
+            {
+                "id": 2,
+                "header": "Footwear",
+                "categories": ["Heels & Flats"]
+            },
+            {
+                "id": 3,
+                "header": "",
+                "categories": [""]
+            },
+            {
+                "id": 4,
+                "header": "",
+                "categories": []
+            },
+            {
+                "id": 5,
+                "header": "",
+                "categories": [""]
+            }
+    ]
+    
+    
+
+    },
+    {
+        "id" : 3,
+        "items" :[
+            {
+                "id": 1,
+                "header": "Boys Clothing",
+                "categories": ["T-Shirts"]
+            },
+            {
+                "id": 2,
+                "header": "Girls Clothing",
+                "categories": ["Dresses"]
+            },
+            {
+                "id": 3,
+                "header": "",
+                "categories": [""]
+            },
+            {
+                "id": 4,
+                "header": "",
+                "categories": []
+            },
+            {
+                "id": 5,
+                "header": "",
+                "categories": [""]
+            }
+    ]
+    
+    
+
+    },
+    {
+        "id" : 4,
+        "items" :[
+            {
+                "id": 1,
+                "header": "Bed Linen & Furnishing",
+                "categories": ["Blankets, Quilts & Dohars"]
+            },
+            {
+                "id": 2,
+                "header": "Lamps & Lighting",
+                "categories": ["Floor Lamps"]
+            },
+            {
+                "id": 3,
+                "header": "",
+                "categories": [""]
+            },
+            {
+                "id": 4,
+                "header": "",
+                "categories": []
+            },
+            {
+                "id": 5,
+                "header": "",
+                "categories": [""]
+            }
+    ]
+    
+    
+
+    }
+]
+
+}

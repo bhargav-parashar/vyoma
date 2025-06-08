@@ -1,5 +1,6 @@
 {
-    "availableProducts" :[
+    "men" :[
+
         {
                     "id": 1,
                     "name": "Men Pure Cotton T-shirt",
@@ -611,6 +612,66 @@
                         "count": 13
                     },
                     "images":["product-34.jpg","product-34.1.jpg"]
+                }
+    ],
+    "women":[
+        {
+                    "id": 35,
+                    "name": "Woman Item",
+                    "section" : "women",
+                    "category" : "Kurtis",
+                    "brand": "CULT",
+                     "color":"blue",
+                    "price":{
+                        "original": 2799,
+                        "discounted": 811,
+                        "discount": 71
+                    },
+                    "rating" :{
+                        "average": 3.3,
+                        "count": 13
+                    },
+                    "images":["product-34.jpg","product-34.1.jpg"]
+                }
+    ],
+    "kids":[
+        {
+                    "id": 35,
+                    "name": "Kids Item",
+                    "section" : "women",
+                    "category" : "Kurtis",
+                    "brand": "CULT",
+                     "color":"blue",
+                    "price":{
+                        "original": 2799,
+                        "discounted": 811,
+                        "discount": 71
+                    },
+                    "rating" :{
+                        "average": 3.3,
+                        "count": 13
+                    },
+                    "images":["product-24.jpg","product-24.1.jpg"]
+                }
+    ],
+    "home":[
+        {
+                    "id": 35,
+                    "name": "Home Item",
+                    "section" : "women",
+                    "category" : "Kurtis",
+                    "brand": "CULT",
+                     "color":"blue",
+                    "price":{
+                        "original": 2799,
+                        "discounted": 811,
+                        "discount": 71
+                    },
+                    "rating" :{
+                        "average": 3.3,
+                        "count": 13
+                    },
+                    "images":["product-14.jpg","product-14.1.jpg"]
                 }
     ]
     
