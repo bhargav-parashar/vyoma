@@ -1,32 +1,58 @@
 import React, { useState, useEffect } from "react";
 import categories from "../../constants/categories.json";
+import {useNavigate} from "react-router-dom";
 
 const getBgColor = (idx) => {
-    switch (idx) {
-      case 0:
-        return "text-red-400";
+  switch (idx) {
+    case 0 :
+      return "text-red-400";
 
-      case 1:
-        return "text-pink-500";
+    case 1 :
+      return "text-pink-500";
 
-      case 2:
-        return "text-orange-400";
+    case 2 :
+      return "text-orange-400";
 
-      case 3:
-        return "text-yellow-400";
+    case 3 :
+      return "text-yellow-400";
 
-      case 4:
-        return "text-teal-500";
+    case 4 :
+      return "text-teal-500";
 
-      case 5:
-        return "text-blue-500";
+    case 5 :
+      return "text-blue-500";
 
-      default:
-        return "text-blue-500";
+    default :
+      return "text-blue-500";
+  }
+};
+const CategoryModal = ({ hoveredTab, handleMouseEnter, handleMouseLeave, setIsModalOpen }) => {
+
+  const navigate = useNavigate();
+ 
+  const handleHeaderClick = (hoveredTab) =>{
+    switch(hoveredTab){
+      case 0 :
+         navigate(`/men-products`);
+         break;
+      case 1 :
+         navigate(`/women-products`);
+         break;
+      case 2 :
+         navigate(`/kids-products`);
+         break;
+      case 3 :
+         navigate(`/home-products`);
+        break;
+     
+      default :
+         navigate(`/men-products`);
+         break;
     }
-  };
-const CategoryModal = ({ hoveredTab, handleMouseEnter, handleMouseLeave }) => {
-  console.log(categories.categoryList.filter((item)=>item.id === hoveredTab+1)[0].items);
+
+    setIsModalOpen(false);
+  }
+
   return (
     <div className="fixed inset-0 bg-black/50 z-10">
       <div
@@ -38,19 +64,23 @@ const CategoryModal = ({ hoveredTab, handleMouseEnter, handleMouseLeave }) => {
          opacity-100 flex justify-between gap-0
         `}
       >
-        {categories.categoryList.filter((item)=>item.id === hoveredTab+1 )[0].items.map((item, index) => (
-          <div
-            key={index}
-            className={` ${item.id % 2 === 0 ? `bg-gray-100` : `bg-white`} h-[100%] w-[20%] p-5`}
-          >
-            <p className={`${ getBgColor(hoveredTab)} text-sm font-bold mb-2`}  >{item.header} </p>
-            {
-              item.categories.map((category, idx)=>(
-                <p key={idx} className="text-sm font-light" >{category}</p>
-              ))
-            }
-          </div>
-        ))}
+        {categories.categoryList
+          .filter((item) => item.id === hoveredTab + 1)[0]
+          .items.map((item, index) => (
+            <div
+              key={index}
+              className={` ${ item.id % 2 === 0 ? `bg-gray-100` : `bg-white`} h-[100%] w-[20%] p-5`}
+            >
+              <p className={`${getBgColor(hoveredTab)} text-sm font-bold mb-2`} >
+                {item.header}
+              </p>
+              {item.categories.map((category, idx) => (
+                <p key={idx} className="text-sm font-light cursor-pointer hover:font-bold" onClick={()=>handleHeaderClick(hoveredTab)} >
+                  {category}
+                </p>
+              ))}
+            </div>
+          ))}
       </div>
     </div>
   );

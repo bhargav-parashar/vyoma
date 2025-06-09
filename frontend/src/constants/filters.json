@@ -1,8 +1,29 @@
 {
     "men":{
-        "categories" : ["T-shirt", "Casual Trousers"],
-        "brands" : ["Allen Solly", "ADIDAS", "Blackberrys", "Being Human", "CULT"],
-        "colors" : ["black", "blue", "white", "green", "gray"]
+
+        "categories" : [
+            { "id" : 1, "key" : "tshirt", "value" : "T-Shirt"}, 
+            { "id" : 2, "key" : "casualtrousers", "value" : "Casual Trousers"}
+        ],
+
+        "brands" : [
+            {"id" : 1, "key" : "allensolly", "value": "Allen Solly"}, 
+            {"id" : 2, "key" : "adidas", "value": "ADIDAS"}, 
+            {"id" : 3, "key" : "blackberrys", "value": "Blackberrys"}, 
+            {"id" : 4, "key" : "being human", "value": "Being Human"}, 
+            {"id" : 5, "key" : "cult", "value": "CULT"}
+            
+        ],
+
+        "colors" : [
+            {"id" : 1, "key" : "black", "value": "Black"}, 
+            {"id" : 2, "key" : "blue", "value": "Blue"}, 
+            {"id" : 3, "key" : "white", "value": "White"}, 
+            {"id" : 4, "key" : "green", "value": "Green"}, 
+            {"id" : 5, "key" : "gray", "value": "Gray"}
+        
+        ]
+        
     }
     
 }

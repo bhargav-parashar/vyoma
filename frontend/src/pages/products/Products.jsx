@@ -63,7 +63,7 @@ const Products = ({section="men"}) => {
           </div>
         </main>
       </div>
-      {isModalOpen && <CategoryModal hoveredTab={hoveredTab} handleMouseLeave={handleMouseLeave} handleMouseEnter={handleMouseEnter} />}
+      {isModalOpen && <CategoryModal hoveredTab={hoveredTab} handleMouseLeave={handleMouseLeave} handleMouseEnter={handleMouseEnter} setModsetIsModalOpenalOpen={setIsModalOpen} />}
       
     </div>
   );

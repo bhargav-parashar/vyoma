@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "../../assets/logo.png";
-import {Link} from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 const tabs = ["MEN", "WOMEN", "KIDS", "HOME"];
 
 const Header = ({
@@ -10,6 +10,9 @@ const Header = ({
   handleMouseLeave,
   handleMouseEnter,
 }) => {
+
+  const navigate = useNavigate();
+
   const getBgColor = (idx) => {
     switch (idx) {
       case 0:
@@ -35,6 +38,11 @@ const Header = ({
     }
   };
 
+  const handleSectionClick = (item) =>{
+    setIsModalOpen(false);
+    navigate(`/${item.toLowerCase()}-products`)
+  }
+
   return (
     <div className="  flex items-center justify-between bg-white h-20 px-10 shadow-lg z-20 fixed w-[100%] ">
       <div className=" h-[100%] flex justify-start items-center gap-10">
@@ -50,7 +58,7 @@ const Header = ({
                 onMouseEnter={() => handleMouseEnter(idx)}
                 onMouseLeave={() => handleMouseLeave()}
               >
-                <Link to={`/${item.toLowerCase()}-products`}><p>{item}</p></Link>
+                <p onClick={()=>handleSectionClick(item)} >{item}</p>
               </div>
 
               <div

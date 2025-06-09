@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import FilterGroup from "./FilterGroup";
 import filters from "../../constants/filters.json";
+import {useLocation} from 'react-router-dom';
 
 const Filters = ({ products, setFilteredProducts }) => {
   const [appliedFilters, setAppliedFilters] = useState({
@@ -9,6 +10,12 @@ const Filters = ({ products, setFilteredProducts }) => {
     colors: [],
   });
 
+  const location = useLocation();
+  
+  
+  
+  
+ 
   const handleChange = (group, value) => {
     //add option to group keyed array of appliedFilters
     //if it is already present, remove it
@@ -20,11 +27,21 @@ const Filters = ({ products, setFilteredProducts }) => {
     setAppliedFilters((prev) => ({ ...prev, [group]: updatedFilter }));
   };
 
+  //get the params if available
+  //update the filters in an useEffect
+
+  // useEffect(()=>{
+  //   const params = new URLSearchParams(location.search);
+  //   for(let [key,val] of params){
+  //     handleChange (key, val);
+  //   }
+  // },[]);
+
   useEffect(() => {
     const filteredProducts = products.filter((product) => {
 
       const matchColor     = appliedFilters.colors.length == 0  ||  appliedFilters.colors.includes(product.color);
-      const matchBrand     = appliedFilters.brands.length == 0  ||  appliedFilters.brands.includes(product.brand);
+      const matchBrand     = appliedFilters.brands.length == 0  ||  appliedFilters.brands.includes(product.brandkey);
       const matchCategory  = appliedFilters.categories.length == 0 ||  appliedFilters.categories.includes(product.category);
 
       return matchColor && matchBrand && matchCategory;
@@ -32,6 +49,9 @@ const Filters = ({ products, setFilteredProducts }) => {
 
     setFilteredProducts(filteredProducts);
   }, [appliedFilters]);
+
+  
+
 
   return (
     <div className="h-screen flex flex-col">
@@ -49,7 +69,7 @@ const Filters = ({ products, setFilteredProducts }) => {
         title={"BRANDS"}
         options={filters.men.brands}
         group={"brands"}
-        selectedValues={appliedFilters.brands}
+        selectedValues={appliedFilters}
         handleChange={handleChange}
       />
       <hr className="text-gray-300 " />
@@ -57,7 +77,7 @@ const Filters = ({ products, setFilteredProducts }) => {
         title={"COLORS"}
         options={filters.men.colors}
         group={"colors"}
-        selectedValues={appliedFilters.colors}
+        selectedValues={appliedFilters}
         handleChange={handleChange}
       />
     </div>

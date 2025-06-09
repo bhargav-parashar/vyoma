@@ -10,11 +10,11 @@ const FilterGroup = ({ title, options, group, selectedValues, handleChange }) =>
             <input
               className="cursor-pointer"
               type="checkbox"
-              value={option}
-              checked={selectedValues.includes(option)}
-              onChange={()=>handleChange(group, option)}
+              value={option.key}
+              checked={selectedValues.includes(option.key)}
+              onChange={()=>handleChange(group, option.key)}
             />
-            <span className="ml-2 cursor-pointer">{option}</span>
+            <span className="ml-2 cursor-pointer">{option.value}</span>
           </label>
         </div>
       ))}
