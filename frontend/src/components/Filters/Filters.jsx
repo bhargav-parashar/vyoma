@@ -69,7 +69,7 @@ const Filters = ({ products, setFilteredProducts }) => {
         title={"BRANDS"}
         options={filters.men.brands}
         group={"brands"}
-        selectedValues={appliedFilters}
+        selectedValues={appliedFilters.brands}
         handleChange={handleChange}
       />
       <hr className="text-gray-300 " />
@@ -77,7 +77,7 @@ const Filters = ({ products, setFilteredProducts }) => {
         title={"COLORS"}
         options={filters.men.colors}
         group={"colors"}
-        selectedValues={appliedFilters}
+        selectedValues={appliedFilters.colors}
         handleChange={handleChange}
       />
     </div>
