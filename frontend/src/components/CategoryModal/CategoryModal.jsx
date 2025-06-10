@@ -30,19 +30,24 @@ const CategoryModal = ({ hoveredTab, handleMouseEnter, handleMouseLeave, setIsMo
 
   const navigate = useNavigate();
  
-  const handleHeaderClick = (hoveredTab) =>{
+  const handleHeaderClick = (hoveredTab, category) =>{
     switch(hoveredTab){
       case 0 :
-         navigate(`/men-products`);
+         navigate(`/men-products?category=${category}`);
+         handleMouseLeave();
          break;
       case 1 :
-         navigate(`/women-products`);
+         navigate(`/women-products?category=${category}`);
+         handleMouseLeave();
          break;
       case 2 :
-         navigate(`/kids-products`);
+         navigate(`/kids-products?category=${category}`);
+         handleMouseLeave();
          break;
+        
       case 3 :
-         navigate(`/home-products`);
+         navigate(`/home-products?category=${category}`);
+         handleMouseLeave();
         break;
      
       default :
@@ -75,8 +80,8 @@ const CategoryModal = ({ hoveredTab, handleMouseEnter, handleMouseLeave, setIsMo
                 {item.header}
               </p>
               {item.categories.map((category, idx) => (
-                <p key={idx} className="text-sm font-light cursor-pointer hover:font-bold" onClick={()=>handleHeaderClick(hoveredTab)} >
-                  {category}
+                <p key={idx} className="text-sm font-light cursor-pointer hover:font-bold" onClick={()=>handleHeaderClick(hoveredTab, category.key)} >
+                  {category.value}
                 </p>
               ))}
             </div>

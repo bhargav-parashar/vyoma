@@ -43,6 +43,7 @@ const Products = ({section="men"}) => {
           <Filters
             products={products}
             setFilteredProducts={setFilteredProducts}
+            section={section}
           />
         </aside>
 
@@ -54,7 +55,7 @@ const Products = ({section="men"}) => {
             </div>
             <SortHover />
           </div>
-          <div class="grid grid-cols-[repeat(auto-fit,_minmax(200px,200px))] gap-7 p-4  ">
+          <div className="grid grid-cols-[repeat(auto-fit,_minmax(200px,200px))] gap-7 p-4  ">
             {filteredProducts.map((item) => (
               <div key={item.id}>
                 <ProductCard item={item} />

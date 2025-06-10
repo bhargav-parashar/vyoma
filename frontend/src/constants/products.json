@@ -677,7 +677,7 @@
                     "category" : "kurtis",
                     "brandKey" : "cult",
                     "brand": "CULT",
-                     "color":"blue",
+                    "color":"blue",
                     "price":{
                         "original": 2799,
                         "discounted": 811,

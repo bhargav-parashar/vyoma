@@ -7,12 +7,12 @@
                 
                 "id": 1,
                 "header": "Topwear",
-                "categories": ["T-Shirts"]
+                "categories": [{ "key":"tshirt", "value": "T-Shirts"}]
             },
             {
                 "id": 2,
                 "header": "Bottomwear",
-                "categories": ["Casual Trousers"]
+                "categories": [{ "key":"casualtrousers", "value": "Casual Trousers"}]
             },
             {
                 "id": 3,
@@ -40,12 +40,12 @@
             {
                 "id": 1,
                 "header": "Indian & Fusion Wear",
-                "categories": ["Kurtis, Tunics & Tops"]
+                "categories": [{ "key":"kurtis", "value": "Kurtis, Tunics & Tops"}]
             },
             {
                 "id": 2,
                 "header": "Footwear",
-                "categories": ["Heels & Flats"]
+                "categories": [{ "key":"heels", "value": "Heels"}, { "key":"flats", "value": "Flats"}]
             },
             {
                 "id": 3,
@@ -73,12 +73,12 @@
             {
                 "id": 1,
                 "header": "Boys Clothing",
-                "categories": ["T-Shirts"]
+                "categories": [{ "key":"tshirt", "value": "T-Shirts"}]
             },
             {
                 "id": 2,
                 "header": "Girls Clothing",
-                "categories": ["Dresses"]
+                "categories": [{ "key":"dress", "value": "Dresses"}]
             },
             {
                 "id": 3,
@@ -106,12 +106,12 @@
             {
                 "id": 1,
                 "header": "Bed Linen & Furnishing",
-                "categories": ["Blankets, Quilts & Dohars"]
+                "categories": [{ "key":"blanket", "value": "Blankets, Quilts & Dohars"}]
             },
             {
                 "id": 2,
                 "header": "Lamps & Lighting",
-                "categories": ["Floor Lamps"]
+                "categories": [{ "key":"floor-lamp", "value": "Floor Lamps"}]
             },
             {
                 "id": 3,

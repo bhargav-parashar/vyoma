@@ -1,7 +1,7 @@
 {
     "men":{
 
-        "categories" : [
+        "category" : [
             { "id" : 1, "key" : "tshirt", "value" : "T-Shirt"}, 
             { "id" : 2, "key" : "casualtrousers", "value" : "Casual Trousers"}
         ],
@@ -15,7 +15,86 @@
             
         ],
 
-        "colors" : [
+        "color" : [
+            {"id" : 1, "key" : "black", "value": "Black"}, 
+            {"id" : 2, "key" : "blue", "value": "Blue"}, 
+            {"id" : 3, "key" : "white", "value": "White"}, 
+            {"id" : 4, "key" : "green", "value": "Green"}, 
+            {"id" : 5, "key" : "gray", "value": "Gray"}
+        
+        ]
+
+    },
+    "women":{
+
+        "category" : [
+            { "id" : 1, "key" : "kurtis", "value" : "Kurtis, Tunics & Tops"}, 
+            { "id" : 2, "key" : "heels", "value" : "Heels"},
+            { "id" : 3, "key" : "flats", "value" : "Flats"}
+        ],
+
+        "brand" : [
+            {"id" : 1, "key" : "allensolly", "value": "Allen Solly"}, 
+            {"id" : 2, "key" : "adidas", "value": "ADIDAS"}, 
+            {"id" : 3, "key" : "blackberrys", "value": "Blackberrys"}, 
+            {"id" : 4, "key" : "beinghuman", "value": "Being Human"}, 
+            {"id" : 5, "key" : "cult", "value": "CULT"}
+            
+        ],
+
+        "color" : [
+            {"id" : 1, "key" : "black", "value": "Black"}, 
+            {"id" : 2, "key" : "blue", "value": "Blue"}, 
+            {"id" : 3, "key" : "white", "value": "White"}, 
+            {"id" : 4, "key" : "green", "value": "Green"}, 
+            {"id" : 5, "key" : "gray", "value": "Gray"}
+        
+        ]
+
+    },
+    "kids":{
+
+        "category" : [
+            { "id" : 1, "key" : "tshirt", "value" : "T-Shirt"}, 
+            { "id" : 2, "key" : "dress", "value" : "Dresses"}
+        ],
+
+        "brand" : [
+            {"id" : 1, "key" : "allensolly", "value": "Allen Solly"}, 
+            {"id" : 2, "key" : "adidas", "value": "ADIDAS"}, 
+            {"id" : 3, "key" : "blackberrys", "value": "Blackberrys"}, 
+            {"id" : 4, "key" : "beinghuman", "value": "Being Human"}, 
+            {"id" : 5, "key" : "cult", "value": "CULT"}
+            
+        ],
+
+        "color" : [
+            {"id" : 1, "key" : "black", "value": "Black"}, 
+            {"id" : 2, "key" : "blue", "value": "Blue"}, 
+            {"id" : 3, "key" : "white", "value": "White"}, 
+            {"id" : 4, "key" : "green", "value": "Green"}, 
+            {"id" : 5, "key" : "gray", "value": "Gray"}
+        
+        ]
+
+    },
+    "home":{
+
+        "category" : [
+            { "id" : 1, "key" : "blanket", "value" : "Blankets & Quilts"}, 
+            { "id" : 2, "key" : "floor-lamp", "value" : "Floor Lamps"}
+        ],
+
+        "brand" : [
+            {"id" : 1, "key" : "allensolly", "value": "Allen Solly"}, 
+            {"id" : 2, "key" : "adidas", "value": "ADIDAS"}, 
+            {"id" : 3, "key" : "blackberrys", "value": "Blackberrys"}, 
+            {"id" : 4, "key" : "beinghuman", "value": "Being Human"}, 
+            {"id" : 5, "key" : "cult", "value": "CULT"}
+            
+        ],
+
+        "color" : [
             {"id" : 1, "key" : "black", "value": "Black"}, 
             {"id" : 2, "key" : "blue", "value": "Blue"}, 
             {"id" : 3, "key" : "white", "value": "White"}, 
