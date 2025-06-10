@@ -6,11 +6,11 @@
             { "id" : 2, "key" : "casualtrousers", "value" : "Casual Trousers"}
         ],
 
-        "brands" : [
+        "brand" : [
             {"id" : 1, "key" : "allensolly", "value": "Allen Solly"}, 
             {"id" : 2, "key" : "adidas", "value": "ADIDAS"}, 
             {"id" : 3, "key" : "blackberrys", "value": "Blackberrys"}, 
-            {"id" : 4, "key" : "being human", "value": "Being Human"}, 
+            {"id" : 4, "key" : "beinghuman", "value": "Being Human"}, 
             {"id" : 5, "key" : "cult", "value": "CULT"}
             
         ],
@@ -23,7 +23,7 @@
             {"id" : 5, "key" : "gray", "value": "Gray"}
         
         ]
-        
+
     }
     
 }

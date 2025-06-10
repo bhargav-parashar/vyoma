@@ -64,7 +64,7 @@
                     "section" : "men",
                     "category" : "tshirt",
                     "brandKey" : "adidas",
-"brand": "ADIDAS",
+                    "brand": "ADIDAS",
                      "color":"gray",
                     "price":{
                         "original": 999,
@@ -159,8 +159,8 @@
                     "section" : "men",
                     "category" : "tshirt",
                     "brandKey" : "blackberrys",
-"brand": "Blackberrys",
-                     "color":"blue",
+                    "brand": "Blackberrys",
+                    "color":"blue",
                     "price":{
                         "original": 1495,
                         "discounted": 717,
@@ -254,7 +254,7 @@
                     "section" : "men",
                     "category" : "tshirt",
                     "brandKey" : "allensolly",
-"brand": "Allen Solly",
+                    "brand": "Allen Solly",
                      "color":"white",
                     "price":{
                         "original": 2199,
@@ -311,7 +311,7 @@
                     "section" : "men",
                     "category" : "tshirt",
                     "brandKey" : "beinghuman",
-"brand": "Being Human",
+                    "brand": "Being Human",
                      "color":"white",
                     "price":{
                         "original": 1199,
