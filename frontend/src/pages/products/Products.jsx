@@ -6,9 +6,10 @@ import Pill from "../../components/Pill/Pill";
 import SortHover from "../../components/SortHover/SortHover";
 import allProducts from "../../constants/products.json";
 import CategoryModal from "../../components/CategoryModal/CategoryModal";
+import Countries from "../../constants/countries.json";
 
 
-const Products = ({section="men"}) => {
+const Products = ({ section = "men" }) => {
   const [products, setProducts] = useState(allProducts[`${section}`]);
   const [filteredProducts, setFilteredProducts] = useState(
     allProducts[`${section}`]
@@ -48,14 +49,32 @@ const Products = ({section="men"}) => {
         </aside>
 
         <main className="w-5/6 h-cover">
-          <div className="h-13 flex justify-start items-center gap-1 px-4 ">
+          <div className="h-13 flex justify-start items-center gap-1 px-4 border">
             <div className="flex justify-start w-[100%]">
               <Pill label="Country of Origin" />
               <Pill label="Size" />
             </div>
             <SortHover />
           </div>
-          <div className="grid grid-cols-[repeat(auto-fit,_minmax(200px,200px))] gap-7 p-4  ">
+          <div className="border grid grid-cols-[repeat(auto-fit,_minmax(100px,100px))]  px-4 gap-x-8 gap-y-1" >
+            {
+            Countries.originCountries.map((country,idx)=>(
+            <div  >
+              <label className="inline-flex items-center text-sm">
+                <input
+                  className="cursor-pointer"
+                  type="checkbox"
+                  value={country.key}
+                  // checked={selectedValues.includes(option.key)}
+                  // onChange={()=>updateParams( group, option.key)}
+                />
+                <span className="ml-2 cursor-pointer">{country.value}</span>
+              </label>
+            </div>
+            ))
+          }
+          </div>
+          <div className="grid grid-cols-[repeat(auto-fit,_minmax(200px,200px))] gap-7 p-4  border">
             {filteredProducts.map((item) => (
               <div key={item.id}>
                 <ProductCard item={item} />
@@ -64,8 +83,14 @@ const Products = ({section="men"}) => {
           </div>
         </main>
       </div>
-      {isModalOpen && <CategoryModal hoveredTab={hoveredTab} handleMouseLeave={handleMouseLeave} handleMouseEnter={handleMouseEnter} setModsetIsModalOpenalOpen={setIsModalOpen} />}
-      
+      {isModalOpen && (
+        <CategoryModal
+          hoveredTab={hoveredTab}
+          handleMouseLeave={handleMouseLeave}
+          handleMouseEnter={handleMouseEnter}
+          setModsetIsModalOpenalOpen={setIsModalOpen}
+        />
+      )}
     </div>
   );
 };
