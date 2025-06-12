@@ -1,0 +1,6 @@
+{
+    "filterPills" : [
+        {"id":1, "value":"Country of Origin"},
+        {"id":2, "value":"Size"}
+    ]
+}

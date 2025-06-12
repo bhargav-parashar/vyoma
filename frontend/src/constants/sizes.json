@@ -1,0 +1,14 @@
+{
+    "availableSizes" : [
+        { "id": 1, "key": "3xs", "value": "3XS" },
+        { "id": 2, "key": "xxs", "value": "XXS" },
+        { "id": 3, "key": "xs", "value": "XS" },
+        { "id": 4, "key": "s", "value": "S" },
+        { "id": 5, "key": "m", "value": "M" },
+        { "id": 6, "key": "l", "value": "L" },
+        { "id": 7, "key": "xl", "value": "XL" },
+        { "id": 8, "key": "xxl", "value": "XXL" },
+        { "id": 9, "key": "3XL", "value": "3xl" }
+        
+    ]
+}

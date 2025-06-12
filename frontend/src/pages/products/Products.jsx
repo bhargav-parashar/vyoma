@@ -2,12 +2,14 @@ import { useState } from "react";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import Header from "../../components/Header/Header";
 import Filters from "../../components/Filters/Filters";
-import Pill from "../../components/Pill/Pill";
+import Pill from "../../components/PillsSection/Pill";
 import SortHover from "../../components/SortHover/SortHover";
 import allProducts from "../../constants/products.json";
 import CategoryModal from "../../components/CategoryModal/CategoryModal";
-import Countries from "../../constants/countries.json";
-
+import CountryList from "../../constants/countries.json";
+import FilterSection from "../../components/PillsSection/FilterSection";
+import SizeList from "../../constants/sizes.json";
+import Pills from "../../constants/pills.json";
 
 const Products = ({ section = "men" }) => {
   const [products, setProducts] = useState(allProducts[`${section}`]);
@@ -17,6 +19,8 @@ const Products = ({ section = "men" }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [hoveredTab, setHoveredTab] = useState(-1);
 
+  const [selectedPill, setSelectedPill] = useState(-1);
+
   const handleMouseEnter = (tab) => {
     setIsModalOpen(true);
     setHoveredTab(tab);
@@ -24,6 +28,13 @@ const Products = ({ section = "men" }) => {
   const handleMouseLeave = () => {
     setIsModalOpen(false);
     setHoveredTab(-1);
+  };
+  const handlePillClick = (id) => {
+    if (id === selectedPill) {
+      setSelectedPill(-1);
+    } else {
+      setSelectedPill(id);
+    }
   };
 
   return (
@@ -49,32 +60,55 @@ const Products = ({ section = "men" }) => {
         </aside>
 
         <main className="w-5/6 h-cover">
-          <div className="h-13 flex justify-start items-center gap-1 px-4 border">
+          <div className="h-13 flex justify-start items-center gap-1 px-4">
             <div className="flex justify-start w-[100%]">
-              <Pill label="Country of Origin" />
-              <Pill label="Size" />
+              {Pills.filterPills.map((pill) => (
+                <Pill
+                  itemKey={pill.id}
+                  value={pill.value}
+                  selectedPill={selectedPill}
+                  handlePillClick={handlePillClick}
+                />
+              ))}
             </div>
             <SortHover />
           </div>
-          <div className="border grid grid-cols-[repeat(auto-fit,_minmax(100px,100px))]  px-4 gap-x-8 gap-y-1" >
-            {
-            Countries.originCountries.map((country,idx)=>(
-            <div  >
-              <label className="inline-flex items-center text-sm">
-                <input
-                  className="cursor-pointer"
-                  type="checkbox"
-                  value={country.key}
-                  // checked={selectedValues.includes(option.key)}
-                  // onChange={()=>updateParams( group, option.key)}
-                />
-                <span className="ml-2 cursor-pointer">{country.value}</span>
-              </label>
-            </div>
-            ))
+          {
+            /* ORIGIN COUNTRY FILTER SECTION */
+            selectedPill == 1 && (
+              <div
+                className="grid grid-cols-[repeat(auto-fit,_minmax(100px,100px))] py-2  px-4 gap-x-8 gap-y-1"
+                style={{ boxShadow: "0 4px 4px -4px rgba(0, 0, 0, 0.2)" }}
+              >
+                {CountryList.originCountries.map((country) => (
+                  <FilterSection
+                    key={country.id}
+                    itemKey={country.key}
+                    value={country.value}
+                  />
+                ))}
+              </div>
+            )
           }
-          </div>
-          <div className="grid grid-cols-[repeat(auto-fit,_minmax(200px,200px))] gap-7 p-4  border">
+          {
+            /* SIZE FILTER SECTION */
+            selectedPill == 2 && (
+              <div
+                className="grid grid-cols-[repeat(auto-fit,_minmax(100px,100px))] py-2  px-4 gap-x-8 gap-y-1 shadow-b-lg"
+                style={{ boxShadow: "0 4px 4px -4px rgba(0, 0, 0, 0.2)" }}
+              >
+                {SizeList.availableSizes.map((size) => (
+                  <FilterSection
+                    key={size.id}
+                    itemKey={size.key}
+                    value={size.value}
+                  />
+                ))}
+              </div>
+            )
+          }
+
+          <div className="grid grid-cols-[repeat(auto-fit,_minmax(200px,200px))] gap-7 p-4">
             {filteredProducts.map((item) => (
               <div key={item.id}>
                 <ProductCard item={item} />
