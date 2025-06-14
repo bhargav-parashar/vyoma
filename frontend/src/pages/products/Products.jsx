@@ -4,38 +4,30 @@ import Header from "../../components/Header/Header";
 import Filters from "../../components/Filters/Filters";
 import Pill from "../../components/PillsSection/Pill";
 import SortHover from "../../components/SortHover/SortHover";
-import allProducts from "../../constants/products.json";
 import CategoryModal from "../../components/CategoryModal/CategoryModal";
 import CountryList from "../../constants/countries.json";
 import FilterSection from "../../components/PillsSection/FilterSection";
 import SizeList from "../../constants/sizes.json";
 import Pills from "../../constants/pills.json";
+import useFilter from "../../hooks/useFilter";
+import useGetProducts from "../../hooks/useGetProducts";
+import useSectionHoverModal from "../../hooks/useSectionHoverModal";
+import usePill from "../../hooks/usePill";
+
 
 const Products = ({ section = "men" }) => {
-  const [products, setProducts] = useState(allProducts[`${section}`]);
-  const [filteredProducts, setFilteredProducts] = useState(
-    allProducts[`${section}`]
-  );
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [hoveredTab, setHoveredTab] = useState(-1);
 
-  const [selectedPill, setSelectedPill] = useState(-1);
+  //GET PRODUCTS
+  const {products,filteredProducts, setFilteredProducts} = useGetProducts({section});
+  
+  //APPLY FILTERS
+  const { appliedFilters, updateParams } = useFilter({products, setFilteredProducts});
 
-  const handleMouseEnter = (tab) => {
-    setIsModalOpen(true);
-    setHoveredTab(tab);
-  };
-  const handleMouseLeave = () => {
-    setIsModalOpen(false);
-    setHoveredTab(-1);
-  };
-  const handlePillClick = (id) => {
-    if (id === selectedPill) {
-      setSelectedPill(-1);
-    } else {
-      setSelectedPill(id);
-    }
-  };
+  //SHOW SECTION HOVER MENU
+  const {hoveredTab, setHoveredTab, isModalOpen, setIsModalOpen, handleMouseEnter, handleMouseLeave} = useSectionHoverModal();
+  
+  //HANDLE PILLS SECTION
+  const { selectedPill, handlePillClick } = usePill();
 
   return (
     <div className="h-screen flex flex-col overflow-y-auto bg-gray-50">
@@ -56,6 +48,8 @@ const Products = ({ section = "men" }) => {
             products={products}
             setFilteredProducts={setFilteredProducts}
             section={section}
+            appliedFilters = {appliedFilters}
+            updateParams={updateParams}
           />
         </aside>
 
@@ -74,7 +68,7 @@ const Products = ({ section = "men" }) => {
             <SortHover />
           </div>
           {
-            /* ORIGIN COUNTRY FILTER SECTION */
+            //ORIGIN COUNTRY FILTER SECTION
             selectedPill == 1 && (
               <div
                 className="grid grid-cols-[repeat(auto-fit,_minmax(100px,100px))] py-2  px-4 gap-x-8 gap-y-1"
@@ -91,7 +85,7 @@ const Products = ({ section = "men" }) => {
             )
           }
           {
-            /* SIZE FILTER SECTION */
+            //SIZE FILTER SECTION 
             selectedPill == 2 && (
               <div
                 className="grid grid-cols-[repeat(auto-fit,_minmax(100px,100px))] py-2  px-4 gap-x-8 gap-y-1 shadow-b-lg"
