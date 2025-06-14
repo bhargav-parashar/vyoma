@@ -1,25 +1,11 @@
 {
     "originCountries" : [
-        { "id": 1, "key": "albania", "value": "Albania" },
-        { "id": 2, "key": "all countries", "value": "All Countries" },
-        { "id": 3, "key": "argentina", "value": "Argentina" },
-        { "id": 4, "key": "brazil", "value": "Brazil" },
-        { "id": 5, "key": "cambodia", "value": "Cambodia" },
-        { "id": 6, "key": "china", "value": "China" },
-        { "id": 7, "key": "egypt", "value": "Egypt" },
-        { "id": 8, "key": "el salvador", "value": "El Salvador" },
-        { "id": 9, "key": "guatemala", "value": "Guatemala" },
-        { "id": 10, "key": "honduras", "value": "Honduras" },
-        { "id": 11, "key": "hong kong", "value": "Hong Kong" },
-        { "id": 12, "key": "india", "value": "India" },
-        { "id": 13, "key": "indonesia", "value": "Indonesia" },
-        { "id": 14, "key": "italy", "value": "Italy" },
-        { "id": 15, "key": "jordan", "value": "Jordan" },
-        { "id": 16, "key": "kenya", "value": "Kenya" },
-        { "id": 17, "key": "madagascar", "value": "Madagascar" },
-        { "id": 18, "key": "malaysia", "value": "Malaysia" },
-        { "id": 19, "key": "morocco", "value": "Morocco" },
-        { "id": 20, "key": "peru", "value": "Peru" },
-        { "id": 21, "key": "uk", "value": "UK" }
+        { "id": 1, "key": "argentina", "value": "Argentina" },
+        { "id": 2, "key": "canada", "value": "Canada" },
+        { "id": 3, "key": "germany", "value": "Germany" },
+        { "id": 4, "key": "india", "value": "India" },
+        { "id": 5, "key": "russia", "value": "Russia" },
+        { "id": 6, "key": "uk", "value": "UK" },
+        { "id": 7, "key": "usa", "value": "USA" }  
     ]
 }

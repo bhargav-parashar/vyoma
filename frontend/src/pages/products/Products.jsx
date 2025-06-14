@@ -61,7 +61,7 @@ const Products = ({ section = "men" }) => {
 
         <main className="w-5/6 h-cover">
           <div className="h-13 flex justify-start items-center gap-1 px-4">
-            <div className="flex justify-start w-[100%]">
+            <div className="flex justify-start w-[100%] gap-2">
               {Pills.filterPills.map((pill) => (
                 <Pill
                   itemKey={pill.id}

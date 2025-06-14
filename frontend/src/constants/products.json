@@ -18,7 +18,9 @@
                         "average": 4.5,
                         "count": 120
                     },
-                    "images":["product-image.jpg", "product-image-1.jpg"]
+                    "images":["product-image.jpg", "product-image-1.jpg"],
+                    "originCountry" : "argentina",
+                    "size":["3xs", "xxs", "xs", "s", "xl", "xxl"]
                 },
                 {
                     "id": 2,
@@ -37,7 +39,9 @@
                         "average": 4.2,
                         "count": 147
                     },
-                    "images":["product-2.jpg", "product-2.1.jpg"]
+                    "images":["product-2.jpg", "product-2.1.jpg"],
+                    "originCountry" : "canada",
+                    "size":[ "xs", "s", "m", "l", "xl", "xxl", "3xl"]
                 },
                 {
                     "id": 3,
@@ -56,7 +60,9 @@
                         "average": 4.3,
                         "count": 112
                     },
-                    "images":["product-3.jpg","product-3.1.jpg"]
+                    "images":["product-3.jpg","product-3.1.jpg"],
+                    "originCountry" : "germany",
+                    "size":["3xs",  "m", "l", "xl", "xxl", "3xl"]
                 },
                 {
                     "id": 4,
@@ -75,7 +81,9 @@
                         "average": 4.3,
                         "count": 112
                     },
-                    "images":["product-4.jpg","product-4.1.jpg"]
+                    "images":["product-4.jpg","product-4.1.jpg"],
+                    "originCountry" : "india",
+                    "size":["3xs", "xxs", "xs", "s", "m", "3xl"]
                 },
                 {
                     "id": 5,
@@ -94,7 +102,9 @@
                         "average": 4.7,
                         "count": 200
                     },
-                    "images":["product-5.jpg","product-5.1.jpg"]
+                    "images":["product-5.jpg","product-5.1.jpg"],
+                    "originCountry" : "russia",
+                    "size":["3xs", "xxs", "xs", "s", "xl", "xxl", "3xl"]
                 },
                 {
                     "id": 6,
@@ -113,7 +123,9 @@
                         "average": 4.5,
                         "count": 136
                     },
-                    "images":["product-6.jpg","product-6.1.jpg"]
+                    "images":["product-6.jpg","product-6.1.jpg"],
+                    "originCountry" : "uk",
+                    "size":["3xs", "xxs",  "m", "l", "xl", "xxl", "3xl"]
                 },
                 {
                     "id": 7,
@@ -132,7 +144,9 @@
                         "average": 4,
                         "count": 253
                     },
-                    "images":["product-7.jpg","product-7.1.jpg"]
+                    "images":["product-7.jpg","product-7.1.jpg"],
+                    "originCountry" : "usa",
+                    "size":["3xs", "xxs",  "l", "xl", "xxl", "3xl"]
                 },
                 {
                     "id": 8,
@@ -151,7 +165,9 @@
                         "average": 4.7,
                         "count": 200
                     },
-                    "images":["product-8.jpg","product-8.1.jpg"]
+                    "images":["product-8.jpg","product-8.1.jpg"],
+                    "originCountry" : "argentina",
+                    "size":[ "s", "m", "l", "xl", "xxl", "3xl"]
                 },
                 {
                     "id": 9,
@@ -170,7 +186,9 @@
                         "average": 4.5,
                         "count": 11
                     },
-                    "images":["product-9.jpg","product-9.1.jpg"]
+                    "images":["product-9.jpg","product-9.1.jpg"],
+                    "originCountry" : "canada",
+                    "size":["3xs", "xxs", "xs", "s", "m", "l", "xl"]
                 },
                 {
                     "id": 10,
@@ -189,7 +207,9 @@
                         "average": 4.8,
                         "count": 16
                     },
-                    "images":["product-10.jpg","product-10.1.jpg"]
+                    "images":["product-10.jpg","product-10.1.jpg"],
+                    "originCountry" : "germany",
+                    "size":["3xs", "xxs", "xs", "xl", "xxl", "3xl"]
                 },
                 {
                     "id": 11,
@@ -208,7 +228,9 @@
                         "average": 4.8,
                         "count": 9
                     },
-                    "images":["product-11.jpg","product-11.1.jpg"]
+                    "images":["product-11.jpg","product-11.1.jpg"],
+                    "originCountry" : "india",
+                    "size":["3xs", "xxs", "xs", "s", "m", "l", "3xl"]
                 },
                 {
                     "id": 12,
@@ -227,7 +249,9 @@
                         "average": 4.9,
                         "count": 20
                     },
-                    "images":["product-12.jpg","product-12.1.jpg"]
+                    "images":["product-12.jpg","product-12.1.jpg"],
+                    "originCountry" : "uk",
+                    "size":[ "xs", "s", "m", "l", "xl", "xxl", "3xl"]
                 },
                 {
                     "id": 13,
@@ -246,7 +270,9 @@
                         "average": 4.6,
                         "count": 30
                     },
-                    "images":["product-13.jpg","product-13.1.jpg"]
+                    "images":["product-13.jpg","product-13.1.jpg"],
+                    "originCountry" : "usa",
+                    "size":["3xs",  "s", "m", "l", "xl", "xxl", "3xl"]
                 },
                 {
                     "id": 14,
@@ -265,7 +291,9 @@
                         "average": 4,
                         "count": 10
                     },
-                    "images":["product-14.jpg","product-14.1.jpg"]
+                    "images":["product-14.jpg","product-14.1.jpg"],
+                    "originCountry" : "russia",
+                    "size":["3xs", "xxs", "xs", "s", "m", "l",  "3xl"]
                 },
                 {
                     "id": 15,
@@ -284,7 +312,9 @@
                         "average": 4.5,
                         "count": 78
                     },
-                    "images":["product-15.jpg","product-15.1.jpg"]
+                    "images":["product-15.jpg","product-15.1.jpg"],
+                    "originCountry" : "argentina",
+                    "size":["3xs", "xxs", "xs", "s", "m", "l",  "xxl"]
                 },
                 {
                     "id": 16,
@@ -303,7 +333,9 @@
                         "average": 4.8,
                         "count": 34
                     },
-                    "images":["product-16.jpg","product-16.1.jpg"]
+                    "images":["product-16.jpg","product-16.1.jpg"],
+                    "originCountry" : "canada",
+                    "size":[ "xxs", "xs", "s", "m", "l", "xl", "xxl", "3xl"]
                 },
                 {
                     "id": 17,
@@ -322,7 +354,9 @@
                         "average": 4.7,
                         "count": 50
                     },
-                    "images":["product-17.jpg","product-17.1.jpg"]
+                    "images":["product-17.jpg","product-17.1.jpg"],
+                    "originCountry" : "germany",
+                    "size":["3xs", "xxs",  "s", "m", "l", "xl", "xxl", "3xl"]
                 },
                 {
                     "id": 18,
@@ -341,7 +375,9 @@
                         "average": 4.4,
                         "count": 73
                     },
-                    "images":["product-18.jpg","product-18.1.jpg"]
+                    "images":["product-18.jpg","product-18.1.jpg"],
+                    "originCountry" : "india",
+                    "size":["3xs", "xxs", "xs", "m", "l", "xl", "xxl", "3xl"]
                 },
                 {
                     "id": 19,
@@ -360,7 +396,9 @@
                         "average": 4.1,
                         "count": 11
                     },
-                    "images":["product-19.jpg","product-19.1.jpg"]
+                    "images":["product-19.jpg","product-19.1.jpg"],
+                    "originCountry" : "russia",
+                    "size":["3xs", "xxs", "xs", "s",  "l", "xl", "xxl", "3xl"]
                 },
                 {
                     "id": 20,
@@ -379,7 +417,9 @@
                         "average": 4,
                         "count": 15
                     },
-                    "images":["product-20.jpg","product-20.1.jpg"]
+                    "images":["product-20.jpg","product-20.1.jpg"],
+                    "originCountry" : "uk",
+                    "size":["3xs", "xxs", "xs", "s", "m",  "xl", "xxl", "3xl"]
                 },
                 {
                     "id": 21,
@@ -398,7 +438,9 @@
                         "average": 4.3,
                         "count": 20
                     },
-                    "images":["product-21.jpg","product-21.1.jpg"]
+                    "images":["product-21.jpg","product-21.1.jpg"],
+                    "originCountry" : "usa",
+                    "size":["3xs", "xxs", "xs", "s", "m", "l", "xl", "3xl"]
                 },
                 {
                     "id": 22,
@@ -417,7 +459,9 @@
                         "average": 4.2,
                         "count": 15
                     },
-                    "images":["product-22.jpg","product-22.1.jpg"]
+                    "images":["product-22.jpg","product-22.1.jpg"],
+                    "originCountry" : "argentina",
+                    "size":[ "xs", "s", "m", "l", "xl", "xxl", "3xl"]
                 },
                  {
                     "id": 23,
@@ -436,7 +480,9 @@
                         "average": 4,
                         "count": 9
                     },
-                    "images":["product-23.jpg","product-23.1.jpg"]
+                    "images":["product-23.jpg","product-23.1.jpg"],
+                    "originCountry" : "canada",
+                    "size":["3xs", "xxs",  "m", "l", "xl", "xxl", "3xl"]
                 },
                 {
                     "id": 24,
@@ -455,7 +501,9 @@
                         "average": 4.2,
                         "count": 5
                     },
-                    "images":["product-24.jpg","product-24.1.jpg"]
+                    "images":["product-24.jpg","product-24.1.jpg"],
+                    "originCountry" : "germany",
+                    "size":["3xs", "xxs", "xs", "s", "m",  "xxl", "3xl"]
                 },
                 {
                     "id": 25,
@@ -474,7 +522,9 @@
                         "average": 4.2,
                         "count": 695
                     },
-                    "images":["product-25.jpg","product-25.1.jpg"]
+                    "images":["product-25.jpg","product-25.1.jpg"],
+                    "originCountry" : "india",
+                    "size":["3xs", "xxs", "m", "l", "xl", "xxl", "3xl"]
                 },
                 {
                     "id": 26,
@@ -493,7 +543,9 @@
                         "average": 4.7,
                         "count": 5
                     },
-                    "images":["product-26.jpg","product-26.1.jpg"]
+                    "images":["product-26.jpg","product-26.1.jpg"],
+                    "originCountry" : "russia",
+                    "size":["3xs", "xxs", "xs", "s", "m", "l", "xl", "xxl", "3xl"]
                 },
                 {
                     "id": 27,
@@ -512,7 +564,9 @@
                         "average": 4.8,
                         "count": 35
                     },
-                    "images":["product-27.jpg","product-27.1.jpg"]
+                    "images":["product-27.jpg","product-27.1.jpg"],
+                    "originCountry" : "uk",
+                    "size":["3xs", "xxs", "xs", "s", "m", "l",  "xxl", "3xl"]
                 },
                 {
                     "id": 28,
@@ -531,7 +585,9 @@
                         "average": 5,
                         "count": 5
                     },
-                    "images":["product-28.jpg","product-28.1.jpg"]
+                    "images":["product-28.jpg","product-28.1.jpg"],
+                    "originCountry" : "usa",
+                    "size":["3xs", "xxs", "xs", "s", "m", "l", "xl",  "3xl"]
                 },
                 {
                     "id": 29,
@@ -550,7 +606,9 @@
                         "average": 4.8,
                         "count": 10
                     },
-                    "images":["product-29.jpg","product-29.1.jpg"]
+                    "images":["product-29.jpg","product-29.1.jpg"],
+                    "originCountry" : "argentina",
+                    "size":["3xs", "xxs", "s", "m", "l", "xl", "xxl", "3xl"]
                 },
                 {
                     "id": 30,
@@ -569,7 +627,9 @@
                         "average": 4.3,
                         "count": 30
                     },
-                    "images":["product-30.jpg","product-30.1.jpg"]
+                    "images":["product-30.jpg","product-30.1.jpg"],
+                    "originCountry" : "canada",
+                    "size":["3xs",  "xs", "s", "m", "l", "xl", "xxl", "3xl"]
                 },
                 {
                     "id": 31,
@@ -588,7 +648,9 @@
                         "average": 4.6,
                         "count": 49
                     },
-                    "images":["product-31.jpg","product-31.1.jpg"]
+                    "images":["product-31.jpg","product-31.1.jpg"],
+                    "originCountry" : "germany",
+                    "size":["xxs", "xs", "s", "m", "l", "xl", "xxl", "3xl"]
                 },
                 {
                     "id": 32,
@@ -607,7 +669,9 @@
                         "average": 4.5,
                         "count": 30
                     },
-                    "images":["product-32.jpg","product-32.1.jpg"]
+                    "images":["product-32.jpg","product-32.1.jpg"],
+                    "originCountry" : "india",
+                    "size":["3xs", "xxs", "xs", "m", "l", "xl", "xxl", "3xl"]
                 },
                 {
                     "id": 33,
@@ -626,7 +690,9 @@
                         "average": 4.2,
                         "count": 6
                     },
-                    "images":["product-33.jpg","product-33.1.jpg"]
+                    "images":["product-33.jpg","product-33.1.jpg"],
+                    "originCountry" : "russia",
+                    "size":["3xs", "xxs", "xs", "s", "m", "xxl", "3xl"]
                 },
                 {
                     "id": 34,
@@ -645,7 +711,9 @@
                         "average": 3.3,
                         "count": 13
                     },
-                    "images":["product-34.jpg","product-34.1.jpg"]
+                    "images":["product-34.jpg","product-34.1.jpg"],
+                    "originCountry" : "uk",
+                    "size":["3xs", "xxs", "xs", "s", "l", "xl", "xxl", "3xl"]
                 }
     ],
     "women":[
@@ -666,7 +734,9 @@
                         "average": 3.3,
                         "count": 13
                     },
-                    "images":["product-34.jpg","product-34.1.jpg"]
+                    "images":["product-34.jpg","product-34.1.jpg"],
+                    "originCountry" : "usa",
+                    "size":["3xs", "xxs",  "s", "m", "l", "xl", "xxl", "3xl"]
                 }
     ],
     "kids":[
@@ -687,7 +757,9 @@
                         "average": 3.3,
                         "count": 13
                     },
-                    "images":["product-24.jpg","product-24.1.jpg"]
+                    "images":["product-24.jpg","product-24.1.jpg"],
+                    "originCountry" : "india",
+                    "size":["3xs", "xxs", "xs",  "m", "l", "xl", "xxl", "3xl"]
                 }
     ],
     "home":[
@@ -708,7 +780,9 @@
                         "average": 3.3,
                         "count": 13
                     },
-                    "images":["product-14.jpg","product-14.1.jpg"]
+                    "images":["product-14.jpg","product-14.1.jpg"],
+                    "originCountry" : "india",
+                    "size":["3xs", "xxs", "xs", "s",  "xl", "xxl", "3xl"]
                 }
     ]
     
