@@ -1,6 +1,6 @@
 import React from "react";
 
-const FilterSection = ({itemKey,value}) => {
+const FilterSection = ({itemKey,value, updateParams, group, selectedValues}) => {
   return (
     <div>
       <label className="inline-flex items-center text-sm">
@@ -8,8 +8,8 @@ const FilterSection = ({itemKey,value}) => {
           className="cursor-pointer"
           type="checkbox"
           value={itemKey}
-          // checked={selectedValues.includes(option.key)}
-          // onChange={()=>updateParams( group, option.key)}
+          checked={selectedValues.includes(itemKey)}
+          onChange={()=>updateParams( group, itemKey)}
         />
         <span className="ml-2 cursor-pointer">{value}</span>
       </label>

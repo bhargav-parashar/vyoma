@@ -8,8 +8,10 @@ const useFilter = ({products, setFilteredProducts}) => {
     category: [],
     brand: [],
     color: [],
+    origin:[],
+    size:[]
   });
-
+ 
   //MAINTAIN STATE FOR SEARCH PARAMS
   const [searchParams, setSearchParams] = useSearchParams();
 
@@ -20,14 +22,26 @@ const useFilter = ({products, setFilteredProducts}) => {
       const matchColor =
         appliedFilters.color.length == 0 ||
         appliedFilters.color.includes(product.color);
+
       const matchBrand =
         appliedFilters.brand.length == 0 ||
         appliedFilters.brand.includes(product.brandKey);
+
       const matchCategory =
         appliedFilters.category.length == 0 ||
         appliedFilters.category.includes(product.category);
 
-      return matchColor && matchBrand && matchCategory;
+      const matchOrigin = 
+        appliedFilters.origin.length == 0 ||
+        appliedFilters.origin.includes(product.origin);
+      
+      const matchSize = 
+        appliedFilters.size.length == 0 ||
+        product.size.filter((item)=> appliedFilters.size.includes( item ) ).length > 0
+        //appliedFilters.size.includes(product.size);
+
+
+      return matchColor && matchBrand && matchCategory && matchOrigin && matchSize;
     });
 
     setFilteredProducts(filteredProducts);
@@ -75,12 +89,16 @@ const useFilter = ({products, setFilteredProducts}) => {
     const updatedCategory = searchParams.getAll("category") || [];
     const updatedBrand = searchParams.getAll("brand") || [];
     const updatedColor = searchParams.getAll("color") || [];
+    const updatedOrigin = searchParams.getAll("origin") || [];
+    const updatedSize = searchParams.getAll("size") || [];
 
     setAppliedFilters((prev) => ({
       ...prev,
       category: updatedCategory,
       brand: updatedBrand,
-      color: updatedColor
+      color: updatedColor,
+      origin: updatedOrigin,
+      size: updatedSize
     }));
   }, [searchParams]);
 

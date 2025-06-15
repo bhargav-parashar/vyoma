@@ -24,7 +24,7 @@ const Products = ({ section = "men" }) => {
   const { appliedFilters, updateParams } = useFilter({products, setFilteredProducts});
 
   //SHOW SECTION HOVER MENU
-  const {hoveredTab, setHoveredTab, isModalOpen, setIsModalOpen, handleMouseEnter, handleMouseLeave} = useSectionHoverModal();
+  const {hoveredTab,  isModalOpen, setIsModalOpen, handleMouseEnter, handleMouseLeave} = useSectionHoverModal();
   
   //HANDLE PILLS SECTION
   const { selectedPill, handlePillClick } = usePill();
@@ -33,7 +33,6 @@ const Products = ({ section = "men" }) => {
     <div className="h-screen flex flex-col overflow-y-auto bg-gray-50">
       <Header
         setIsModalOpen={setIsModalOpen}
-        setHoveredTab={setHoveredTab}
         hoveredTab={hoveredTab}
         handleMouseEnter={handleMouseEnter}
         handleMouseLeave={handleMouseLeave}
@@ -79,6 +78,9 @@ const Products = ({ section = "men" }) => {
                     key={country.id}
                     itemKey={country.key}
                     value={country.value}
+                    updateParams={updateParams}
+                    group="origin"
+                    selectedValues = {appliedFilters.origin}
                   />
                 ))}
               </div>
@@ -96,13 +98,27 @@ const Products = ({ section = "men" }) => {
                     key={size.id}
                     itemKey={size.key}
                     value={size.value}
+                    updateParams={updateParams}
+                    group="size"
+                    selectedValues = {appliedFilters.size}
                   />
                 ))}
               </div>
             )
           }
-
-          <div className="grid grid-cols-[repeat(auto-fit,_minmax(200px,200px))] gap-7 p-4">
+          <div className="flex justify-start w-[100%] gap-2 px-4">
+              {[...appliedFilters.origin, ...appliedFilters.size].map((pill,idx) => (
+                <Pill
+                   key={idx}
+                  //itemKey={pill.id}
+                  value={pill}
+                  //selectedPill={selectedPill}
+                  handlePillClick={handlePillClick}
+                  secondary
+                />
+              ))}
+            </div>
+          <div className="grid grid-cols-[repeat(auto-fit,_minmax(200px,200px))] gap-7 p-4 ">
             {filteredProducts.map((item) => (
               <div key={item.id}>
                 <ProductCard item={item} />

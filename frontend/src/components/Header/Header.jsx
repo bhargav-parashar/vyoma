@@ -5,7 +5,6 @@ const tabs = ["MEN", "WOMEN", "KIDS", "HOME"];
 
 const Header = ({
   setIsModalOpen,
-  setHoveredTab,
   hoveredTab,
   handleMouseLeave,
   handleMouseEnter,
