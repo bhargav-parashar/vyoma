@@ -13,6 +13,7 @@ import useFilter from "../../hooks/useFilter";
 import useGetProducts from "../../hooks/useGetProducts";
 import useSectionHoverModal from "../../hooks/useSectionHoverModal";
 import usePill from "../../hooks/usePill";
+import useSort from "../../hooks/useSort";
 
 
 const Products = ({ section = "men" }) => {
@@ -29,6 +30,9 @@ const Products = ({ section = "men" }) => {
   //HANDLE PILLS SECTION
   const { selectedPill, handlePillClick } = usePill();
 
+  //HANDLE SORT
+  const {sortBy, handleSort} = useSort({setFilteredProducts, products, filteredProducts});
+  
   return (
     <div className="h-screen flex flex-col overflow-y-auto bg-gray-50">
       <Header
@@ -57,6 +61,7 @@ const Products = ({ section = "men" }) => {
             <div className="flex justify-start w-[100%] gap-2">
               {Pills.filterPills.map((pill) => (
                 <Pill
+                  key={pill.id}
                   itemKey={pill.id}
                   value={pill.value}
                   selectedPill={selectedPill}
@@ -64,13 +69,13 @@ const Products = ({ section = "men" }) => {
                 />
               ))}
             </div>
-            <SortHover />
+            <SortHover handleSort={handleSort} sortBy={sortBy} products={products} />
           </div>
           {
             //ORIGIN COUNTRY FILTER SECTION
             selectedPill == 1 && (
               <div
-                className="grid grid-cols-[repeat(auto-fit,_minmax(100px,100px))] py-2  px-4 gap-x-8 gap-y-1"
+                className="grid grid-cols-[repeat(auto-fit,_minmax(100px,100px))] pt-1 pb-5 px-4 gap-x-8 gap-y-1"
                 style={{ boxShadow: "0 4px 4px -4px rgba(0, 0, 0, 0.2)" }}
               >
                 {CountryList.originCountries.map((country) => (
@@ -90,7 +95,7 @@ const Products = ({ section = "men" }) => {
             //SIZE FILTER SECTION 
             selectedPill == 2 && (
               <div
-                className="grid grid-cols-[repeat(auto-fit,_minmax(100px,100px))] py-2  px-4 gap-x-8 gap-y-1 shadow-b-lg"
+                className="grid grid-cols-[repeat(auto-fit,_minmax(100px,100px))] pt-1 pb-5  px-4 gap-x-8 gap-y-1 shadow-b-lg"
                 style={{ boxShadow: "0 4px 4px -4px rgba(0, 0, 0, 0.2)" }}
               >
                 {SizeList.availableSizes.map((size) => (
@@ -107,16 +112,31 @@ const Products = ({ section = "men" }) => {
             )
           }
           <div className="flex justify-start w-[100%] gap-2 px-4">
-              {[...appliedFilters.origin, ...appliedFilters.size].map((pill,idx) => (
+              {
+              
+              appliedFilters.origin.map((pill,idx) => (
                 <Pill
-                   key={idx}
-                  //itemKey={pill.id}
+                  key={idx}
+                  itemKey={"origin"}
                   value={pill}
-                  //selectedPill={selectedPill}
-                  handlePillClick={handlePillClick}
+                  updateParams={updateParams}
                   secondary
                 />
-              ))}
+              ))
+            }
+            {
+              appliedFilters.size.map((pill,idx) => (
+                <Pill
+                  key={idx}
+                  itemKey={"size"}
+                  value={pill}
+                  updateParams={updateParams}
+                  secondary
+                />
+              ))
+              
+              
+              }
             </div>
           <div className="grid grid-cols-[repeat(auto-fit,_minmax(200px,200px))] gap-7 p-4 ">
             {filteredProducts.map((item) => (

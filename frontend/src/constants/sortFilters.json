@@ -1,0 +1,12 @@
+
+{
+        "sortList" : [
+            {"id" : 1, "key" : "recommended", "value": "Recommended"}, 
+            {"id" : 2, "key" : "date", "value": "What's New"}, 
+            {"id" : 3, "key" : "popularity", "value": "Popularity"}, 
+            {"id" : 4, "key" : "discount", "value": "Better Discount"}, 
+            {"id" : 5, "key" : "price-high-low", "value": "Price: High to Low"},
+            {"id" : 6, "key" : "price-low-high", "value": "Price: Low to High"},
+            {"id" : 7, "key" : "rating", "value": "Customer Rating"}
+        ]
+}
