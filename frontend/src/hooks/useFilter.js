@@ -1,5 +1,7 @@
 import {useState, useEffect} from 'react';
 import {useSearchParams } from "react-router-dom";
+import useSort from './useSort';
+
 
 const useFilter = ({products, setFilteredProducts}) => {
  
@@ -38,7 +40,7 @@ const useFilter = ({products, setFilteredProducts}) => {
       const matchSize = 
         appliedFilters.size.length == 0 ||
         product.size.filter((item)=> appliedFilters.size.includes( item ) ).length > 0
-        //appliedFilters.size.includes(product.size);
+      
 
 
       return matchColor && matchBrand && matchCategory && matchOrigin && matchSize;
@@ -101,6 +103,8 @@ const useFilter = ({products, setFilteredProducts}) => {
       size: updatedSize
     }));
   }, [searchParams]);
+
+ 
 
   return {updateParams, appliedFilters}
 

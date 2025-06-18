@@ -4,16 +4,7 @@ import {sortList} from "../../constants/sortFilters.json";
 
 const SortDropdown = ({handleSort, sortBy}) => {
   const [isHovered, setIsHovered] = useState(false);
-  // const options = [
-  //   "Recommended",
-  //   "What's New",
-  //   "Popularity",
-  //   "Better Discount",
-  //   "Price: High to Low",
-  //   "Price: Low to High",
-  //   "Customer Rating",
-  // ];
-
+  
   return (
     <div
       className="relative inline-block text-left"
