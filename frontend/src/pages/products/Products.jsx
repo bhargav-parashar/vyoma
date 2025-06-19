@@ -1,4 +1,3 @@
-import { useState } from "react";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import Header from "../../components/Header/Header";
 import Filters from "../../components/Filters/Filters";
@@ -9,11 +8,10 @@ import CountryList from "../../constants/countries.json";
 import FilterSection from "../../components/PillsSection/FilterSection";
 import SizeList from "../../constants/sizes.json";
 import Pills from "../../constants/pills.json";
-import useFilter from "../../hooks/useFilter";
 import useGetProducts from "../../hooks/useGetProducts";
 import useSectionHoverModal from "../../hooks/useSectionHoverModal";
 import usePill from "../../hooks/usePill";
-import useSort from "../../hooks/useSort";
+import useFilter from "../../hooks/useFilter";
 
 
 const Products = ({ section = "men" }) => {
@@ -22,7 +20,7 @@ const Products = ({ section = "men" }) => {
   const {products,filteredProducts, setFilteredProducts} = useGetProducts({section});
   
   //APPLY FILTERS
-  const { appliedFilters, updateParams } = useFilter({products, setFilteredProducts});
+  const { appliedFilters, updateParams, sortBy, handleSort, handleSearch, searchText } = useFilter({products, setFilteredProducts,filteredProducts});
 
   //SHOW SECTION HOVER MENU
   const {hoveredTab,  isModalOpen, setIsModalOpen, handleMouseEnter, handleMouseLeave} = useSectionHoverModal();
@@ -30,8 +28,6 @@ const Products = ({ section = "men" }) => {
   //HANDLE PILLS SECTION
   const { selectedPill, handlePillClick } = usePill();
 
-  //HANDLE SORT
-  const {sortBy, handleSort} = useSort({setFilteredProducts, products, filteredProducts});
   
   return (
     <div className="h-screen flex flex-col overflow-y-auto bg-gray-50">
@@ -40,6 +36,8 @@ const Products = ({ section = "men" }) => {
         hoveredTab={hoveredTab}
         handleMouseEnter={handleMouseEnter}
         handleMouseLeave={handleMouseLeave}
+        searchText = {searchText}
+        handleSearch = {handleSearch}
       />
 
       <div className="mt-20 px-[5%] flex  overflow-hidden z-10 w-[100%]  h-screen overflow-y-auto ">
@@ -152,7 +150,7 @@ const Products = ({ section = "men" }) => {
           hoveredTab={hoveredTab}
           handleMouseLeave={handleMouseLeave}
           handleMouseEnter={handleMouseEnter}
-          setModsetIsModalOpenalOpen={setIsModalOpen}
+          setIsModalOpen={setIsModalOpen}
         />
       )}
     </div>

@@ -1,25 +1,25 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import categories from "../../constants/categories.json";
 import {useNavigate} from "react-router-dom";
 
 const getBgColor = (idx) => {
   switch (idx) {
-    case 0 :
+    case 1 :
       return "text-red-400";
 
-    case 1 :
+    case 2 :
       return "text-pink-500";
 
-    case 2 :
+    case 3 :
       return "text-orange-400";
 
-    case 3 :
+    case 4 :
       return "text-yellow-400";
 
-    case 4 :
+    case 5 :
       return "text-teal-500";
 
-    case 5 :
+    case 6 :
       return "text-blue-500";
 
     default :
@@ -32,20 +32,20 @@ const CategoryModal = ({ hoveredTab, handleMouseEnter, handleMouseLeave, setIsMo
  
   const handleHeaderClick = (hoveredTab, category) =>{
     switch(hoveredTab){
-      case 0 :
+      case 1 :
          navigate(`/men-products?category=${category}`);
          handleMouseLeave();
          break;
-      case 1 :
+      case 2 :
          navigate(`/women-products?category=${category}`);
          handleMouseLeave();
          break;
-      case 2 :
+      case 3 :
          navigate(`/kids-products?category=${category}`);
          handleMouseLeave();
          break;
         
-      case 3 :
+      case 4 :
          navigate(`/home-products?category=${category}`);
          handleMouseLeave();
         break;
@@ -70,7 +70,7 @@ const CategoryModal = ({ hoveredTab, handleMouseEnter, handleMouseLeave, setIsMo
         `}
       >
         {categories.categoryList
-          .filter((item) => item.id === hoveredTab + 1)[0]
+          .filter((item) => item.id === hoveredTab)[0]
           .items.map((item, index) => (
             <div
               key={index}

@@ -1,7 +1,8 @@
 import {useState, useEffect} from 'react';
 import {useSearchParams } from "react-router-dom";
-import useSort from './useSort';
-
+import {applyFilter} from "../utilities/applyFilter";
+import {applySort} from "../utilities/applySort";
+import {applySearch} from "../utilities/applySearch";
 
 const useFilter = ({products, setFilteredProducts}) => {
  
@@ -13,41 +14,44 @@ const useFilter = ({products, setFilteredProducts}) => {
     origin:[],
     size:[]
   });
- 
+  
+  //MAINTAIN STATE FOR SORT
+  const [sortBy, setSortBy] = useState("recommended");
+
+  //MAINTAIN STATE FOR SEARCH
+  const [searchText, setSearchText] = useState('');
+  
+  // HANDLE SORT BY CHANGE
+  const handleSort = (val) =>{ 
+    setSortBy(val);
+  }
+
+  //HANDLE SEARCH TEXT CHANGE
+  const handleSearch = (val) =>{
+    setSearchText(val);
+  }
+  
   //MAINTAIN STATE FOR SEARCH PARAMS
   const [searchParams, setSearchParams] = useSearchParams();
 
 
   // FILTER PRODUCTS ON APPLIED FILTER CHANGE
   useEffect(() => {
-    const filteredProducts = products.filter((product) => {
-      const matchColor =
-        appliedFilters.color.length == 0 ||
-        appliedFilters.color.includes(product.color);
+   
+    // 1. Apply filter
+    let filteredProducts = applyFilter(products, appliedFilters);
+    
+    // 2. Apply Sort
+    filteredProducts = applySort(filteredProducts, sortBy);
 
-      const matchBrand =
-        appliedFilters.brand.length == 0 ||
-        appliedFilters.brand.includes(product.brandKey);
-
-      const matchCategory =
-        appliedFilters.category.length == 0 ||
-        appliedFilters.category.includes(product.category);
-
-      const matchOrigin = 
-        appliedFilters.origin.length == 0 ||
-        appliedFilters.origin.includes(product.origin);
-      
-      const matchSize = 
-        appliedFilters.size.length == 0 ||
-        product.size.filter((item)=> appliedFilters.size.includes( item ) ).length > 0
-      
-
-
-      return matchColor && matchBrand && matchCategory && matchOrigin && matchSize;
-    });
+    // 3. Apply Search
+    filteredProducts = applySearch(filteredProducts, searchText); 
 
     setFilteredProducts(filteredProducts);
-  }, [appliedFilters, products]);
+  
+}, [appliedFilters, products, sortBy, searchText]);
+
+
 
   // UPDATE SEARCH PARAMS
   const updateParams = (key, val) => {
@@ -73,15 +77,9 @@ const useFilter = ({products, setFilteredProducts}) => {
       //Get a list of all brands minus the select brand
       const updatedParams = currentParams.filter((param) => param != val);
 
-      // Create a new URLSearchParams object
       const newParams = new URLSearchParams(searchParams.toString());
-
-      // Delete existing brand keys
       newParams.delete(key);
-
-      // Add each brand
       updatedParams.forEach((param) => newParams.append(key, param));
-
       setSearchParams(newParams);
     }
   };
@@ -106,7 +104,7 @@ const useFilter = ({products, setFilteredProducts}) => {
 
  
 
-  return {updateParams, appliedFilters}
+  return {updateParams, appliedFilters, handleSort, sortBy, handleSearch, searchText}
 
 }
 
