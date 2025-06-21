@@ -43,7 +43,7 @@ const Header = ({
   return (
     <div className="  flex items-center justify-between bg-white h-20 px-10 shadow-lg z-20 fixed w-[100%]">
       
-      <div className="h-[100%] flex justify-start items-center gap-10 w-[40%]">
+      <div className="h-[100%] flex justify-start items-center gap-10 w-[40%] ">
         
         {/*HOME IMAGE*/}
         <div className="cursor-pointer h-[100%] flex justify-center items-center p-3">
@@ -71,20 +71,24 @@ const Header = ({
           ))}
         </div>
       </div>
-      
+      <div className="h-[100%] w-[60%] flex items-center justify-end ">
       {/*SEARCH BAR*/}
-      <div className="relative h-[100%] flex items-center  w-[60%]">
+      <div className="relative h-[100%] flex items-center w-[70%] ">
         <MagnifyingGlassIcon className="w-5 h-5 text-gray-400 absolute left-3 top-1/2 transform -translate-y-1/2" />
         <input
           type="text"
           value={searchText}
           onChange={(e) => handleSearch(e.target.value)}
           placeholder="Search for products or brands"
-          className="w-full max-w-sm pl-10 pr-4 py-2 border border-gray-300 rounded-sm  bg-gray-200 text-sm focus:outline-none focus:bg-transparent"
+          className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-sm  bg-gray-100 text-sm focus:outline-none focus:bg-transparent "
         />
       </div>
-
-      <p>{hoveredTab}</p>
+      
+      <div className="h-[100%] flex items-center justify-center w-[30%] ">
+        <p>{hoveredTab}</p>
+      </div>
+      
+      </div>
     </div>
   );
 };

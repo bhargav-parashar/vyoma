@@ -17,7 +17,7 @@ const Pill = ({
       className={` flex items-center justify-start gap-2 rounded-full  px-3 py-1   ${
         secondary
           ? `mt-2 mb-7 box-border border border-gray-400 hover:border-gray-600 cursor-default`
-          : `box-border border border-transparent hover:bg-gray-300 cursor-pointer`
+          : `box-border border border-transparent hover:bg-gray-200 cursor-pointer`
       } `}
       onClick={ () =>{ 
         if(!secondary)

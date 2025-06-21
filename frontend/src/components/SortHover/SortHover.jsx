@@ -28,7 +28,7 @@ const SortDropdown = ({handleSort, sortBy}) => {
               
               <li
                 key={option.key}
-                className={`px-4 py-2 text-sm text-gray-700 ${ sortBy === option.key && `font-bold bg-gray-200` } hover:bg-gray-200 cursor-pointer`}
+                className={`px-4 py-2 text-sm text-gray-700 ${ sortBy === option.key && `font-bold bg-gray-100` } hover:bg-gray-100 cursor-pointer`}
                 onClick={()=>handleSort(option.key)}
               >
                 {option.value}
