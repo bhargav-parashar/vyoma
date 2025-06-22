@@ -38,6 +38,7 @@ const Products = ({ section = "men" }) => {
         handleMouseLeave={handleMouseLeave}
         searchText = {searchText}
         handleSearch = {handleSearch}
+        filteredProducts={filteredProducts}
       />
 
       <div className="mt-20 px-[5%] flex  overflow-hidden z-10 w-[100%]  h-screen overflow-y-auto ">

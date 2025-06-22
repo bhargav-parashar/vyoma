@@ -10,7 +10,8 @@ const Header = ({
   handleMouseLeave,
   handleMouseEnter,
   searchText,
-  handleSearch
+  handleSearch,
+  filteredProducts
 }) => {
 
   const navigate = useNavigate();
@@ -82,7 +83,7 @@ const Header = ({
           className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-sm  bg-gray-100 text-sm focus:outline-none focus:bg-transparent "
         />
       </div> */}
-      <SearchBar handleSearch={handleSearch}/>
+      <SearchBar handleSearch={handleSearch} filteredProducts = {filteredProducts} searchText={searchText}/>
       
       <div className="h-[100%] flex items-center justify-center w-[30%] ">
         <p>{hoveredTab}</p>
