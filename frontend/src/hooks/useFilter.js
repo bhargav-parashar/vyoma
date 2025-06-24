@@ -1,57 +1,56 @@
-import {useState, useEffect} from 'react';
-import {useSearchParams } from "react-router-dom";
-import {applyFilter} from "../utilities/applyFilter";
-import {applySort} from "../utilities/applySort";
-import {applySearch} from "../utilities/applySearch";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
+import { applyFilter } from "../utilities/applyFilter";
+import { applySort } from "../utilities/applySort";
+import { applySearch } from "../utilities/applySearch";
 
-const useFilter = ({products, setFilteredProducts}) => {
- 
- //MAINTAIN STATE FOR APPLIED FILTERS
+const useFilter = ({ products, setFilteredProducts }) => {
+  //MAINTAIN STATE FOR APPLIED FILTERS
   const [appliedFilters, setAppliedFilters] = useState({
     category: [],
     brand: [],
     color: [],
-    origin:[],
-    size:[]
+    origin: [],
+    size: [],
   });
-  
+
   //MAINTAIN STATE FOR SORT
   const [sortBy, setSortBy] = useState("recommended");
 
   //MAINTAIN STATE FOR SEARCH
-  const [searchText, setSearchText] = useState('');
-  
+  const [searchText, setSearchText] = useState("");
+
   // HANDLE SORT BY CHANGE
-  const handleSort = (val) =>{ 
+  const handleSort = (val) => {
     setSortBy(val);
-  }
+  };
 
   //HANDLE SEARCH TEXT CHANGE
-  const handleSearch = (val) =>{
+  const handleSearch = (val) => {
     setSearchText(val);
-  }
-  
+  };
+
   //MAINTAIN STATE FOR SEARCH PARAMS
   const [searchParams, setSearchParams] = useSearchParams();
 
-
-  // FILTER PRODUCTS ON APPLIED FILTER CHANGE
-  useEffect(() => {
-   
+  // APPLY COMBINED FILTERS
+  const applyCombinedFilters = () => {
     // 1. Apply filter
     let filteredProducts = applyFilter(products, appliedFilters);
-    
+
     // 2. Apply Sort
     filteredProducts = applySort(filteredProducts, sortBy);
 
     // 3. Apply Search
-    filteredProducts = applySearch(filteredProducts, searchText); 
+    filteredProducts = applySearch(filteredProducts, searchText);
 
     setFilteredProducts(filteredProducts);
-  
-}, [appliedFilters, products, sortBy, searchText]);
+  };
 
-
+  // FILTER PRODUCTS ON APPLIED FILTER CHANGE
+  useEffect(() => {
+    applyCombinedFilters();
+  }, [appliedFilters, products, sortBy, searchText]);
 
   // UPDATE SEARCH PARAMS
   const updateParams = (key, val) => {
@@ -98,14 +97,18 @@ const useFilter = ({products, setFilteredProducts}) => {
       brand: updatedBrand,
       color: updatedColor,
       origin: updatedOrigin,
-      size: updatedSize
+      size: updatedSize,
     }));
   }, [searchParams]);
 
- 
-
-  return {updateParams, appliedFilters, handleSort, sortBy, handleSearch, searchText}
-
-}
+  return {
+    updateParams,
+    appliedFilters,
+    handleSort,
+    sortBy,
+    handleSearch,
+    searchText,
+  };
+};
 
 export default useFilter;
