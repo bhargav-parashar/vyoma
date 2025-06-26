@@ -1,6 +1,4 @@
-import logo from "../../assets/logo.png";
 import { useNavigate} from "react-router-dom";
-import { MagnifyingGlassIcon } from '@heroicons/react/24/solid';
 import {tabs} from "../../constants/sectionTabs.json";
 import SearchBar from "../SearchBar/SearchBar";
 
@@ -47,7 +45,7 @@ const Header = ({
         
         {/*HOME IMAGE*/}
         <div className="cursor-pointer h-[100%] flex justify-center items-center p-3">
-          <img src={logo} className="h-[100%]" />
+          <img src={'/assets/logo.png'} className="h-[100%]" />
         </div>
 
         {/*SECTION TABS*/}

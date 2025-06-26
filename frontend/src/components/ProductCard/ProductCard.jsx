@@ -2,8 +2,8 @@ import React from "react";
 import { StarIcon } from "@heroicons/react/24/solid";
 
 const ProductCard = ({ item }) => {
-  const imageSrc = new URL(`/src/assets/${item.images[0]}`, import.meta.url)
-    .href;
+  const imageSrc = `/assets/${item.images[0]}`;
+  //const imageSrc = new URL(`/src/assets/${item.images[0]}`, import.meta.url).href;
   return (
     <div className="hover:shadow-xl w-[100%] h-[100%] bg-white cursor-pointer relative">
       <img alt="product" src={imageSrc} className="h-[77%]" />
