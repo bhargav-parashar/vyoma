@@ -1,6 +1,8 @@
 import { useNavigate} from "react-router-dom";
 import {tabs} from "../../constants/sectionTabs.json";
 import SearchBar from "../SearchBar/SearchBar";
+import allProducts from "../../constants/products.json";
+
 
 const Header = ({
   setIsModalOpen,
@@ -9,11 +11,11 @@ const Header = ({
   handleMouseEnter,
   searchText,
   handleSearch,
-  filteredProducts
+  clearFilters
 }) => {
-
+ 
   const navigate = useNavigate();
-
+ 
   const getBgColor = (id) => {
     switch (id) {
       case 1:
@@ -36,6 +38,14 @@ const Header = ({
   const handleSectionClick = (item) =>{
     setIsModalOpen(false);
     navigate(`/${item.toLowerCase()}-products`);
+  }
+
+  const handleSelect = (val) =>{
+    handleSearch(val);
+  }
+
+  const onInputChange = () =>{
+    handleSearch("");
   }
 
   return (
@@ -70,9 +80,19 @@ const Header = ({
         </div>
       </div>
       <div className="h-[100%] w-[60%] flex items-center justify-end">
-      {/*SEARCH BAR*/}
-      <SearchBar handleSearch={handleSearch} filteredProducts = {filteredProducts} searchText={searchText}/>
       
+      {/*SEARCH BAR*/}
+      
+      <SearchBar 
+        placeholder = {"Search products"}
+        staticData = {allProducts}
+        dataKey = {"name"}
+        onSelect = {(val)=>handleSelect(val)}
+        onChange = {onInputChange}
+        searchText={searchText}
+        clearFilters={clearFilters}
+      />
+
       <div className="h-[100%] flex items-center justify-center w-[30%] ">
         <p>{hoveredTab}</p>
       </div>

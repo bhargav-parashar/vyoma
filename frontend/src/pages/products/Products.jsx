@@ -13,14 +13,13 @@ import useSectionHoverModal from "../../hooks/useSectionHoverModal";
 import usePill from "../../hooks/usePill";
 import useFilter from "../../hooks/useFilter";
 
-
 const Products = ({ section = "men" }) => {
 
   //GET PRODUCTS
   const {products,filteredProducts, setFilteredProducts} = useGetProducts({section});
   
   //APPLY FILTERS
-  const { appliedFilters, updateParams, sortBy, handleSort, handleSearch, searchText } = useFilter({products, setFilteredProducts,filteredProducts});
+  const { appliedFilters, updateParams, sortBy, handleSort, handleSearch, searchText,clearFilters } = useFilter({products, setFilteredProducts,filteredProducts});
 
   //SHOW SECTION HOVER MENU
   const {hoveredTab,  isModalOpen, setIsModalOpen, handleMouseEnter, handleMouseLeave} = useSectionHoverModal();
@@ -39,12 +38,22 @@ const Products = ({ section = "men" }) => {
         searchText = {searchText}
         handleSearch = {handleSearch}
         filteredProducts={filteredProducts}
+        clearFilters={clearFilters}
       />
 
       <div className="mt-20 px-[5%] flex  overflow-hidden z-10 w-[100%]  h-screen overflow-y-auto ">
         <aside className="w-1/6 h-screen border-r border-gray-300 ">
-          <div className="h-13 ">
+          <div className="h-13 flex justify-between">
             <h2 className="text-sm font-bold  p-4 ">FILTERS</h2>
+            {
+              ( appliedFilters.category.length > 0 ||
+                appliedFilters.brand.length > 0 ||
+                appliedFilters.color.length > 0 ||
+                appliedFilters.origin.length > 0||
+                appliedFilters.size.length > 0
+              ) &&
+              <h2 className="text-xs font-bold p-4 cursor-pointer text-red-400" onClick={()=>clearFilters()}>CLEAR ALL</h2>
+            }
           </div>
           <Filters
             products={products}

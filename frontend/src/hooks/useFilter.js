@@ -40,17 +40,23 @@ const useFilter = ({ products, setFilteredProducts }) => {
 
     // 2. Apply Sort
     filteredProducts = applySort(filteredProducts, sortBy);
-
-    // 3. Apply Search
-    filteredProducts = applySearch(filteredProducts, searchText);
-
+    
     setFilteredProducts(filteredProducts);
+    
   };
 
   // FILTER PRODUCTS ON APPLIED FILTER CHANGE
   useEffect(() => {
     applyCombinedFilters();
-  }, [appliedFilters, products, sortBy, searchText]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [appliedFilters, products, sortBy]);
+
+  useEffect(() => {
+    if (searchText.length > 0) {
+      const searchedProduct = applySearch(products, searchText);
+      setFilteredProducts(searchedProduct);
+    } 
+  }, [searchText]);
 
   // UPDATE SEARCH PARAMS
   const updateParams = (key, val) => {
@@ -83,23 +89,31 @@ const useFilter = ({ products, setFilteredProducts }) => {
     }
   };
 
+ 
   // CALL HANDLE CHANGE IF SEARCH PARAMETERS ARE CHANGED
   useEffect(() => {
-    const updatedCategory = searchParams.getAll("category") || [];
-    const updatedBrand = searchParams.getAll("brand") || [];
-    const updatedColor = searchParams.getAll("color") || [];
-    const updatedOrigin = searchParams.getAll("origin") || [];
-    const updatedSize = searchParams.getAll("size") || [];
+    
+        const updatedCategory = searchParams.getAll("category") || [];
+        const updatedBrand = searchParams.getAll("brand") || [];
+        const updatedColor = searchParams.getAll("color") || [];
+        const updatedOrigin = searchParams.getAll("origin") || [];
+        const updatedSize = searchParams.getAll("size") || [];
 
-    setAppliedFilters((prev) => ({
-      ...prev,
-      category: updatedCategory,
-      brand: updatedBrand,
-      color: updatedColor,
-      origin: updatedOrigin,
-      size: updatedSize,
-    }));
+        setAppliedFilters((prev) => ({
+          ...prev,
+          category: updatedCategory,
+          brand: updatedBrand,
+          color: updatedColor,
+          origin: updatedOrigin,
+          size: updatedSize,
+        }));
+    
   }, [searchParams]);
+
+  //CLEAR FILTERS
+  const clearFilters = () =>{
+    setSearchParams({});
+  }
 
   return {
     updateParams,
@@ -108,6 +122,7 @@ const useFilter = ({ products, setFilteredProducts }) => {
     sortBy,
     handleSearch,
     searchText,
+    clearFilters
   };
 };
 
