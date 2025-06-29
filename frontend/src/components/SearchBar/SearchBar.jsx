@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
-import { XMarkIcon } from '@heroicons/react/24/outline'
+import { XMarkIcon } from "@heroicons/react/24/outline";
 import Suggestion from "../Suggestion/Suggestion";
+import debounce from "lodash/debounce";
 
 const SearchBar = ({
   staticData,
@@ -10,7 +11,7 @@ const SearchBar = ({
   onChange,
   searchText,
   placeholder,
-  clearFilters
+  clearFilters,
 }) => {
   const [inputValue, setInputValue] = useState("");
   const [suggestions, setSuggestions] = useState([]);
@@ -29,9 +30,14 @@ const SearchBar = ({
     }
   };
 
+  const getSuggestionsDebounced = useCallback(
+    debounce(getSuggestions, 300),
+    []
+  );
+
   useEffect(() => {
     if (inputValue.length > 1 && !searchText) {
-      getSuggestions(inputValue);
+      getSuggestionsDebounced(inputValue);
     } else {
       setSuggestions([]);
     }
@@ -44,17 +50,21 @@ const SearchBar = ({
     setSuggestions([]);
   };
 
-  const handleClearSearchClick = () =>{
+  const handleClearSearchClick = () => {
     setInputValue("");
     onSelect("");
-    clearFilters();   
-  }
-
+    clearFilters();
+  };
+  
+  
   return (
     <div className="relative inline-block text-left w-[70%]">
       <div className="relative h-[100%] flex items-center w-[100%]">
         <MagnifyingGlassIcon className="w-5 h-5 text-gray-400 absolute left-3 top-1/2 transform -translate-y-1/2" />
-        <XMarkIcon onClick={handleClearSearchClick} className="w-5 h-5 text-gray-400 absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer" />
+        <XMarkIcon
+          onClick={handleClearSearchClick}
+          className="w-5 h-5 text-gray-400 absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer"
+        />
         <input
           type="text"
           value={inputValue}

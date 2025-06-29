@@ -91,6 +91,7 @@ const Products = ({ section = "men" }) => {
                     key={country.id}
                     itemKey={country.key}
                     value={country.value}
+                    
                     updateParams={updateParams}
                     group="origin"
                     selectedValues = {appliedFilters.origin}
