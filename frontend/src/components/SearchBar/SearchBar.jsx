@@ -61,10 +61,13 @@ const SearchBar = ({
     <div className="relative inline-block text-left w-[70%]">
       <div className="relative h-[100%] flex items-center w-[100%]">
         <MagnifyingGlassIcon className="w-5 h-5 text-gray-400 absolute left-3 top-1/2 transform -translate-y-1/2" />
-        <XMarkIcon
-          onClick={handleClearSearchClick}
-          className="w-5 h-5 text-gray-400 absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer"
-        />
+        {
+          inputValue.length > 0 && 
+          <XMarkIcon
+            onClick={handleClearSearchClick}
+            className="w-5 h-5 text-gray-400 absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer"
+          />
+        }
         <input
           type="text"
           value={inputValue}
