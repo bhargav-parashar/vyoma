@@ -3,31 +3,33 @@ import { useSearchParams } from "react-router-dom";
 import { applyFilter } from "../utilities/applyFilter";
 import { applySort } from "../utilities/applySort";
 import { applySearch } from "../utilities/applySearch";
+import allProducts from "../constants/products.json";
 
-const useFilter = ({ products, setFilteredProducts }) => {
-  //MAINTAIN STATE FOR APPLIED FILTERS
-  const [appliedFilters, setAppliedFilters] = useState({
-    category: [],
-    brand: [],
-    color: [],
-    origin: [],
-    size: [],
-  });
+const useFilter = ({
+  section = "men",
+  productsFilters,
+  setProductsFilters,
+  search
+}) => {
+  // GET PRODUCTS BY SECTION
+  const [products] = useState(allProducts[`${section}`]);
+
+  //MAINTAIN STATE FOR FILTERED PRODUCTS
+  const [filteredProducts, setFilteredProducts] = useState(
+    allProducts[`${section}`]
+  );
+
+  //UPDATE FILTERED PRODUCTS ON SECTION CHANGE
+  useEffect(() => {
+    setFilteredProducts(allProducts[`${section}`]);
+  }, [section]);
 
   //MAINTAIN STATE FOR SORT
   const [sortBy, setSortBy] = useState("recommended");
 
-  //MAINTAIN STATE FOR SEARCH
-  const [searchText, setSearchText] = useState("");
-
   // HANDLE SORT BY CHANGE
   const handleSort = (val) => {
     setSortBy(val);
-  };
-
-  //HANDLE SEARCH TEXT CHANGE
-  const handleSearch = (val) => {
-    setSearchText(val);
   };
 
   //MAINTAIN STATE FOR SEARCH PARAMS
@@ -36,7 +38,7 @@ const useFilter = ({ products, setFilteredProducts }) => {
   // APPLY COMBINED FILTERS
   const applyCombinedFilters = () => {
     // 1. Apply filter
-    let filteredProducts = applyFilter(products, appliedFilters);
+    let filteredProducts = applyFilter(products, productsFilters);
 
     // 2. Apply Sort
     filteredProducts = applySort(filteredProducts, sortBy);
@@ -48,14 +50,16 @@ const useFilter = ({ products, setFilteredProducts }) => {
   useEffect(() => {
     applyCombinedFilters();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [appliedFilters, products, sortBy]);
+  }, [productsFilters, products, sortBy]);
 
   useEffect(() => {
-    if (searchText.length > 0) {
-      const searchedProduct = applySearch(products, searchText);
+    if (search.length > 0) {
+      const searchedProduct = applySearch(products, search);
       setFilteredProducts(searchedProduct);
     }
-  }, [searchText]);
+  }, [search]);
+
+  
 
   // UPDATE SEARCH PARAMS
   const updateParams = (key, val) => {
@@ -96,7 +100,7 @@ const useFilter = ({ products, setFilteredProducts }) => {
     const updatedOrigin = searchParams.getAll("origin") || [];
     const updatedSize = searchParams.getAll("size") || [];
 
-    setAppliedFilters((prev) => ({
+    setProductsFilters((prev) => ({
       ...prev,
       category: updatedCategory,
       brand: updatedBrand,
@@ -106,31 +110,13 @@ const useFilter = ({ products, setFilteredProducts }) => {
     }));
   }, [searchParams]);
 
-  //CLEAR FILTERS
-  const clearFilters = () => {
-    if (searchParams.size > 0) {
-      setSearchParams({});
-    } else {
-      setAppliedFilters({
-        category: [],
-        brand: [],
-        color: [],
-        origin: [],
-        size: [],
-      });
-    }
- 
-   
-  };
-
   return {
+    products,
+    filteredProducts,
+    setFilteredProducts,
     updateParams,
-    appliedFilters,
-    handleSort,
     sortBy,
-    handleSearch,
-    searchText,
-    clearFilters,
+    handleSort  
   };
 };
 

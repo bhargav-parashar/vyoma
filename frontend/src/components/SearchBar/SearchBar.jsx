@@ -9,7 +9,7 @@ const SearchBar = ({
   dataKey = "",
   onSelect,
   onChange,
-  searchText,
+  search,
   placeholder,
   clearFilters,
 }) => {
@@ -36,7 +36,7 @@ const SearchBar = ({
   );
 
   useEffect(() => {
-    if (inputValue.length > 1 && !searchText) {
+    if (inputValue.length > 1 && !search) {
       getSuggestionsDebounced(inputValue);
     } else {
       setSuggestions([]);

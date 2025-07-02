@@ -1,7 +1,7 @@
 import FilterGroup from "./FilterGroup";
 import filters from "../../constants/filters.json";
 
-const Filters = ({ section, appliedFilters, updateParams }) => {
+const Filters = ({ section, productsFilters, updateParams }) => {
   
   return (
     <div className="h-screen flex flex-col">
@@ -12,7 +12,7 @@ const Filters = ({ section, appliedFilters, updateParams }) => {
         title={"CATEGORIES"}
         options={filters[section].category}
         group={"category"}
-        selectedValues={appliedFilters.category}
+        selectedValues={productsFilters.category}
         updateParams={updateParams}
       />
       <hr className="text-gray-300 " />
@@ -21,7 +21,7 @@ const Filters = ({ section, appliedFilters, updateParams }) => {
         title={"BRANDS"}
         options={filters[section].brand}
         group={"brand"}
-        selectedValues={appliedFilters.brand}
+        selectedValues={productsFilters.brand}
         updateParams={updateParams}
       />
       <hr className="text-gray-300 " />
@@ -30,7 +30,7 @@ const Filters = ({ section, appliedFilters, updateParams }) => {
         title={"COLORS"}
         options={filters[section].color}
         group={"color"}
-        selectedValues={appliedFilters.color}
+        selectedValues={productsFilters.color}
         updateParams={updateParams}
       />
     </div>

@@ -3,10 +3,8 @@ import { createRoot } from 'react-dom/client'
 import {createBrowserRouter, RouterProvider } from "react-router-dom";
 import './index.css';
 import App from './App.jsx';
-import MenProducts from "./pages/Products/Men/MenProducts.jsx";
-import WomenProducts from "./pages/Products/Women/WomenProducts.jsx";
-import KidsProducts from "./pages/Products/Kids/KidsProducts.jsx";
-import HomeProducts from "./pages/Products/Home/HomeProducts.jsx";
+import Products from './pages/Products/Products.jsx';
+import ProductDetails from "./pages/Products/ProductDetails.jsx";
 
 const appRouter = createBrowserRouter([
   {
@@ -15,23 +13,15 @@ const appRouter = createBrowserRouter([
     children:[
       {
         path : "/",
-        element : <MenProducts/>
+        element : <Products/>
       },
       {
-        path : "/men-products",
-        element : <MenProducts/>
+        path : "/products/:section",
+        element : <Products/>
       },
       {
-        path : "/women-products",
-        element : <WomenProducts/>
-      },
-      {
-        path : "/kids-products",
-        element : <KidsProducts/>
-      },
-      {
-        path : "/home-products",
-        element : <HomeProducts/>
+        path : "/products/details/:id",
+        element : <ProductDetails/>
       }
     ]
   }

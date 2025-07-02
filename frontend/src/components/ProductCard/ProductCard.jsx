@@ -1,11 +1,16 @@
-import React from "react";
 import { StarIcon } from "@heroicons/react/24/solid";
+import { useNavigate } from "react-router-dom";
 
 const ProductCard = ({ item }) => {
+  const navigate = useNavigate();
+
+  const handleItemClick = () => {
+    navigate(`/products/details/${item.id}`);
+  };
+
   const imageSrc = `/assets/${item.images[0]}`;
-  //const imageSrc = new URL(`/src/assets/${item.images[0]}`, import.meta.url).href;
   return (
-    <div className="hover:shadow-xl w-[100%] h-[100%] bg-white cursor-pointer relative">
+    <div onClick={() => handleItemClick()} className="hover:shadow-xl w-[100%] h-[100%] bg-white cursor-pointer relative">
       <img alt="product" src={imageSrc} className="h-[77%]" />
       <div className="px-4 py-2">
         <p className="font-semibold">{item.brand}</p>

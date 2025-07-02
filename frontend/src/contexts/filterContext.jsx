@@ -1,7 +1,5 @@
 import { createContext } from "react";
 
-const filterContext = createContext({
-    user : "bhargav"
-})
+const FilterContext = createContext();
 
-export default filterContext;
+export default FilterContext;

@@ -1,21 +1,23 @@
-import { useNavigate} from "react-router-dom";
-import {tabs} from "../../constants/sectionTabs.json";
+import { useNavigate } from "react-router-dom";
+import { tabs } from "../../constants/sectionTabs.json";
 import SearchBar from "../SearchBar/SearchBar";
 import allProducts from "../../constants/products.json";
+import { useContext } from "react";
+import FilterContext from "../../contexts/FilterContext";
 
+const Header = () => {
+  const {
+    search,
+    hoveredTab,
+    setIsModalOpen,
+    handleMouseEnter,
+    handleMouseLeave,
+    clearFilters,
+    handleSearch
+  } = useContext(FilterContext);
 
-const Header = ({
-  setIsModalOpen,
-  hoveredTab,
-  handleMouseLeave,
-  handleMouseEnter,
-  searchText,
-  handleSearch,
-  clearFilters
-}) => {
- 
   const navigate = useNavigate();
- 
+
   const getBgColor = (id) => {
     switch (id) {
       case 1:
@@ -35,27 +37,25 @@ const Header = ({
     }
   };
 
-  const handleSectionClick = (item) =>{
+  const handleSectionClick = (item) => {
     setIsModalOpen(false);
-    navigate(`/${item.toLowerCase()}-products`);
-  }
+    navigate(`/products/${item.toLowerCase()}`);
+  };
 
-  const handleSelect = (val) =>{
+  const handleSelect = (val) => {
     handleSearch(val);
-  }
+  };
 
-  const onInputChange = () =>{
+  const onInputChange = () => {
     handleSearch("");
-  }
+  };
 
   return (
     <div className="  flex items-center justify-between bg-white h-20 px-10 shadow-lg z-20 fixed w-[100%]">
-      
       <div className="h-[100%] flex justify-start items-center gap-10 w-[40%] ">
-        
         {/*HOME IMAGE*/}
         <div className="cursor-pointer h-[100%] flex justify-center items-center p-3">
-          <img src={'/assets/logo.png'} className="h-[100%]" />
+          <img src={"/assets/logo.png"} className="h-[100%]" />
         </div>
 
         {/*SECTION TABS*/}
@@ -67,36 +67,38 @@ const Header = ({
                 onMouseEnter={() => handleMouseEnter(item.id)}
                 onMouseLeave={() => handleMouseLeave()}
               >
-                <p onClick={()=>handleSectionClick(item.value)} >{item.value}</p>
+                <p onClick={() => handleSectionClick(item.value)}>
+                  {item.value}
+                </p>
               </div>
 
               <div
                 onMouseEnter={() => handleMouseEnter(item.id)}
                 onMouseLeave={() => handleMouseLeave()}
-                className={`${item.id == hoveredTab ? getBgColor(item.id) : ``} h-[4%]`}
+                className={`${
+                  item.id == hoveredTab ? getBgColor(item.id) : ``
+                } h-[4%]`}
               ></div>
             </div>
           ))}
         </div>
       </div>
       <div className="h-[100%] w-[60%] flex items-center justify-end">
-      
-      {/*SEARCH BAR*/}
-      
-      <SearchBar 
-        placeholder = {"Search products"}
-        staticData = {allProducts}
-        dataKey = {"name"}
-        onSelect = {(val)=>handleSelect(val)}
-        onChange = {onInputChange}
-        searchText={searchText}
-        clearFilters={clearFilters}
-      />
+        {/*SEARCH BAR*/}
 
-      <div className="h-[100%] flex items-center justify-center w-[30%] ">
-        <p>{hoveredTab}</p>
-      </div>
-      
+        <SearchBar
+          placeholder={"Search products"}
+          staticData={allProducts}
+          dataKey={"name"}
+          onSelect={(val) => handleSelect(val)}
+          onChange={onInputChange}
+          search={search}
+          clearFilters={clearFilters}
+        />
+
+        <div className="h-[100%] flex items-center justify-center w-[30%] ">
+          <p>{hoveredTab}</p>
+        </div>
       </div>
     </div>
   );
