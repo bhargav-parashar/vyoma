@@ -1,7 +1,11 @@
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, useParams } from "react-router-dom";
 import {useState} from "react"; 
 
 const useGetFilter = () => {
+
+  //GET REQUEST PARAM FROM URL
+  const { section ="men" } = useParams();
+  
   //MAINTAIN STATE FOR SEARCH PARAMS
   const [searchParams, setSearchParams] = useSearchParams();
 
@@ -15,6 +19,7 @@ const useGetFilter = () => {
 
   //MAINTAIN STATE FOR APPLIED FILTERS
   const [productsFilters, setProductsFilters] = useState({
+    section :[section],
     category: [],
     brand: [],
     color: [],
@@ -25,9 +30,11 @@ const useGetFilter = () => {
   //CLEAR FILTERS
   const clearFilters = () => {
     if (searchParams.size > 0) {
+     
       setSearchParams({});
     } else {
       setProductsFilters({
+        section :[section],
         category: [],
         brand: [],
         color: [],
@@ -38,6 +45,7 @@ const useGetFilter = () => {
   };
 
   return {
+    section,
     search,
     productsFilters,
     setProductsFilters,

@@ -3,37 +3,55 @@ import { useSearchParams } from "react-router-dom";
 import { applyFilter } from "../utilities/applyFilter";
 import { applySort } from "../utilities/applySort";
 import { applySearch } from "../utilities/applySearch";
-import allProducts from "../constants/products.json";
+//import allProducts from "../constants/products.json";
+import {allProducts} from "../constants/productList.json";
 
-const useFilter = ({
+const useApplyFilter = ({
   section = "men",
   productsFilters,
   setProductsFilters,
   search
 }) => {
-  // GET PRODUCTS BY SECTION
-  const [products] = useState(allProducts[`${section}`]);
 
+ 
+
+  // GET ALL PRODUCTS 
+  const [products] =  useState(allProducts);
+ 
   //MAINTAIN STATE FOR FILTERED PRODUCTS
-  const [filteredProducts, setFilteredProducts] = useState(
-    allProducts[`${section}`]
-  );
+  const [filteredProducts, setFilteredProducts] = useState(allProducts);
+
 
   //UPDATE FILTERED PRODUCTS ON SECTION CHANGE
   useEffect(() => {
-    setFilteredProducts(allProducts[`${section}`]);
+   
+    setFilteredProducts(
+      allProducts.filter((product)=>product.section === section)
+    );
   }, [section]);
+
+
+
 
   //MAINTAIN STATE FOR SORT
   const [sortBy, setSortBy] = useState("recommended");
+
+
+
 
   // HANDLE SORT BY CHANGE
   const handleSort = (val) => {
     setSortBy(val);
   };
 
+
+
+
   //MAINTAIN STATE FOR SEARCH PARAMS
   const [searchParams, setSearchParams] = useSearchParams();
+
+
+
 
   // APPLY COMBINED FILTERS
   const applyCombinedFilters = () => {
@@ -46,6 +64,9 @@ const useFilter = ({
     setFilteredProducts(filteredProducts);
   };
 
+
+
+  
   // FILTER PRODUCTS ON APPLIED FILTER CHANGE
   useEffect(() => {
     applyCombinedFilters();
@@ -102,13 +123,14 @@ const useFilter = ({
 
     setProductsFilters((prev) => ({
       ...prev,
+      section : section,
       category: updatedCategory,
       brand: updatedBrand,
       color: updatedColor,
       origin: updatedOrigin,
       size: updatedSize,
     }));
-  }, [searchParams]);
+  }, [searchParams,section]);
 
   return {
     products,
@@ -120,4 +142,4 @@ const useFilter = ({
   };
 };
 
-export default useFilter;
+export default useApplyFilter;

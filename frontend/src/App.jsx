@@ -5,10 +5,14 @@ import useSectionHoverModal from "./hooks/useSectionHoverModal";
 import FilterContext from "./contexts/FilterContext";
 import useGetFilter from "./hooks/useGetFilter";
 
+
 function App() {
+
+
   
   //GET FILTERS
   const {
+    section,
     search,
     productsFilters,
     setProductsFilters,
@@ -26,6 +30,7 @@ function App() {
   } = useSectionHoverModal();
 
   const value = {
+    section,
     search,
     productsFilters,
     setProductsFilters,
