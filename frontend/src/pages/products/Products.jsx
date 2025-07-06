@@ -9,15 +9,11 @@ import SizeList from "../../constants/sizes.json";
 import Pills from "../../constants/pills.json";
 import usePill from "../../hooks/usePill";
 import useApplyFilter from "../../hooks/useApplyFilter";
-//import { useParams } from "react-router-dom";
 import { useContext } from "react";
-import FilterContext from "../../contexts/FilterContext";
+import {FilterContext} from "../../contexts/FilterContext";
 
 const Products = () => {
   
-  //GET REQUEST PARAM FROM URL
- // const { section="men" } = useParams();
-
   //GET CONTEXT VARIABLES
   const {
     section,
@@ -46,8 +42,9 @@ const Products = () => {
 
   //HANDLE PILLS SECTION
   const { selectedPill, handlePillClick } = usePill();
+  
 
-
+ console.log(productsFilters);
   return (
     <div className="h-screen flex flex-col overflow-y-auto bg-gray-50">
     

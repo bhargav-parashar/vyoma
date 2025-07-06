@@ -1,9 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import { tabs } from "../../constants/sectionTabs.json";
 import SearchBar from "../SearchBar/SearchBar";
-import allProducts from "../../constants/products.json";
+import {allProducts} from "../../constants/productList.json";
 import { useContext } from "react";
-import FilterContext from "../../contexts/FilterContext";
+import {FilterContext} from "../../contexts/FilterContext";
 
 const Header = () => {
   const {

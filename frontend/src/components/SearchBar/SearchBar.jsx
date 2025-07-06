@@ -23,7 +23,7 @@ const SearchBar = ({
 
   const getSuggestions = (query) => {
     if (staticData) {
-      let result = staticData.men.filter((item) => {
+      let result = staticData.filter((item) => {
         return item.name.toLowerCase().includes(query.toLowerCase());
       });
       setSuggestions(result);

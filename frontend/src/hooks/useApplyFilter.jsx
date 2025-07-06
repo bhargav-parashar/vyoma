@@ -123,7 +123,7 @@ const useApplyFilter = ({
 
     setProductsFilters((prev) => ({
       ...prev,
-      section : section,
+      section : [section],
       category: updatedCategory,
       brand: updatedBrand,
       color: updatedColor,
