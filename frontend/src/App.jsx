@@ -3,15 +3,18 @@ import { Outlet } from "react-router-dom";
 import Header from "./components/Header/Header";
 import { FilterContextProvider } from "./contexts/FilterContext";
 import { SnackbarProvider } from "./contexts/SnackbarContext";
+import { CartWishlistContextProvider } from "./contexts/CartWishlistContext";
 
 function App() {
   return (
-    <FilterContextProvider>
-      <SnackbarProvider>
-        <Header />
-        <Outlet />
-      </SnackbarProvider>
-    </FilterContextProvider>
+    <SnackbarProvider>
+      <FilterContextProvider>
+        <CartWishlistContextProvider>
+          <Header />
+          <Outlet />
+        </CartWishlistContextProvider>
+      </FilterContextProvider>
+    </SnackbarProvider>
   );
 }
 

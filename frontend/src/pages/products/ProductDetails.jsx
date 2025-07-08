@@ -132,11 +132,11 @@ const ProductDetails = () => {
         <div className=" pt-2 px-2 border-b-1 border-gray-300">
           <SizeSelector selectedProduct={selectedProduct} selectedSize={selectedSize} handleSizeSelect={handleSizeSelect} />
           <div className={` flex flex-wrap gap-2 py-5`}>
-            <button className="border rounded px-5 py-4 w-[45%] cursor-pointer flex items-center justify-center gap-2 bg-rose-400 text-white font-bold hover:brightness-115">
+            <button className="border rounded px-5 py-4 w-[50%] cursor-pointer flex items-center justify-center gap-2 bg-rose-400 text-white font-bold hover:brightness-115">
               <ShoppingBagIcon className="h-5 w-5" />
               <span>ADD TO BAG</span>
             </button>
-            <button className="border border-gray-300 rounded  w-[28%] cursor-pointer flex items-center justify-center gap-2 hover:border-black">
+            <button className="border border-gray-300 rounded px-5 py-4 w-[35%] cursor-pointer flex items-center justify-center gap-2 hover:border-black">
               <HeartIcon className="h-5 w-5" />
               <span>WISHLIST</span>
             </button>

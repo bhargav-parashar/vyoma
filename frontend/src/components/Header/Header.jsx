@@ -1,9 +1,13 @@
 import { useNavigate } from "react-router-dom";
 import { tabs } from "../../constants/sectionTabs.json";
 import SearchBar from "../SearchBar/SearchBar";
-import {allProducts} from "../../constants/productList.json";
+import { allProducts } from "../../constants/productList.json";
 import { useContext } from "react";
-import {FilterContext} from "../../contexts/FilterContext";
+import { FilterContext } from "../../contexts/FilterContext";
+import { CartWishlistContext } from "../../contexts/CartWishlistContext";
+import { UserIcon } from "@heroicons/react/24/outline";
+import { HeartIcon } from "@heroicons/react/24/outline";
+import { ShoppingBagIcon } from "@heroicons/react/24/outline";
 
 const Header = () => {
   const {
@@ -13,8 +17,10 @@ const Header = () => {
     handleMouseEnter,
     handleMouseLeave,
     clearFilters,
-    handleSearch
+    handleSearch,
   } = useContext(FilterContext);
+
+  const { wishlist, handleToggleWishlist, cart, handleToggleCart } = useContext(CartWishlistContext);
 
   const navigate = useNavigate();
 
@@ -54,7 +60,10 @@ const Header = () => {
     <div className="  flex items-center justify-between bg-white h-20 px-10 shadow-lg z-20 fixed w-[100%]">
       <div className="h-[100%] flex justify-start items-center gap-10 w-[40%] ">
         {/*HOME IMAGE*/}
-        <div className="cursor-pointer h-[100%] flex justify-center items-center p-3" onClick={()=>handleSectionClick("men")} >
+        <div
+          className="cursor-pointer h-[100%] flex justify-center items-center p-3"
+          onClick={() => handleSectionClick("men")}
+        >
           <img src={"/assets/logo.png"} className="h-[100%]" />
         </div>
 
@@ -96,8 +105,19 @@ const Header = () => {
           clearFilters={clearFilters}
         />
 
-        <div className="h-[100%] flex items-center justify-center w-[30%] ">
-          <p>{hoveredTab}</p>
+        <div className="h-[100%] flex items-center justify-end w-[30%] gap-7">
+          <div className="flex flex-col items-center justify-end">
+            <UserIcon className="h-5 w-5" />
+            <p className="text-xs font-bold">Profile</p>
+          </div>
+          <div className="flex flex-col items-center justify-end hover:cursor-pointer">
+            <HeartIcon className="h-5 w-5" />
+            <p className="text-xs font-bold">Wishlist</p>
+          </div>
+          <div className="flex flex-col items-center justify-end hover:cursor-pointer">
+            <ShoppingBagIcon className="h-5 w-5" />
+            <p className="text-xs font-bold ">Bag</p>
+          </div>
         </div>
       </div>
     </div>
