@@ -5,6 +5,8 @@ import './index.css';
 import App from './App.jsx';
 import Products from './pages/Products/Products.jsx';
 import ProductDetails from "./pages/Products/ProductDetails.jsx";
+import Wishlist from './pages/Wishlist/Wishlist.jsx';
+import Cart from './pages/Cart/Cart.jsx';
 
 const appRouter = createBrowserRouter([
   {
@@ -22,6 +24,14 @@ const appRouter = createBrowserRouter([
       {
         path : "/products/details/:id",
         element : <ProductDetails/>
+      },
+      {
+        path : "/wishlist",
+        element : <Wishlist/>
+      },
+      {
+        path : "/cart",
+        element : <Cart/>
       }
     ]
   }
@@ -30,5 +40,5 @@ const appRouter = createBrowserRouter([
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <RouterProvider router={appRouter} />
-  </StrictMode>,
+  </StrictMode>
 )

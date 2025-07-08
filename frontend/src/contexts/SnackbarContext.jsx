@@ -23,7 +23,7 @@ const SnackbarProvider = ({ children }) => {
       {children}
       {snackbar.visible && (
         <div
-          className={`flex items-center gap-2 justify-start fixed bottom-5 left-1/2 -translate-x-1/2 bg-rose-400 text-white px-4 py-2 rounded shadow-lg transition-opacity duration-300 z-50`}
+          className={`flex items-center gap-2 justify-start fixed bottom-5 left-1/2 -translate-x-1/2 bg-orange-400 text-white px-4 py-2 rounded shadow-lg transition-opacity duration-300 z-50`}
         >
           {snackbar.type == "error" ? (
             <ExclamationCircleIcon className="h-5 w-5" />

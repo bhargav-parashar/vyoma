@@ -4,7 +4,6 @@ import SearchBar from "../SearchBar/SearchBar";
 import { allProducts } from "../../constants/productList.json";
 import { useContext } from "react";
 import { FilterContext } from "../../contexts/FilterContext";
-import { CartWishlistContext } from "../../contexts/CartWishlistContext";
 import { UserIcon } from "@heroicons/react/24/outline";
 import { HeartIcon } from "@heroicons/react/24/outline";
 import { ShoppingBagIcon } from "@heroicons/react/24/outline";
@@ -20,8 +19,7 @@ const Header = () => {
     handleSearch,
   } = useContext(FilterContext);
 
-  const { wishlist, handleToggleWishlist, cart, handleToggleCart } = useContext(CartWishlistContext);
-
+  
   const navigate = useNavigate();
 
   const getBgColor = (id) => {
@@ -54,6 +52,14 @@ const Header = () => {
 
   const onInputChange = () => {
     handleSearch("");
+  };
+
+  const handleWishlistClick = () => {
+    navigate(`/wishlist`);
+  };
+
+  const handleCartClick = () => {
+    navigate(`/cart`);
   };
 
   return (
@@ -105,16 +111,22 @@ const Header = () => {
           clearFilters={clearFilters}
         />
 
-        <div className="h-[100%] flex items-center justify-end w-[30%] gap-7">
-          <div className="flex flex-col items-center justify-end">
+        <div className="h-[100%] flex items-center justify-end w-[30%] gap-7 ">
+          <div className="flex flex-col items-center justify-end hover:cursor-default">
             <UserIcon className="h-5 w-5" />
             <p className="text-xs font-bold">Profile</p>
           </div>
-          <div className="flex flex-col items-center justify-end hover:cursor-pointer">
+          <div
+            className="flex flex-col items-center justify-end hover:cursor-pointer "
+            onClick={handleWishlistClick}
+          >
             <HeartIcon className="h-5 w-5" />
             <p className="text-xs font-bold">Wishlist</p>
           </div>
-          <div className="flex flex-col items-center justify-end hover:cursor-pointer">
+          <div
+            className="flex flex-col items-center justify-end hover:cursor-pointer"
+            onClick={handleCartClick}
+          >
             <ShoppingBagIcon className="h-5 w-5" />
             <p className="text-xs font-bold ">Bag</p>
           </div>

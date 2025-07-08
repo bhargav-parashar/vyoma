@@ -43,8 +43,7 @@ const Products = () => {
   //HANDLE PILLS SECTION
   const { selectedPill, handlePillClick } = usePill();
   
-
- console.log(productsFilters);
+  
   return (
     <div className="h-screen flex flex-col overflow-y-auto bg-gray-50">
     
