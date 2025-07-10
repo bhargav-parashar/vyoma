@@ -12,6 +12,7 @@ import PincodeInput from "../../components/PincodeInput/PincodeInput";
 import SizeSelector from "../../components/SizeSelector/SizeSelector";
 import { MapPinIcon } from "@heroicons/react/24/outline";
 import { CalendarDateRangeIcon } from "@heroicons/react/24/outline";
+import { ArrowRightIcon  } from "@heroicons/react/24/outline";
 import { format } from "date-fns";
 import useGetCartWishlist from "../../hooks/useGetCartWishlist";
 
@@ -151,7 +152,7 @@ const ProductDetails = () => {
                     handleToggleCart(selectedProduct)
                   }
                 >
-                  <ShoppingBagIcon className="h-5 w-5" />
+                  <ArrowRightIcon className="h-5 w-5" />
                   <span>GO TO BAG</span>
                 </button>
               ) : (
