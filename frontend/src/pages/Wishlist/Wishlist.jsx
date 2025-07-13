@@ -1,15 +1,19 @@
-import {useContext} from "react";
-import { CartWishlistContext } from "../../contexts/CartWishlistContext";
+import { useState } from "react";
+import useLocalStorage from "../../hooks/useLocalStorage";
+import getProductsById from "../../utilities/getProductsById";
+import ProductCard from "../../components/ProductCard/ProductCard";
 
 const Wishlist = () => {
-  const { wishlist, handleToggleWishlist, cart, handleToggleCart } =
-    useContext(CartWishlistContext);
+  const [wishlistItemIds, setWishlistItemIds] = useLocalStorage("wishlist", []);
+  const [wishlistItems, setWishlistItems] = useState(
+    getProductsById(wishlistItemIds)
+  );
 
   return (
-    <div className=" pt-25">
-      {wishlist.map((item) => (
-        <div>
-          <p>{item.name}</p>
+    <div className=" pt-25 flex flex-wrap flex-row gap-5">
+      {wishlistItems.map((item) => (
+        <div key={item.id} className="w-50 border">
+          <ProductCard item={item} />
         </div>
       ))}
     </div>

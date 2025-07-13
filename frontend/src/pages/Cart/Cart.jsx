@@ -1,13 +1,12 @@
-import { useContext } from "react";
-import useGetCartWishlist from "../../hooks/useGetCartWishlist";
+import useLocalStorage from "../../hooks/useLocalStorage";
 
 const Cart = () => {
-  const { cart } = useGetCartWishlist();
+  const [cartItems, setCartItems] = useLocalStorage("cart", []);
   return (
     <div className=" pt-25">
-      {cart.map((item) => (
-        <div>
-          <p>{item.name}</p>
+      {cartItems.map((item) => (
+        <div key={item}>
+          <p>{item}</p>
         </div>
       ))}
     </div>

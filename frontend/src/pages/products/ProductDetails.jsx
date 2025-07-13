@@ -145,7 +145,7 @@ const ProductDetails = () => {
             <div className={` flex flex-wrap gap-2 py-5`}>
               {/* BUTTON : Add to cart */}
 
-              {cart.find((item) => item.id == selectedProduct.id) ? (
+              {cart.find((item) => item == selectedProduct.id) ? (
                 <button
                   className="border rounded px-5 py-4 w-[50%] cursor-pointer flex items-center justify-center gap-2 bg-rose-400 text-white font-bold hover:brightness-115"
                   onClick={() =>
@@ -168,7 +168,7 @@ const ProductDetails = () => {
               )}
 
               {/* BUTTON : Add to wishlist */}
-              {wishlist.find((item) => item.id == selectedProduct.id) ? (
+              {wishlist.find((item) => item == selectedProduct.id) ? (
                 <button
                   className={`border border-gray-300 rounded px-5 py-4 w-[37%] cursor-pointer flex items-center justify-center gap-2 hover:border-black bg-gray-600`}
                   onClick={() => handleToggleWishlist(selectedProduct)}
