@@ -10,10 +10,10 @@ const Wishlist = () => {
   );
 
   return (
-    <div className=" pt-25 flex flex-wrap flex-row gap-5">
+    <div className=" pt-25 px-20 flex flex-wrap flex-row justify-between bg-gray-200">
       {wishlistItems.map((item) => (
-        <div key={item.id} className="w-50 border">
-          <ProductCard item={item} />
+        <div key={item.id} className="w-50 my-2">
+          <ProductCard item={item} isForWishlist/>
         </div>
       ))}
     </div>

@@ -45,7 +45,7 @@ const Products = () => {
   
   
   return (
-    <div className="h-screen flex flex-col overflow-y-auto bg-gray-50">
+    <div className="h-screen flex flex-col overflow-y-auto bg-gray-200">
     
       <div className="mt-20 px-[5%] flex  overflow-hidden z-10 w-[100%]  h-screen overflow-y-auto ">
         <aside className="w-1/6 h-screen border-r border-gray-300 ">
