@@ -1,8 +1,8 @@
+import { XMarkIcon } from "@heroicons/react/24/solid";
 import { StarIcon } from "@heroicons/react/24/solid";
 import { useNavigate } from "react-router-dom";
-import Rating from "./Rating";
 
-const ProductCard = ({ item, isForWishlist }) => {
+const ProductCard = ({ item, isForWishlist, handleRemoveFromWishlist }) => {
   const navigate = useNavigate();
 
   const handleItemClick = () => {
@@ -10,6 +10,9 @@ const ProductCard = ({ item, isForWishlist }) => {
   };
 
   const imageSrc = `/assets/${item.images[0]}`;
+
+
+
   return (
     <div
       onClick={() => handleItemClick()}
@@ -37,6 +40,14 @@ const ProductCard = ({ item, isForWishlist }) => {
       {isForWishlist && (
         <div className="cursor-pointer flex justify-center items-center p-2 border border-gray-300">
           <p className="text-rose-400 font-bold text-sm">MOVE TO BAG</p>
+        </div>
+      )}
+      {isForWishlist && (
+        <div
+          className="absolute top-2 right-3 flex items-center justify-center bg-gray-300 p-1 w-7 h-7 rounded-full cursor:pointer"
+          onClick={(e)=>handleRemoveFromWishlist(e, item)}
+        >
+          <XMarkIcon className="h-4 w-4 text-gray-700" />
         </div>
       )}
     </div>
