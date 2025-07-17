@@ -5,26 +5,17 @@ import ProductCard from "../../components/ProductCard/ProductCard";
 import useGetCartWishlist from "../../hooks/useGetCartWishlist";
 
 const Wishlist = () => {
-  const [wishlistItemIds, setWishlistItemIds] = useLocalStorage("wishlist", []);
+  const { wishlist, handleToggleWishlist, cart, handleToggleCart } = useGetCartWishlist();
   const [wishlistItems, setWishlistItems] = useState([]);
   
   useEffect(() => {
-    setWishlistItems(getProductsById(wishlistItemIds));
-  }, [wishlistItemIds]);
-
-  const { wishlist, handleToggleWishlist, cart, handleToggleCart } =
-    useGetCartWishlist();
+    setWishlistItems(getProductsById(wishlist));
+  }, [wishlist]);
 
   const handleRemoveFromWishlist = (e, item) => {
     e.stopPropagation();
     handleToggleWishlist(item);
-    setWishlistItemIds(localStorage.getItem("wishlist"));
-    //setWishlistItemIds(localStorage.getItem("wishlist"));
   };
-  console.log(wishlistItemIds);
-  // useEffect(() => {
-  //   setWishlistItems(getProductsById(wishlistItemIds));
-  // }, [wishlistItemIds]);
 
   return (
     <div className=" pt-25 px-20 flex flex-wrap flex-row justify-between bg-gray-200">
