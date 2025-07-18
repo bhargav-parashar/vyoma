@@ -7,15 +7,21 @@ import useGetCartWishlist from "../../hooks/useGetCartWishlist";
 const Wishlist = () => {
   const { wishlist, handleToggleWishlist, cart, handleToggleCart } = useGetCartWishlist();
   const [wishlistItems, setWishlistItems] = useState([]);
-  
+
   useEffect(() => {
     setWishlistItems(getProductsById(wishlist));
   }, [wishlist]);
 
   const handleRemoveFromWishlist = (e, item) => {
     e.stopPropagation();
-    handleToggleWishlist(item);
+    handleToggleWishlist(item, true);
   };
+
+  const handleMoveToCart = (e, item) =>{
+    e.stopPropagation();
+    handleToggleCart(item);
+    handleToggleWishlist(item, false);
+  }
 
   return (
     <div className=" pt-25 px-20 flex flex-wrap flex-row justify-between bg-gray-200">
@@ -25,6 +31,7 @@ const Wishlist = () => {
             item={item}
             isForWishlist
             handleRemoveFromWishlist={handleRemoveFromWishlist}
+            handleMoveToCart = {handleMoveToCart}
           />
         </div>
       ))}

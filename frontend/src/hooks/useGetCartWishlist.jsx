@@ -7,16 +7,18 @@ const useGetCartWishlist = () =>{
     const { showSnackbar } = useSnackbar();
     
     //ADD OR REMOVE FROM WISHLST
-    const handleToggleWishlist = (product) =>{
+    const handleToggleWishlist = (product, show) =>{
         
         const isExists = wishlist.find((item)=>item == product.id);
         if(!isExists){
             setWishlist(prev=>[...prev, product.id]);
-            showSnackbar("Added item to wishlist", 3000, "success");
+            if(show)
+                showSnackbar("Added item to wishlist", 3000, "success");
         }
         else{
             setWishlist(prev=>prev.filter((item)=>item != product.id));
-            showSnackbar("Removed item from wishlist", 3000, "success");
+            if(show)
+                showSnackbar("Removed item from wishlist", 3000, "success");
         }
     }
 
@@ -26,11 +28,11 @@ const useGetCartWishlist = () =>{
         const isExists = cart.find((item)=>item == product.id);
         if(!isExists){
             setCart(prev=>[...prev, product.id]);
-            showSnackbar("Added item to cart", 3000, "success");
+            showSnackbar("Added item to bag", 3000, "success");
         }
         else{
             setCart(prev=>prev.filter((item)=>item != product.id));
-            showSnackbar("Removed item from cart", 3000, "success");
+            showSnackbar("Removed item from bag", 3000, "success");
         }
     }
 

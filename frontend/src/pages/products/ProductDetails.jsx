@@ -52,6 +52,11 @@ const ProductDetails = () => {
   //GET CART AND WISHLIST CONTEXT VARIABLES
   const { wishlist, handleToggleWishlist, cart, handleToggleCart } =
     useGetCartWishlist();
+  
+  const handleGoToBagClick = () =>{
+    navigate(`/cart`);
+  }
+
 
   return (
     <div className=" pt-25">
@@ -149,7 +154,7 @@ const ProductDetails = () => {
                 <button
                   className="border rounded px-5 py-4 w-[50%] cursor-pointer flex items-center justify-center gap-2 bg-rose-400 text-white font-bold hover:brightness-115"
                   onClick={() =>
-                    handleToggleCart(selectedProduct)
+                    handleGoToBagClick()
                   }
                 >
                   <ArrowRightIcon className="h-5 w-5" />
@@ -171,7 +176,7 @@ const ProductDetails = () => {
               {wishlist.find((item) => item == selectedProduct.id) ? (
                 <button
                   className={`border border-gray-300 rounded px-5 py-4 w-[37%] cursor-pointer flex items-center justify-center gap-2 hover:border-black bg-gray-600`}
-                  onClick={() => handleToggleWishlist(selectedProduct)}
+                  onClick={() => handleToggleWishlist(selectedProduct, true)}
                 >
                   <HeartSolidIcon className="h-5 w-5 text-rose-400" />
                   <span className="font-bold text-white">WISHLISTED</span>
@@ -179,7 +184,7 @@ const ProductDetails = () => {
               ) : (
                 <button
                   className={`border border-gray-300 rounded px-5 py-4 w-[37%] cursor-pointer flex items-center justify-center gap-2 hover:border-black`}
-                  onClick={() => handleToggleWishlist(selectedProduct)}
+                  onClick={() => handleToggleWishlist(selectedProduct, )}
                 >
                   <HeartOutlineIcon className="h-5 w-5" />
                   <span>WISHLIST</span>
