@@ -36,6 +36,8 @@ const useGetCartWishlist = () =>{
         }
     }
 
+   
+
     return { wishlist, handleToggleWishlist, cart, handleToggleCart };
 
  

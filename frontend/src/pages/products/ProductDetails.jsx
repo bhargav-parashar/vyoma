@@ -184,7 +184,7 @@ const ProductDetails = () => {
               ) : (
                 <button
                   className={`border border-gray-300 rounded px-5 py-4 w-[37%] cursor-pointer flex items-center justify-center gap-2 hover:border-black`}
-                  onClick={() => handleToggleWishlist(selectedProduct, )}
+                  onClick={() => handleToggleWishlist(selectedProduct, true )}
                 >
                   <HeartOutlineIcon className="h-5 w-5" />
                   <span>WISHLIST</span>

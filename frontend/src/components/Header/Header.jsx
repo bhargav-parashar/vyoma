@@ -4,6 +4,7 @@ import SearchBar from "../SearchBar/SearchBar";
 import { allProducts } from "../../constants/productList.json";
 import { useContext } from "react";
 import { FilterContext } from "../../contexts/FilterContext";
+import {CartWishlistContext} from "../../contexts/CartWishlistContext";
 import { UserIcon } from "@heroicons/react/24/outline";
 import { HeartIcon } from "@heroicons/react/24/outline";
 import { ShoppingBagIcon } from "@heroicons/react/24/outline";
@@ -19,7 +20,8 @@ const Header = () => {
     handleSearch,
   } = useContext(FilterContext);
 
-  
+  const {cart} = useContext(CartWishlistContext);
+
   const navigate = useNavigate();
 
   const getBgColor = (id) => {
@@ -124,11 +126,16 @@ const Header = () => {
             <p className="text-xs font-bold">Wishlist</p>
           </div>
           <div
-            className="flex flex-col items-center justify-end hover:cursor-pointer"
+            className="relative flex flex-col items-center justify-end hover:cursor-pointer"
             onClick={handleCartClick}
           >
             <ShoppingBagIcon className="h-5 w-5" />
             <p className="text-xs font-bold ">Bag</p>
+            {cart.length > 0 && (
+              <div className="absolute bottom-6 left-3 flex items-center justify-center rounded-full bg-rose-400  h-5 w-5 text-xs font-bold text-white">
+                {cart.length}
+              </div>
+            )}
           </div>
         </div>
       </div>
