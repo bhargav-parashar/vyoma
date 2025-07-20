@@ -6,7 +6,7 @@ import App from './App.jsx';
 import Products from './pages/Products/Products.jsx';
 import ProductDetails from "./pages/Products/ProductDetails.jsx";
 import Wishlist from './pages/Wishlist/Wishlist.jsx';
-import Cart from './pages/Cart/Cart.jsx';
+import Cart from './pages/Cart/Cart1.jsx';
 
 const appRouter = createBrowserRouter([
   {

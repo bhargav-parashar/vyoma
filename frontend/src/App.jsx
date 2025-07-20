@@ -4,17 +4,21 @@ import Header from "./components/Header/Header";
 import { FilterContextProvider } from "./contexts/FilterContext";
 import { SnackbarProvider } from "./contexts/SnackbarContext";
 import { CartWishlistContextProvider } from "./contexts/CartWishlistContext";
+import { Provider } from "react-redux";
+import appStore from "./redux/stores/appStore";
 
 function App() {
   return (
-    <SnackbarProvider>
-      <FilterContextProvider>
-        <CartWishlistContextProvider>
-          <Header />
-          <Outlet />
-        </CartWishlistContextProvider>
-      </FilterContextProvider>
-    </SnackbarProvider>
+    <Provider store={appStore}>
+      <SnackbarProvider>
+        <FilterContextProvider>
+          <CartWishlistContextProvider>
+            <Header />
+            <Outlet />
+          </CartWishlistContextProvider>
+        </FilterContextProvider>
+      </SnackbarProvider>
+    </Provider>
   );
 }
 

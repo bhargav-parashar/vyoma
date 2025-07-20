@@ -4,10 +4,12 @@ import SearchBar from "../SearchBar/SearchBar";
 import { allProducts } from "../../constants/productList.json";
 import { useContext } from "react";
 import { FilterContext } from "../../contexts/FilterContext";
-import {CartWishlistContext} from "../../contexts/CartWishlistContext";
+//import {CartWishlistContext} from "../../contexts/CartWishlistContext";
 import { UserIcon } from "@heroicons/react/24/outline";
 import { HeartIcon } from "@heroicons/react/24/outline";
 import { ShoppingBagIcon } from "@heroicons/react/24/outline";
+import {useSelector} from "react-redux";
+
 
 const Header = () => {
   const {
@@ -20,7 +22,7 @@ const Header = () => {
     handleSearch,
   } = useContext(FilterContext);
 
-  const {cart} = useContext(CartWishlistContext);
+ // const {cart} = useContext(CartWishlistContext);
 
   const navigate = useNavigate();
 
@@ -64,6 +66,9 @@ const Header = () => {
     navigate(`/cart`);
   };
 
+  // Selector hook - gives access to store
+  const cartItems = useSelector((store)=>store.cart.items);
+   console.log(cartItems);
   return (
     <div className="  flex items-center justify-between bg-white h-20 px-10 shadow-lg z-20 fixed w-[100%]">
       <div className="h-[100%] flex justify-start items-center gap-10 w-[40%] ">
@@ -116,7 +121,7 @@ const Header = () => {
         <div className="h-[100%] flex items-center justify-end w-[30%] gap-7 ">
           <div className="flex flex-col items-center justify-end hover:cursor-default">
             <UserIcon className="h-5 w-5" />
-            <p className="text-xs font-bold">Profile</p>
+            <p className="text-xs font-bold">Guest</p>
           </div>
           <div
             className="flex flex-col items-center justify-end hover:cursor-pointer "
@@ -131,9 +136,9 @@ const Header = () => {
           >
             <ShoppingBagIcon className="h-5 w-5" />
             <p className="text-xs font-bold ">Bag</p>
-            {cart.length > 0 && (
+            {cartItems.length > 0 && (
               <div className="absolute bottom-6 left-3 flex items-center justify-center rounded-full bg-rose-400  h-5 w-5 text-xs font-bold text-white">
-                {cart.length}
+                {cartItems.length}
               </div>
             )}
           </div>

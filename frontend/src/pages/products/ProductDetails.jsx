@@ -15,6 +15,8 @@ import { CalendarDateRangeIcon } from "@heroicons/react/24/outline";
 import { ArrowRightIcon  } from "@heroicons/react/24/outline";
 import { format } from "date-fns";
 import useGetCartWishlist from "../../hooks/useGetCartWishlist";
+import { useDispatch } from "react-redux";
+import { addItem } from "../../redux/slices/cartSlice";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -57,7 +59,21 @@ const ProductDetails = () => {
     navigate(`/cart`);
   }
 
+  const dispatch = useDispatch();
+  const handleAddToBag = () =>{
+    // Dispatch an action
+    const productToAdd = {
+      id : selectedProduct.id,
+      name : selectedProduct.name,
+      brand : selectedProduct.brand,
+      size : 's',
+      price : selectedProduct.price,
+      quantity : 1
+    }
+    dispatch(addItem(productToAdd));
+  }
 
+ 
   return (
     <div className=" pt-25">
       <div className=" h-screen flex px-15 gap-2">
@@ -163,8 +179,9 @@ const ProductDetails = () => {
               ) : (
                 <button
                   className="border rounded px-5 py-4 w-[50%] cursor-pointer flex items-center justify-center gap-2 bg-rose-400 text-white font-bold hover:brightness-115"
-                  onClick={() =>
-                    handleToggleCart(selectedProduct)
+                  onClick={
+                    //handleToggleCart(selectedProduct)
+                    handleAddToBag
                   }
                 >
                   <ShoppingBagIcon className="h-5 w-5" />

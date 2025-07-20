@@ -21,7 +21,7 @@ const Cart = () => {
     setCartItemIds(localStorage.getItem("cart"));
     //setWishlistItemIds(localStorage.getItem("wishlist"));
   };
-  console.log(cartItemIds);
+ 
   // useEffect(() => {
   //   setWishlistItems(getProductsById(wishlistItemIds));
   // }, [wishlistItemIds]);
