@@ -68,7 +68,8 @@ const ProductDetails = () => {
       brand : selectedProduct.brand,
       size : 's',
       price : selectedProduct.price,
-      quantity : 1
+      quantity : 1,
+      image : selectedProduct.images[0]
     }
     dispatch(addItem(productToAdd));
   }
