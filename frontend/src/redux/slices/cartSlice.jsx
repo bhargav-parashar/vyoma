@@ -21,8 +21,9 @@ const cartSlice = createSlice({
             localStorage.setItem('cart', JSON.stringify(state.items)  );
             
         },
-        removeItem : (state) =>{
-            state.items.pop();
+        removeItem : (state,action) =>{
+            const id = action.payload;
+            state.items =  state.items.filter((item)=>item.id != id);
         },
         clearCart : (state) =>{
             state.items.length = 0; //makes items[] as empty again
