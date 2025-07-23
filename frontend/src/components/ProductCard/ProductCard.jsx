@@ -50,7 +50,7 @@ const ProductCard = ({
       )}
       {isForWishlist && (
         <div
-          className="absolute top-2 right-3 flex items-center justify-center bg-gray-300 p-1 w-7 h-7 rounded-full cursor:pointer"
+          className="absolute top-2 right-3 flex items-center justify-center bg-gray-300 p-1 w-7 h-7 rounded-full cursor-pointer"
           onClick={(e) => handleRemoveFromWishlist(e, item)}
         >
           <XMarkIcon className="h-4 w-4 text-gray-700" />
