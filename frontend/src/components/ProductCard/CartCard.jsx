@@ -1,6 +1,6 @@
 import React from "react";
 import { XMarkIcon } from "@heroicons/react/24/solid";
-import { removeItem } from "../../redux/slices/cartSlice";
+import { removeItem,updateQty } from "../../redux/slices/cartSlice";
 import { useDispatch } from "react-redux";
 
 const CartCard = ({ item }) => {
@@ -10,6 +10,18 @@ const CartCard = ({ item }) => {
   const handleRemoveItem = (id) =>{
     dispatch(removeItem(id));
   }
+  const handleIncreaseQty = (id) =>{
+    const payload = {itemId : id, delta : 1};
+    dispatch(updateQty(payload))
+  }
+  const handleDecreaseQty = (id) =>{
+    const payload = {itemId : id, delta : -1};
+    if(item.quantity > 1)
+      dispatch(updateQty(payload))
+    else
+      dispatch(removeItem(id));
+  }
+
   return (
     <div className=" w-[100] h-40 flex relative bg-white rounded my-2">
       <div className=" w-3/12 p-2">
@@ -21,7 +33,10 @@ const CartCard = ({ item }) => {
         <p className="text-sm text-gray-500">Sold by: RetailNet</p>
         <p className="mt-2 text-sm font-bold">
           <span className="mr-2">Size: S</span>
-          <span>Qty: - 1 + </span>
+          <span className="pr-2">Qty: </span>
+          <span><button className="border w-5 rounded cursor-pointer" onClick={()=>handleDecreaseQty(item.id)}>-</button></span>
+          <span className="px-2">{item.quantity}</span>
+          <span><button className="border w-5 rounded cursor-pointer" onClick={()=>handleIncreaseQty(item.id)}>+</button></span>
         </p>
         <p className="mt-2 text-sm">
           <span className="font-semibold ">{`Rs. ${item.price.discounted}`}</span>

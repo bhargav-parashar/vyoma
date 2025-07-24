@@ -9,7 +9,7 @@ const Cart1 = () => {
  
   
   return (
-    <div className=" pt-25 px-20 bg-gray-200">
+    <div className=" pt-25 px-20 bg-gray-200 h-[100vh]">
       {cartItems.map((item) => (
        <CartCard item={item}/>
       ))}

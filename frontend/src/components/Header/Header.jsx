@@ -68,7 +68,7 @@ const Header = () => {
 
   // Selector hook - gives access to store
   const cartItems = useSelector((store)=>store.cart.items);
-   console.log(cartItems);
+ 
   return (
     <div className="  flex items-center justify-between bg-white h-20 px-10 shadow-lg z-20 fixed w-[100%]">
       <div className="h-[100%] flex justify-start items-center gap-10 w-[40%] ">
