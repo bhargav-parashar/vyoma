@@ -1,4 +1,3 @@
-import React from "react";
 import categories from "../../constants/categories.json";
 import {useNavigate} from "react-router-dom";
 

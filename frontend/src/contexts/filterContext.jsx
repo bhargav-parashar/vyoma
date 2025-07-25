@@ -24,6 +24,8 @@ const FilterContextProvider = ({children}) =>{
     handleMouseEnter,
     handleMouseLeave,
     isModalOpen,
+    isCheckoutModalOpen,
+    setIsCheckoutModalOpen
   } = useSectionHoverModal();
 
   const value = {
@@ -38,6 +40,8 @@ const FilterContextProvider = ({children}) =>{
     isModalOpen,
     clearFilters,
     handleSearch,
+    isCheckoutModalOpen,
+    setIsCheckoutModalOpen
   };
 
   return (

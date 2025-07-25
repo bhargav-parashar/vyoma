@@ -25,7 +25,7 @@ const ProductCard = ({
       <img alt="product" src={imageSrc} className="h-[77%]" />
       <div className="px-4 py-2">
         {!isForWishlist && <p className="font-semibold">{item.brand}</p>}
-        <p className="text-sm">{item.name}</p>
+        <p className="text-sm truncate w-[800px] ">{item.name}</p>
         <p>
           <span className="font-semibold text-sm">{`Rs. ${item.price.discounted}`}</span>
           <span className=" text-gray-600 line-through text-xs">{` Rs. ${item.price.original}`}</span>

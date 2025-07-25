@@ -1,34 +1,49 @@
 import React from "react";
 import { XMarkIcon } from "@heroicons/react/24/solid";
-import { removeItem,updateQty } from "../../redux/slices/cartSlice";
+import { removeItem, updateQty } from "../../redux/slices/cartSlice";
 import { useDispatch } from "react-redux";
 import useSnackbar from "../../hooks/useSnackbar";
+import { useNavigate } from "react-router-dom";
 
 const CartCard = ({ item }) => {
   const imageSrc = `/assets/${item.image}`;
   const dispatch = useDispatch();
-  const {showSnackbar} = useSnackbar();
+  const { showSnackbar } = useSnackbar();
+  const navigate = useNavigate();
 
-  const handleRemoveItem = (id) =>{
+  const handleRemoveItem = (e, id) => {
+    e.stopPropagation();
     dispatch(removeItem(id));
     showSnackbar("Removed item from bag", 3000, "success");
-  }
-  
-  const handleIncreaseQty = (id) =>{
-    const payload = {itemId : id, delta : 1};
-    dispatch(updateQty(payload))
-  }
+  };
 
-  const handleDecreaseQty = (id) =>{
-    const payload = {itemId : id, delta : -1};
-    if(item.quantity > 1)
-      dispatch(updateQty(payload))
-    else
-      dispatch(removeItem(id));
+  const handleIncreaseQty = (e, id) => {
+    e.stopPropagation();
+    const payload = { itemId: id, delta: 1 };
+    dispatch(updateQty(payload));
+  };
+
+  const handleDecreaseQty = (e,id) => {
+    e.stopPropagation();
+    const payload = { itemId: id, delta: -1 };
+    if (item.quantity > 1){
+      dispatch(updateQty(payload));
+    }
+    else{
+       dispatch(removeItem(id));
+       showSnackbar("Removed item from bag", 3000, "success");
+    }
+  };
+  
+  const handleItemClick = () =>{
+     navigate(`/products/details/${item.id}`);
   }
 
   return (
-    <div className=" w-[100] h-40 flex relative bg-white rounded my-2">
+    <div
+      className=" w-[100] h-40 flex relative bg-white rounded my-2 border border-gray-300 cursor-pointer "
+      onClick={() => handleItemClick()}
+    >
       <div className=" w-3/12 p-2">
         <img alt="product" src={imageSrc} className="h-[100%]" />
       </div>
@@ -39,9 +54,23 @@ const CartCard = ({ item }) => {
         <p className="mt-2 text-sm font-bold">
           <span className="mr-2">{`Size: ${item.size}`}</span>
           <span className="pr-2">Qty: </span>
-          <span><button className="border w-5 rounded cursor-pointer" onClick={()=>handleDecreaseQty(item.id)}>-</button></span>
+          <span>
+            <button
+              className="border w-5 rounded cursor-pointer"
+              onClick={(e) => handleDecreaseQty(e,item.id)}
+            >
+              -
+            </button>
+          </span>
           <span className="px-2">{item.quantity}</span>
-          <span><button className="border w-5 rounded cursor-pointer" onClick={()=>handleIncreaseQty(item.id)}>+</button></span>
+          <span>
+            <button
+              className="border w-5 rounded cursor-pointer"
+              onClick={(e) => handleIncreaseQty(e, item.id)}
+            >
+              +
+            </button>
+          </span>
         </p>
         <p className="mt-2 text-sm">
           <span className="font-semibold ">{`Rs. ${item.price.discounted}`}</span>
@@ -52,7 +81,7 @@ const CartCard = ({ item }) => {
       </div>
       <div
         className="absolute top-2 right-3 flex items-center justify-center bg-gray-200 p-1 w-7 h-7 rounded-full cursor-pointer"
-        onClick={() => handleRemoveItem(item.id)}
+        onClick={(e) => handleRemoveItem(e, item.id)}
       >
         <XMarkIcon className="h-4 w-4 text-gray-700 " />
       </div>

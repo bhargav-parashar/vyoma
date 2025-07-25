@@ -3,6 +3,7 @@ import { useState } from "react";
 const useSectionHoverModal = () => {
   const [hoveredTab, setHoveredTab] = useState(-1);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isCheckoutModalOpen, setIsCheckoutModalOpen] = useState(false);
   
   const handleMouseEnter = (tab) => {
     setIsModalOpen(true);
@@ -14,7 +15,7 @@ const useSectionHoverModal = () => {
     setHoveredTab(-1);
   };
 
-  return {hoveredTab, setHoveredTab, isModalOpen, setIsModalOpen, handleMouseEnter, handleMouseLeave};
+  return {hoveredTab, setHoveredTab, isModalOpen, setIsModalOpen, handleMouseEnter, handleMouseLeave,isCheckoutModalOpen,setIsCheckoutModalOpen};
 };
 
 export default useSectionHoverModal;

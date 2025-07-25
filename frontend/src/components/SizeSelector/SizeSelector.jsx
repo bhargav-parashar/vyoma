@@ -1,4 +1,3 @@
-import React from "react";
 
 const SizeSelector = ({selectedProduct, selectedSize,handleSizeSelect }) => {
   return (

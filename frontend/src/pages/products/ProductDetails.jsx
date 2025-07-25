@@ -39,7 +39,7 @@ const ProductDetails = () => {
     navigate(`/products/details/${id}`);
   };
 
-  const [selectedSize, setSelectedSize] = useState("");
+  const [selectedSize, setSelectedSize] = useState(selectedProduct.size[0].toUpperCase());
   const handleSizeSelect = (size) => {
     setSelectedSize(size);
   };
