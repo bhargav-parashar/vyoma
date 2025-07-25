@@ -2,6 +2,7 @@ import { XMarkIcon } from "@heroicons/react/24/solid";
 import { StarIcon } from "@heroicons/react/24/solid";
 import { useNavigate } from "react-router-dom";
 
+
 const ProductCard = ({
   item,
   isForWishlist,
@@ -9,14 +10,14 @@ const ProductCard = ({
   handleMoveToCart
 }) => {
   const navigate = useNavigate();
-
+  
   const handleItemClick = () => {
     navigate(`/products/details/${item.id}`);
   };
 
   const imageSrc = `/assets/${item.images[0]}`;
-
-  return (
+  
+ return (
     <div
       onClick={() => handleItemClick()}
       className="hover:shadow-xl w-[100%] h-[cover] bg-white cursor-pointer relative border border-gray-300"

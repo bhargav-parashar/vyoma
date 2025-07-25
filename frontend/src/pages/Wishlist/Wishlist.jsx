@@ -24,7 +24,7 @@ const Wishlist = () => {
   }
 
   return (
-    <div className=" pt-25 px-20 flex flex-wrap flex-row justify-between bg-gray-200">
+    <div className="h-[100vh] pt-25 px-20 flex flex-wrap flex-row justify-between bg-gray-200">
       {wishlistItems.map((item) => (
         <div key={item.id} className="w-50 my-2">
           <ProductCard

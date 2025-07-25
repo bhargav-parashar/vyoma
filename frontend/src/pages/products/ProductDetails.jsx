@@ -14,9 +14,11 @@ import { MapPinIcon } from "@heroicons/react/24/outline";
 import { CalendarDateRangeIcon } from "@heroicons/react/24/outline";
 import { ArrowRightIcon  } from "@heroicons/react/24/outline";
 import { format } from "date-fns";
-import useGetCartWishlist from "../../hooks/useGetCartWishlist";
 import { useDispatch } from "react-redux";
 import { addItem } from "../../redux/slices/cartSlice";
+import { addItemToWishlist, removeItemFromWishlist } from "../../redux/slices/wishlistSlice";
+import { useSelector } from "react-redux";
+import useSnackbar from "../../hooks/useSnackbar";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -41,6 +43,7 @@ const ProductDetails = () => {
   const handleSizeSelect = (size) => {
     setSelectedSize(size);
   };
+  const { showSnackbar } = useSnackbar();
 
   //GET FILTER CONTEXT VARIABLES
   const {
@@ -51,30 +54,62 @@ const ProductDetails = () => {
     isModalOpen,
   } = useContext(FilterContext);
 
-  //GET CART AND WISHLIST CONTEXT VARIABLES
-  const { wishlist, handleToggleWishlist, cart, handleToggleCart } =
-    useGetCartWishlist();
-  
+  const cartItems = useSelector((store) => store.cart.items);
+  const wishlistItems = useSelector((store)=>store.wishlist.items);
+
   const handleGoToBagClick = () =>{
     navigate(`/cart`);
   }
 
   const dispatch = useDispatch();
+  
   const handleAddToBag = () =>{
     // Dispatch an action
     const productToAdd = {
       id : selectedProduct.id,
       name : selectedProduct.name,
       brand : selectedProduct.brand,
-      size : 's',
+      size : selectedSize,
       price : selectedProduct.price,
       quantity : 1,
       image : selectedProduct.images[0]
     }
+
     dispatch(addItem(productToAdd));
+
+    if(wishlistItems.find((item)=>item.id == selectedProduct.id)){
+      dispatch(removeItemFromWishlist(selectedProduct.id));
+    }
+
+    showSnackbar("Added item to bag", 3000, "success");
   }
 
- 
+  const handleAddToWishlist = () =>{
+    if( cartItems.find((item)=>item.id == selectedProduct.id) ){
+       showSnackbar("Cannot wishlist, item is already in bag", 3000, "error");
+    }else{
+      // Dispatch an action
+      const productToAdd = {
+        id : selectedProduct.id,
+        name : selectedProduct.name,
+        brand : selectedProduct.brand,
+        size : selectedSize,
+        price : selectedProduct.price,
+        quantity : 1,
+        images : selectedProduct.images,
+        rating : selectedProduct.rating
+      }
+      dispatch(addItemToWishlist(productToAdd));
+      showSnackbar("Added item to wishlist", 3000, "success");
+    }
+  }
+  
+  const handleRemoveWishlistItem = () =>{
+    // Dispatch an action
+    dispatch(removeItemFromWishlist(selectedProduct.id));
+    showSnackbar("Removed item from wishlist", 3000, "success");
+  }
+
   return (
     <div className=" pt-25">
       <div className=" h-screen flex px-15 gap-2">
@@ -167,7 +202,7 @@ const ProductDetails = () => {
             <div className={` flex flex-wrap gap-2 py-5`}>
               {/* BUTTON : Add to cart */}
 
-              {cart.find((item) => item == selectedProduct.id) ? (
+              {cartItems.find((item) => item.id == selectedProduct.id) ? (
                 <button
                   className="border rounded px-5 py-4 w-[50%] cursor-pointer flex items-center justify-center gap-2 bg-rose-400 text-white font-bold hover:brightness-115"
                   onClick={() =>
@@ -191,10 +226,10 @@ const ProductDetails = () => {
               )}
 
               {/* BUTTON : Add to wishlist */}
-              {wishlist.find((item) => item == selectedProduct.id) ? (
+              {wishlistItems.find((item) => item.id == selectedProduct.id) ? (
                 <button
                   className={`border border-gray-300 rounded px-5 py-4 w-[37%] cursor-pointer flex items-center justify-center gap-2 hover:border-black bg-gray-600`}
-                  onClick={() => handleToggleWishlist(selectedProduct, true)}
+                  onClick={handleRemoveWishlistItem}
                 >
                   <HeartSolidIcon className="h-5 w-5 text-rose-400" />
                   <span className="font-bold text-white">WISHLISTED</span>
@@ -202,7 +237,7 @@ const ProductDetails = () => {
               ) : (
                 <button
                   className={`border border-gray-300 rounded px-5 py-4 w-[37%] cursor-pointer flex items-center justify-center gap-2 hover:border-black`}
-                  onClick={() => handleToggleWishlist(selectedProduct, true )}
+                  onClick={handleAddToWishlist}
                 >
                   <HeartOutlineIcon className="h-5 w-5" />
                   <span>WISHLIST</span>

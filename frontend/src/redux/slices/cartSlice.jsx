@@ -24,6 +24,7 @@ const cartSlice = createSlice({
         removeItem : (state,action) =>{
             const id = action.payload;
             state.items =  state.items.filter((item)=>item.id != id);
+            localStorage.setItem('cart', JSON.stringify(state.items)  );
         },
         clearCart : (state) =>{
             state.items.length = 0; //makes items[] as empty again
@@ -32,6 +33,7 @@ const cartSlice = createSlice({
             const product = state.items.find((item)=>item.id == action.payload.itemId);
             if(product){
                 product.quantity += action.payload.delta;
+                localStorage.setItem('cart', JSON.stringify(state.items)  );
             }
         }
     }
