@@ -33,7 +33,7 @@ const CartPage = () => {
         <div className=" flex gap-5">
           <div className="w-[60%]">
             {cartItems.map((item) => (
-              <CartCard item={item} />
+              <CartCard key={item.id} item={item} />
             ))}
           </div>
           <div className="w-[40%]  border-gray-300 border-l-1">
