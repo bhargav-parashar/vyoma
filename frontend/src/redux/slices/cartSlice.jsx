@@ -28,6 +28,7 @@ const cartSlice = createSlice({
         },
         clearCart : (state) =>{
             state.items.length = 0; //makes items[] as empty again
+            localStorage.setItem('cart', JSON.stringify(state.items)  );
         },
         updateQty : (state,action) =>{
             const product = state.items.find((item)=>item.id == action.payload.itemId);
