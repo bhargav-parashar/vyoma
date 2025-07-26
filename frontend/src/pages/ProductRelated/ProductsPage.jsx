@@ -10,7 +10,7 @@ import Pills from "../../constants/pills.json";
 import usePill from "../../hooks/usePill";
 import useApplyFilter from "../../hooks/useApplyFilter";
 import { useContext } from "react";
-import {FilterContext} from "../../contexts/FilterContext";
+import {FilterContext} from "../../contexts/FiltersContext";
 
 const ProductsPage = () => {
   

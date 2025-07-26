@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { FilterContext } from "../../contexts/FilterContext";
+import { FilterContext } from "../../contexts/FiltersContext";
 import { useContext, useState } from "react";
 import CategoryModal from "../../components/CategoryModal/CategoryModal";
 import { allProducts } from "../../constants/productList.json";

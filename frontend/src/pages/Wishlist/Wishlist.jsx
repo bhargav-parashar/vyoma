@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import useSnackbar from "../../hooks/useSnackbar";
 import { InboxIcon } from "@heroicons/react/24/outline";
 import { useNavigate } from "react-router-dom";
-import { FilterContext } from "../../contexts/FilterContext";
+import { FilterContext } from "../../contexts/FiltersContext";
 import { useContext } from "react";
 import CategoryModal from "../../components/CategoryModal/CategoryModal";
 

@@ -3,7 +3,7 @@ import { tabs } from "../../constants/sectionTabs.json";
 import SearchBar from "../SearchBar/SearchBar";
 import { allProducts } from "../../constants/productList.json";
 import { useContext } from "react";
-import { FilterContext } from "../../contexts/FilterContext";
+import { FilterContext } from "../../contexts/FiltersContext";
 //import {CartWishlistContext} from "../../contexts/CartWishlistContext";
 import { UserIcon } from "@heroicons/react/24/outline";
 import { HeartIcon } from "@heroicons/react/24/outline";

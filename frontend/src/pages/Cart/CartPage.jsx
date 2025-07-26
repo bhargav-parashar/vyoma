@@ -3,7 +3,7 @@ import CartCard from "../../components/ProductCard/CartCard";
 import CartTotal from "../../components/CartTotal/CartTotal";
 import { useNavigate } from "react-router-dom";
 import { InboxIcon } from "@heroicons/react/24/outline";
-import { FilterContext } from "../../contexts/FilterContext";
+import { FilterContext } from "../../contexts/FiltersContext";
 import { useContext } from "react";
 import CategoryModal from "../../components/CategoryModal/CategoryModal";
 import CheckoutModal from "../../components/CheckoutModal/CheckoutModal";
