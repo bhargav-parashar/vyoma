@@ -752,70 +752,158 @@
             
                 {
                         "id": 35,
-                        "name": "Woman Item",
+                        "name": "Printed Pure Cotton Kurta",
                         "section" : "women",
                         "category" : "kurtis",
-                        "brandKey" : "cult",
-                        "brand": "CULT",
-                        "color":"blue",
+                        "brandKey" : "aurelia",
+                        "brand": "AURELIA",
+                        "color":"orange",
                         "price":{
-                            "original": 2799,
-                            "discounted": 811,
-                            "discount": 71
+                            "original": 4999,
+                            "discounted": 2880,
+                            "discount": 57
                         },
                         "rating" :{
-                            "average": 3.3,
-                            "count": 13
+                            "average": 5,
+                            "count": 7
                         },
-                        "images":["product-34.jpg","product-34.1.jpg"],
-                        "origin" : "usa",
+                        "images":["product-35.jpg","product-35.1.jpg"],
+                        "origin" : "india",
                         "size":["3xs", "xxs",  "s", "m", "l", "xl", "xxl", "3xl"],
                         "launchDate": "2025-03-17"
                 },
                 {
                         "id": 36,
-                        "name": "Kids Item",
-                        "section" : "kids",
-                        "category" : "kurtis",
-                        "brandKey" : "cult",
-                        "brand": "CULT",
-                        "color":"blue",
+                        "name": "White Solid Block Heels",
+                        "section" : "women",
+                        "category" : "heels",
+                        "brandKey" : "elle",
+                        "brand": "ELLE",
+                        "color":"white",
                         "price":{
-                            "original": 2799,
-                            "discounted": 811,
-                            "discount": 71
+                            "original": 1999,
+                            "discounted": 999,
+                            "discount": 50
                         },
                         "rating" :{
-                            "average": 3.3,
-                            "count": 13
+                            "average": 4.1,
+                            "count": 433
                         },
-                        "images":["product-24.jpg","product-24.1.jpg"],
-                        "origin" : "india",
-                        "size":["3xs", "xxs", "xs",  "m", "l", "xl", "xxl", "3xl"],
-                        "launchDate": "2025-02-27"
+                        "images":["product-36.jpg","product-36.1.jpg"],
+                        "origin" : "usa",
+                        "size":["4", "5",  "6", "7", "8"],
+                        "launchDate": "2025-03-14"
                 },
                 {
                         "id": 37,
-                        "name": "Home Item",
-                        "section" : "home",
-                        "category" : "kurtis",
-                        "brandKey" : "cult",
-                        "brand": "CULT",
+                        "name": "Open Toe Flats with Bows",
+                        "section" : "women",
+                        "category" : "flats",
+                        "brandKey" : "inc5",
+                        "brand": "Inc 5",
                         "color":"blue",
                         "price":{
-                            "original": 2799,
-                            "discounted": 811,
-                            "discount": 71
+                            "original": 2690,
+                            "discounted": 1600,
+                            "discount": 59
                         },
                         "rating" :{
-                            "average": 3.3,
-                            "count": 13
+                            "average": 4.4,
+                            "count": 15
                         },
-                        "images":["product-14.jpg","product-14.1.jpg"],
-                        "origin" : "india",
-                        "size":["3xs", "xxs", "xs", "s",  "xl", "xxl", "3xl"],
+                        "images":["product-37.jpg","product-37.1.jpg"],
+                        "origin" : "usa",
+                        "size":["3", "4", "5",  "6", "7"],
+                        "launchDate": "2025-03-12"
+                },
+                {
+                        "id": 38,
+                        "name": "2-Pack Cotton T-shirts",
+                        "section" : "kids",
+                        "category" : "tshirt",
+                        "brandKey" : "h&m",
+                        "brand": "H&M",
+                        "color":"blue",
+                        "price":{
+                            "original": 799,
+                            "discounted": 719,
+                            "discount": 10
+                        },
+                        "rating" :{
+                            "average": 4.6,
+                            "count": 153
+                        },
+                        "images":["product-38.jpg","product-38.1.jpg"],
+                        "origin" : "germany",
+                        "size":["3xs", "xxs", "xs",  "s", "m"],
+                        "launchDate": "2025-02-27"
+                },
+                 {
+                        "id": 39,
+                        "name": "Shoulder Bow Cotton Dress",
+                        "section" : "kids",
+                        "category" : "dress",
+                        "brandKey" : "miss&chief",
+                        "brand": "Miss & Chief",
+                        "color":"pink",
+                        "price":{
+                            "original": 1999,
+                            "discounted": 379,
+                            "discount": 81
+                        },
+                        "rating" :{
+                            "average": 3.5,
+                            "count": 57
+                        },
+                        "images":["product-39.jpg","product-39.1.jpg"],
+                        "origin" : "argentina",
+                        "size":["3xs", "xxs", "xs",  "s"],
+                        "launchDate": "2025-02-20"
+                },
+                {
+                        "id": 40,
+                        "name": "All Season Reversible Blanket",
+                        "section" : "home",
+                        "category" : "blanket",
+                        "brandKey" : "sleepwell",
+                        "brand": "Sleep Well",
+                        "color":"green",
+                        "price":{
+                            "original": 2999,
+                            "discounted": 1199,
+                            "discount": 60
+                        },
+                        "rating" :{
+                            "average": 4.4,
+                            "count": 636
+                        },
+                        "images":["product-40.jpg","product-40.1.jpg"],
+                        "origin" : "russia",
+                        "size":[ "K", "Q" ],
                         "launchDate": "2025-01-8"
-                    }
+                },
+                {
+                        "id": 41,
+                        "name": "Wooden Floor Lamp",
+                        "section" : "home",
+                        "category" : "floor-lamp",
+                        "brandKey" : "crosscut",
+                        "brand": "Crosscut",
+                        "color":"yellow",
+                        "price":{
+                            "original": 9990,
+                            "discounted": 2795,
+                            "discount": 72
+                        },
+                        "rating" :{
+                            "average": 4.7,
+                            "count": 20
+                        },
+                        "images":["product-41.jpg","product-41.1.jpg"],
+                        "origin" : "india",
+                        "size":["One"],
+                        "launchDate": "2025-01-5"
+                }
         ]
     
     

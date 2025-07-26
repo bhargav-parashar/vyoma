@@ -34,20 +34,17 @@
         ],
 
         "brand" : [
-            {"id" : 1, "key" : "allensolly", "value": "Allen Solly"}, 
-            {"id" : 2, "key" : "adidas", "value": "ADIDAS"}, 
-            {"id" : 3, "key" : "blackberrys", "value": "Blackberrys"}, 
-            {"id" : 4, "key" : "beinghuman", "value": "Being Human"}, 
-            {"id" : 5, "key" : "cult", "value": "CULT"}
+            {"id" : 1, "key" : "aurelia", "value": "AURELIA"}, 
+            {"id" : 2, "key" : "elle", "value": "ELLE"}, 
+            {"id" : 3, "key" : "inc5", "value": "Inc 5"}
             
         ],
 
         "color" : [
-            {"id" : 1, "key" : "black", "value": "Black"}, 
+            {"id" : 1, "key" : "orange", "value": "Orange"}, 
             {"id" : 2, "key" : "blue", "value": "Blue"}, 
-            {"id" : 3, "key" : "white", "value": "White"}, 
-            {"id" : 4, "key" : "green", "value": "Green"}, 
-            {"id" : 5, "key" : "gray", "value": "Gray"}
+            {"id" : 3, "key" : "white", "value": "White"}
+           
         
         ]
 
@@ -60,20 +57,14 @@
         ],
 
         "brand" : [
-            {"id" : 1, "key" : "allensolly", "value": "Allen Solly"}, 
-            {"id" : 2, "key" : "adidas", "value": "ADIDAS"}, 
-            {"id" : 3, "key" : "blackberrys", "value": "Blackberrys"}, 
-            {"id" : 4, "key" : "beinghuman", "value": "Being Human"}, 
-            {"id" : 5, "key" : "cult", "value": "CULT"}
+            {"id" : 1, "key" : "h&m", "value": "H&M"}, 
+            {"id" : 2, "key" : "miss&chief", "value": "Miss & Chief"}
             
         ],
 
         "color" : [
-            {"id" : 1, "key" : "black", "value": "Black"}, 
-            {"id" : 2, "key" : "blue", "value": "Blue"}, 
-            {"id" : 3, "key" : "white", "value": "White"}, 
-            {"id" : 4, "key" : "green", "value": "Green"}, 
-            {"id" : 5, "key" : "gray", "value": "Gray"}
+            {"id" : 1, "key" : "pink", "value": "Pink"}, 
+            {"id" : 2, "key" : "blue", "value": "Blue"}
         
         ]
 
@@ -86,20 +77,14 @@
         ],
 
         "brand" : [
-            {"id" : 1, "key" : "allensolly", "value": "Allen Solly"}, 
-            {"id" : 2, "key" : "adidas", "value": "ADIDAS"}, 
-            {"id" : 3, "key" : "blackberrys", "value": "Blackberrys"}, 
-            {"id" : 4, "key" : "beinghuman", "value": "Being Human"}, 
-            {"id" : 5, "key" : "cult", "value": "CULT"}
+            {"id" : 1, "key" : "sleepwell", "value": "Sleep Well"}, 
+            {"id" : 2, "key" : "crosscut", "value": "Crosscut"}
             
         ],
 
         "color" : [
-            {"id" : 1, "key" : "black", "value": "Black"}, 
-            {"id" : 2, "key" : "blue", "value": "Blue"}, 
-            {"id" : 3, "key" : "white", "value": "White"}, 
-            {"id" : 4, "key" : "green", "value": "Green"}, 
-            {"id" : 5, "key" : "gray", "value": "Gray"}
+            {"id" : 1, "key" : "green", "value": "Green"}, 
+            {"id" : 2, "key" : "yellow", "value": "Yellow"}
         
         ]
 
