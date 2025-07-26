@@ -1,5 +1,3 @@
-
-
 # Vyoma
 Inspired by Myntra, Vyoma is an e-commerce application with products search, filter, sort, add to wishlist and add to cart features.
 
@@ -60,9 +58,4 @@ Cart and wishlist are persisted in local storage for improved UX.
 ## DEPLOYMENT
 
 Vyoma is deployed on Vercel, a fast and developer-friendly platform optimized for frontend frameworks like React. Vercel enables seamless CI/CD workflows, automatic deployments on code push, and delivers a globally distributed, high-performance user experience.
-
-
-
-
-
 
