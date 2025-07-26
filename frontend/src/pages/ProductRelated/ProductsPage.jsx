@@ -12,7 +12,7 @@ import useApplyFilter from "../../hooks/useApplyFilter";
 import { useContext } from "react";
 import {FilterContext} from "../../contexts/FilterContext";
 
-const Products = () => {
+const ProductsPage = () => {
   
   //GET CONTEXT VARIABLES
   const {
@@ -173,4 +173,4 @@ const Products = () => {
   );
 };
 
-export default Products;
+export default ProductsPage;
