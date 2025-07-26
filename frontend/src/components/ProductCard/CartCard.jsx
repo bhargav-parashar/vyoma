@@ -41,7 +41,7 @@ const CartCard = ({ item }) => {
 
   return (
     <div
-      className=" w-[100] h-40 flex relative bg-white rounded my-2 border border-gray-300 cursor-pointer "
+      className=" w-[100%] h-40 flex relative bg-white rounded my-2 border border-gray-300 cursor-pointer "
       onClick={() => handleItemClick()}
     >
       <div className=" w-3/12 p-2">
