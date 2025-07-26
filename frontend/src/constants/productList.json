@@ -903,6 +903,28 @@
                         "origin" : "india",
                         "size":["One"],
                         "launchDate": "2025-01-5"
+                },
+                {
+                        "id": 42,
+                        "name": "Metal Floor Lamp",
+                        "section" : "home",
+                        "category" : "floor-lamp",
+                        "brandKey" : "crosscut",
+                        "brand": "Crosscut",
+                        "color":"yellow",
+                        "price":{
+                            "original": 2499,
+                            "discounted": 1199,
+                            "discount": 48
+                        },
+                        "rating" :{
+                            "average": 4.6,
+                            "count": 28
+                        },
+                        "images":["product-42.jpg","product-42.1.jpg"],
+                        "origin" : "india",
+                        "size":["One"],
+                        "launchDate": "2025-01-2"
                 }
         ]
     
