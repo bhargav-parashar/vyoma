@@ -5,6 +5,7 @@ import { FilterContextProvider } from "./contexts/FiltersContext";
 import { SnackbarProvider } from "./contexts/SnackbarContext";
 import { Provider } from "react-redux";
 import appStore from "./redux/stores/appStore";
+import MobileHeader from "./components/Header/MobileHeader";
 
 function App() {
   return (

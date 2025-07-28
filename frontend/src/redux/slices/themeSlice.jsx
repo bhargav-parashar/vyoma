@@ -11,17 +11,17 @@ const getTheme = ()=>{
 const themeSlice = createSlice({
     name: 'theme',
     initialState : {
-        items : getTheme()
+        theme : getTheme()
     },
     reducers: {
        
         updateTheme : (state,action) =>{
             const newTheme =  action.payload;
-           
+            state.theme = newTheme;
         }
     }
 });
 
-export const {updateTheme} = cartSlice.actions;
+export const {updateTheme} = themeSlice.actions;
 export default themeSlice.reducer;
 
