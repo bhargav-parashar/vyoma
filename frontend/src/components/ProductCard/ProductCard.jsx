@@ -35,7 +35,7 @@ const ProductCard = ({
           {` (${item.price.discount}% OFF)`}
         </p>
         {!isForWishlist && (
-          <div className="absolute bottom-22 left-3 flex items-center gap-1 bg-white p-1 w-[35%] rounded">
+          <div className="absolute sm:bottom-25 md:bottom-22 left-3 flex items-center gap-1 bg-white p-1 sm:w-[50%] md:w-[35%] rounded">
             <p className="text-xs flex items-center gap-1">
               {item.rating.average}
               <StarIcon className="h-3 w-3 text-emerald-700" />|{" "}
