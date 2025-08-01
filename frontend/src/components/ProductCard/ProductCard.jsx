@@ -25,11 +25,14 @@ const ProductCard = ({
       <img alt="product" src={imageSrc} className="h-[77%]" />
       <div className="px-4 py-2">
         {!isForWishlist && <p className="font-semibold">{item.brand}</p>}
-        <p className="text-sm truncate w-[800px] ">{item.name}</p>
+        <p className="md:text-sm sm:text-xs truncate w-[800px] ">{item.name}</p>
         <p>
-          <span className="font-semibold text-sm">{`Rs. ${item.price.discounted}`}</span>
+          <span className="font-semibold md:text-sm sm:text-xs">{`Rs. ${item.price.discounted}`}</span>
           <span className=" text-gray-600 line-through text-xs">{` Rs. ${item.price.original}`}</span>
-          <span className=" text-orange-400 text-xs">{` (${item.price.discount}% OFF)`}</span>
+          <span className="sm:hidden md:inline text-orange-400 text-xs ">{` (${item.price.discount}% OFF)`}</span>
+        </p>
+         <p className="md:hidden text-orange-400 text-xs">
+          {` (${item.price.discount}% OFF)`}
         </p>
         {!isForWishlist && (
           <div className="absolute bottom-22 left-3 flex items-center gap-1 bg-white p-1 w-[35%] rounded">

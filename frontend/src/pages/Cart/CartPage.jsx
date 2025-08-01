@@ -28,22 +28,45 @@ const CartPage = () => {
  
 
   return (
-    <div className={`pt-25 px-20 bg-gray-200 min-h-screen` }>
+    <div className={`md:pt-25 sm:pt-30 md:px-20 sm:px-5 bg-gray-200 min-h-screen pb-1 ` }>
       {cartItems.length > 0 && (
-        <div className=" flex gap-5">
-          <div className="w-[60%]">
-            {cartItems.map((item) => (
-              <CartCard key={item.id} item={item} />
-            ))}
-          </div>
-          <div className="w-[40%]  border-gray-300 border-l-1">
-            <CartTotal setIsCheckoutModalOpen={setIsCheckoutModalOpen} />
+
+        //DESKTOP
+        <div className = "sm:hidden md:block">
+          <div className="flex gap-5">
+            <div className="w-[60%]">
+              {cartItems.map((item) => (
+                <CartCard key={item.id} item={item} />
+              ))}
+            </div>
+            <div className="w-[40%]  border-gray-300 border-l-1">
+              <CartTotal setIsCheckoutModalOpen={setIsCheckoutModalOpen} />
+            </div>
           </div>
         </div>
       )}
+
+      {cartItems.length > 0 && (
+
+        //MOBILE
+        <div className = "md:hidden">
+          <div className="flex-col">
+            <div className="w-[100%]">
+              {cartItems.map((item) => (
+                <CartCard key={item.id} item={item} />
+              ))}
+            </div>
+            <div className="w-[100%]  border-gray-300 border-t-1">
+              <CartTotal setIsCheckoutModalOpen={setIsCheckoutModalOpen} />
+            </div>
+          </div>
+        </div>
+      )}
+
+
       {cartItems.length == 0 && (
-        <div className="pt-20 flex flex-col items-center ">
-          <div className="w-[27%]  text-center">
+        <div className=" sm:pt-10 md:pt-20 flex flex-col items-center ">
+          <div className="sm:w-[60%] md:w-[27%]  text-center">
             <p className="font-bold mb-5">YOUR BAG IS EMPTY</p>
             <p className="text-gray-500 text-justify mb-5">
               There is nothing in your bag. Let's add some items.   

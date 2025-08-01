@@ -41,17 +41,17 @@ const CartCard = ({ item }) => {
 
   return (
     <div
-      className=" w-[100%] h-40 flex relative bg-white rounded my-2 border border-gray-300 cursor-pointer "
+      className=" w-[100%]  sm:h-30 md:h-40 flex relative bg-white rounded my-2 border border-gray-300 cursor-pointer"
       onClick={() => handleItemClick()}
     >
       <div className=" w-3/12 p-2">
         <img alt="product" src={imageSrc} className="h-[100%]" />
       </div>
       <div className=" w-9/12 p-2">
-        <p className="text-sm font-bold">{item.brand}</p>
-        <p className="text-sm ">{item.name}</p>
-        <p className="text-sm text-gray-500">Sold by: RetailNet</p>
-        <p className="mt-2 text-sm font-bold">
+        <p className="sm:text-xs md:text-sm font-bold">{item.brand}</p>
+        <p className="sm:text-xs md:text-sm ">{item.name}</p>
+        <p className="sm:text-xs md:text-sm text-gray-500">Sold by: RetailNet</p>
+        <p className="sm:mt-1 md:mt-2 sm:text-xs md:text-sm font-bold">
           <span className="mr-2">{`Size: ${item.size}`}</span>
           <span className="pr-2">Qty: </span>
           <span>
@@ -72,12 +72,12 @@ const CartCard = ({ item }) => {
             </button>
           </span>
         </p>
-        <p className="mt-2 text-sm">
+        <p className="sm:mt-1 md:mt-2 sm:text-xs md:text-sm">
           <span className="font-semibold ">{`Rs. ${item.price.discounted}`}</span>
           <span className=" text-gray-600 line-through ">{` Rs. ${item.price.original}`}</span>
           <span className=" text-orange-400 ">{` (${item.price.discount}% OFF)`}</span>
         </p>
-        <p className="mt-2 text-sm ">7 days return available</p>
+        <p className="sm:mt-1 md:mt-2 sm:text-xs md:text-sm">7 days return available</p>
       </div>
       <div
         className="absolute top-2 right-3 flex items-center justify-center bg-gray-200 p-1 w-7 h-7 rounded-full cursor-pointer"

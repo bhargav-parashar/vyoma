@@ -18,11 +18,11 @@ const Header = () => {
     handleMouseLeave,
     clearFilters,
     handleSearch,
+    productsFilters
   } = useContext(FilterContext);
-
-  
+ 
   const navigate = useNavigate();
-
+  
   const getBgColor = (id) => {
     switch (id) {
       case 1:
@@ -147,72 +147,73 @@ const Header = () => {
 
 
       {/* MOBILE HEADER*/}
-      <div className=" md:hidden   bg-white h-40 px-10 shadow-lg z-22 fixed w-[100%]" >
-      <div className=" md:hidden sm:flex items-center justify-between bg-white h-20 px-10  z-20 fixed w-[100%] ">
-        {/*SEARCH BAR*/}
+      <div className=" md:hidden sm:flex-col  bg-white h-25 shadow-lg z-22 fixed w-[100%] " >
+      
+        <div className="flex items-center justify-between bg-white h-15 px-5 mt-2 w-[100%] ">
+          {/*SEARCH BAR*/}
 
-        <div className="h-[100%] flex items-center justify-start w-[70%] gap-7 ">
-          <SearchBar
-            placeholder={"Search products"}
-            staticData={allProducts}
-            dataKey={"name"}
-            onSelect={(val) => handleSelect(val)}
-            onChange={onInputChange}
-            search={search}
-            clearFilters={clearFilters}
-          />
-        </div>
+          <div className="h-[100%] flex items-center justify-start w-[70%] gap-7 ">
+            <SearchBar
+              placeholder={"Search products"}
+              staticData={allProducts}
+              dataKey={"name"}
+              onSelect={(val) => handleSelect(val)}
+              onChange={onInputChange}
+              search={search}
+              clearFilters={clearFilters}
+            />
+          </div>
 
-        <div className="h-[100%] flex items-center justify-end w-[30%] gap-4 ">
-          <div className="flex flex-col items-center justify-end hover:cursor-default">
-            <UserIcon className="h-5 w-5" />
-            <p className="text-xs font-bold">Guest</p>
+          <div className="h-[100%] flex items-center justify-end w-[30%] gap-4 ">
+            <div className="flex flex-col items-center justify-end hover:cursor-default">
+              <UserIcon className="h-5 w-5" />
+              <p className="text-xs font-bold">Guest</p>
+            </div>
+            <div
+              className="flex flex-col items-center justify-end hover:cursor-pointer "
+              onClick={handleWishlistClick}
+            >
+              <HeartIcon className="h-5 w-5" />
+              <p className="text-xs font-bold">Wishlist</p>
+            </div>
+            <div
+              className="relative flex flex-col items-center justify-end hover:cursor-pointer"
+              onClick={handleCartClick}
+            >
+              <ShoppingBagIcon className="h-5 w-5" />
+              <p className="text-xs font-bold ">Bag</p>
+              {cartItems.length > 0 && (
+                <div className="absolute bottom-6 left-3 flex items-center justify-center rounded-full bg-rose-400  h-5 w-5 text-xs font-bold text-white">
+                  {cartItems.length}
+                </div>
+              )}
+            </div>
           </div>
-          <div
-            className="flex flex-col items-center justify-end hover:cursor-pointer "
-            onClick={handleWishlistClick}
-          >
-            <HeartIcon className="h-5 w-5" />
-            <p className="text-xs font-bold">Wishlist</p>
-          </div>
-          <div
-            className="relative flex flex-col items-center justify-end hover:cursor-pointer"
-            onClick={handleCartClick}
-          >
-            <ShoppingBagIcon className="h-5 w-5" />
-            <p className="text-xs font-bold ">Bag</p>
-            {cartItems.length > 0 && (
-              <div className="absolute bottom-6 left-3 flex items-center justify-center rounded-full bg-rose-400  h-5 w-5 text-xs font-bold text-white">
-                {cartItems.length}
-              </div>
-            )}
-          </div>
+          
         </div>
         
-      </div>
-      <div className="flex justify-start gap-0 text-sm font-bold text-gray-700 h-[100%]">
-            {tabs.map((item) => (
-              <div key={item.id} className="h-[100%]">
-                <div
-                  className={` cursor-pointer  flex justify-center items-center px-5 h-[96%] `}
-                  onMouseEnter={() => handleMouseEnter(item.id)}
-                  onMouseLeave={() => handleMouseLeave()}
-                >
-                  <p onClick={() => handleSectionClick(item.value)}>
-                    {item.value}
-                  </p>
-                </div>
+        <div className="flex justify-center  gap-3 text-sm font-bold text-gray-700">
+              {tabs.map((item) => (
+                <div key={item.id} className="h-[100%]">
+                  <div
+                    className={` cursor-pointer  flex justify-center items-center px-5 h-[96%] `}
+                   
+                  >
+                    <p className={`${item.value.toLowerCase() == productsFilters.section[0] ? getBgColor(item.id).replace("bg","text") : ``}`}  onClick={() => handleSectionClick(item.value)}>
+                      {item.value}
+                    </p>
+                  </div>
 
-                <div
-                  onMouseEnter={() => handleMouseEnter(item.id)}
-                  onMouseLeave={() => handleMouseLeave()}
-                  className={`${
-                    item.id == hoveredTab ? getBgColor(item.id) : ``
-                  } h-[4%]`}
-                ></div>
-              </div>
-            ))}
-      </div>
+                  <div
+                   
+                    className={`${
+                      item.id == hoveredTab ? getBgColor(item.id) : ``
+                    } h-[4%]`}
+                  ></div>
+                </div>
+              ))}
+        </div>
+      
       </div>
       
     </div>  

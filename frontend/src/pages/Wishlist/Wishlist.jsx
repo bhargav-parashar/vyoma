@@ -54,7 +54,7 @@ const Wishlist = () => {
   return (
     <div className={`min-h-screen  bg-gray-200 overflow-x-hidden`}>
       {wishlistItems.length > 0 && (
-        <p className="pt-25 px-20">
+        <p className="md:pt-25 sm:pt-30 md:px-20 sm:px-5">
           <span className="font-bold">{`My Wishlist `}</span>
           <span>{`${wishlistItems.length} items `}</span>
         </p>
@@ -62,10 +62,10 @@ const Wishlist = () => {
       <div
         className={`${
           wishlistItems.length == 0 ? `pt-25` : `pt-5`
-        }  flex flex-wrap flex-row justify-start gap-6 bg-gray-200 px-20`}
+        }  flex flex-wrap flex-row justify-start gap-6 bg-gray-200 sm:px-5 md:px-20`}
       >
         {wishlistItems.map((item) => (
-          <div key={item.id} className="w-50 my-2">
+          <div key={item.id} className="sm:w-38 md:w-50 my-2">
             <ProductCard
               item={item}
               isForWishlist
@@ -78,8 +78,8 @@ const Wishlist = () => {
         ))}
       </div>
       {wishlistItems.length == 0 && (
-        <div className="pt-20 flex flex-col items-center ">
-          <div className="w-[27%]  text-center">
+        <div className="sm:pt-10 md:pt-20 flex flex-col items-center ">
+          <div className="sm:w-[60%] md:w-[27%]  text-center">
             <p className="font-bold mb-5">YOUR WISHLIST IS EMPTY</p>
             <p className="text-gray-500 text-justify mb-5">
               Add items that you like to your wishlist. Review them anytime and

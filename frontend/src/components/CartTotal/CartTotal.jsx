@@ -6,7 +6,7 @@ const CartTotal = ({setIsCheckoutModalOpen}) => {
     setIsCheckoutModalOpen(true);
   }
   return (
-    <div className="ml-5 my-2 bg-white rounded border border-gray-300 p-4">
+    <div className="md:ml-5 my-2 bg-white rounded border border-gray-300 p-4">
       <p className="text-sm font-semibold text-gray-600">{`PRICE DETAILS (${cartItems.length} Items) `}</p>
       <p className="my-4 text-sm  flex justify-between">
         <span>{`Total MRP`}</span>

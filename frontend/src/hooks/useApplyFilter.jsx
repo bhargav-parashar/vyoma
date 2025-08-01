@@ -3,7 +3,6 @@ import { useSearchParams } from "react-router-dom";
 import { applyFilter } from "../utilities/applyFilter";
 import { applySort } from "../utilities/applySort";
 import { applySearch } from "../utilities/applySearch";
-//import allProducts from "../constants/products.json";
 import {allProducts} from "../constants/productList.json";
 
 const useApplyFilter = ({
