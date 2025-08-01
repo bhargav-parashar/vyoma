@@ -47,8 +47,8 @@ const ProductsPage = () => {
   return (
     <div className="h-screen flex flex-col overflow-y-auto bg-gray-200">
     
-      <div className="mt-20 px-[5%] flex  overflow-hidden z-10 w-[100%]  h-screen overflow-y-auto ">
-        <aside className="w-1/6 h-screen border-r border-gray-300 ">
+      <div className="sm:mt-28 md:mt-20 sm:px-[1%] md:px-[5%] flex  overflow-hidden z-10 w-[100%]  h-screen overflow-y-auto ">
+        <aside className=" sm:hidden md:block w-1/6 h-screen border-r border-gray-300 ">
           <div className="h-13 flex justify-between">
             <h2 className="text-sm font-bold  p-4 ">FILTERS</h2>
             {(productsFilters.category.length > 0 ||
@@ -73,7 +73,7 @@ const ProductsPage = () => {
           />
         </aside>
 
-        <main className="w-5/6 h-cover">
+        <main className=" sm:w-6/6 md:w-5/6 h-cover">
           <div className="h-13 flex justify-start items-center gap-1 px-4">
             <div className="flex justify-start w-[100%] gap-2">
               {Pills.filterPills.map((pill) => (
@@ -116,7 +116,7 @@ const ProductsPage = () => {
             //SIZE FILTER SECTION
             selectedPill == 2 && (
               <div
-                className="grid grid-cols-[repeat(auto-fit,_minmax(100px,100px))] pt-1 pb-5  px-4 gap-x-8 gap-y-1 shadow-b-lg"
+                className=" grid grid-cols-[repeat(auto-fit,_minmax(100px,100px))] pt-1 pb-5  px-4 gap-x-8 gap-y-1 shadow-b-lg"
                 style={{ boxShadow: "0 4px 4px -4px rgba(0, 0, 0, 0.2)" }}
               >
                 {SizeList.availableSizes.map((size) => (
@@ -152,13 +152,16 @@ const ProductsPage = () => {
               />
             ))}
           </div>
-          <div className="grid grid-cols-[repeat(auto-fit,_minmax(200px,200px))] gap-7 p-4 ">
+         
+          <div className="grid sm:grid-cols-[repeat(auto-fit,_minmax(160px,160px))] md:grid-cols-[repeat(auto-fit,_minmax(200px,200px))] sm:gap-2 md:gap-7 sm:p-1 md:p-4 justify-center">
+            
             {filteredProducts.map((item) => (
-              <div key={item.id}>
+              <div  key={item.id}>
                 <ProductCard item={item} />
               </div>
             ))}
           </div>
+
         </main>
       </div>
       {isModalOpen && (
