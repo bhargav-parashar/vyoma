@@ -19,6 +19,7 @@ import { addItem } from "../../redux/slices/cartSlice";
 import { addItemToWishlist, removeItemFromWishlist } from "../../redux/slices/wishlistSlice";
 import { useSelector } from "react-redux";
 import useSnackbar from "../../hooks/useSnackbar";
+import ProductCarousel from "../../components/Carousel/ProductCarousel";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -111,11 +112,11 @@ const ProductDetails = () => {
   }
 
   return (
-    <div className=" pt-25">
-      <div className=" h-screen flex px-15 gap-2">
+    <div className="sm:pt-30 md:pt-25 pb-5">
+      <div className=" h-[80%]  flex sm:flex-col md:flex-row md:gap-2 sm:px-5 md:px-15 ">  
         {/* IMAGES  */}
-        <div className=" h-[80%] w-[60%] flex flex-col gap-2">
-          <div className=" h-[100%] w-[100%] flex gap-2">
+        <div className="sm:hidden md:block h-[80%] w-[60%] flex flex-col gap-2">
+          <div className=" h-[100%] w-[100%] flex gap-2 pb-2">
             <div className=" h-[100%] w-[100%]">
               <img
                 alt="product"
@@ -148,9 +149,12 @@ const ProductDetails = () => {
             </div>
           </div>
         </div>
+         <div className="md:hidden  rounded-2xl overflow-hidden">
+          <ProductCarousel  images={selectedProduct.images}/>
+         </div> 
 
         {/* PRODUCT DETAILS SECTION */}
-        <div className=" h-[80%] w-[40%]">
+        <div className=" h-[80%] sm:w-[100%] md:w-[40%]">
           {/* Product Header and rating */}
           <div className="border-b-1 border-gray-300 p-2">
             <p className="text-2xl font-semibold">{selectedProduct.brand}</p>
@@ -209,38 +213,38 @@ const ProductDetails = () => {
                     handleGoToBagClick()
                   }
                 >
-                  <ArrowRightIcon className="h-5 w-5" />
-                  <span>GO TO BAG</span>
+                  <ArrowRightIcon className="sm:h-3 md:h-5 sm:w-3 md:w-5" />
+                  <span className="sm:text-sm md:text-md">GO TO BAG</span>
                 </button>
               ) : (
                 <button
-                  className="border rounded px-5 py-4 w-[50%] cursor-pointer flex items-center justify-center gap-2 bg-rose-400 text-white font-bold hover:brightness-115"
+                  className="border rounded px-5 py-4   w-[50%] cursor-pointer flex items-center justify-center gap-2 bg-rose-400 text-white font-bold hover:brightness-115"
                   onClick={
                     //handleToggleCart(selectedProduct)
                     handleAddToBag
                   }
                 >
-                  <ShoppingBagIcon className="h-5 w-5" />
-                  <span>ADD TO BAG</span>
+                  <ShoppingBagIcon className="sm:h-3 md:h-5 sm:w-3 md:w-5" />
+                  <span className="sm:text-sm md:text-md">ADD TO BAG</span>
                 </button>
               )}
 
               {/* BUTTON : Add to wishlist */}
               {wishlistItems.find((item) => item.id == selectedProduct.id) ? (
                 <button
-                  className={`border border-gray-300 rounded px-5 py-4 w-[37%] cursor-pointer flex items-center justify-center gap-2 hover:border-black bg-gray-600`}
+                  className={`border border-gray-300 rounded px-5 py-4  sm:w-[45%] md:w-[37%] cursor-pointer flex items-center justify-center gap-2 hover:border-black bg-gray-600`}
                   onClick={handleRemoveWishlistItem}
                 >
-                  <HeartSolidIcon className="h-5 w-5 text-rose-400" />
-                  <span className="font-bold text-white">WISHLISTED</span>
+                  <HeartSolidIcon className="sm:h-3 md:h-5 sm:w-3 md:w-5 text-rose-400" />
+                  <span className="font-bold text-white sm:text-sm md:text-md">WISHLISTED</span>
                 </button>
               ) : (
                 <button
-                  className={`border border-gray-300 rounded px-5 py-4 w-[37%] cursor-pointer flex items-center justify-center gap-2 hover:border-black`}
+                  className={`border border-gray-300 rounded px-5 py-4 sm:w-[45%] md:w-[37%] cursor-pointer flex items-center justify-center gap-2 hover:border-black`}
                   onClick={handleAddToWishlist}
                 >
-                  <HeartOutlineIcon className="h-5 w-5" />
-                  <span>WISHLIST</span>
+                  <HeartOutlineIcon className="sm:h-3 md:h-5 sm:w-3 md:w-5" />
+                  <span className="sm:text-sm md:text-md">WISHLIST</span>
                 </button>
               )}
             </div>
