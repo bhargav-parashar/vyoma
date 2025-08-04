@@ -10,10 +10,10 @@ import Pills from "../../constants/pills.json";
 import usePill from "../../hooks/usePill";
 import useApplyFilter from "../../hooks/useApplyFilter";
 import { useContext } from "react";
-import {FilterContext} from "../../contexts/FiltersContext";
+import { FilterContext } from "../../contexts/FiltersContext";
+import { InboxIcon } from "@heroicons/react/24/outline";
 
 const ProductsPage = () => {
-  
   //GET CONTEXT VARIABLES
   const {
     section,
@@ -25,9 +25,8 @@ const ProductsPage = () => {
     handleMouseEnter,
     handleMouseLeave,
     isModalOpen,
-    clearFilters
+    clearFilters,
   } = useContext(FilterContext);
-  
 
   //APPLY FILTERS
   const {
@@ -36,17 +35,14 @@ const ProductsPage = () => {
     setFilteredProducts,
     updateParams,
     sortBy,
-    handleSort  
+    handleSort,
   } = useApplyFilter({ section, productsFilters, setProductsFilters, search });
-
 
   //HANDLE PILLS SECTION
   const { selectedPill, handlePillClick } = usePill();
-  
-  
+
   return (
     <div className="h-screen flex flex-col overflow-y-auto bg-gray-200">
-    
       <div className="sm:mt-28 md:mt-20 sm:px-[1%] md:px-[5%] flex  overflow-hidden z-10 w-[100%]  h-screen overflow-y-auto ">
         <aside className=" sm:hidden md:block w-1/6 h-screen border-r border-gray-300 ">
           <div className="h-13 flex justify-between">
@@ -152,16 +148,29 @@ const ProductsPage = () => {
               />
             ))}
           </div>
-         
+
           <div className="grid sm:grid-cols-[repeat(auto-fit,_minmax(160px,160px))] md:grid-cols-[repeat(auto-fit,_minmax(200px,200px))] sm:gap-2 md:gap-7 sm:p-1 md:p-4 sm:justify-center md:justify-start ">
-            
             {filteredProducts.map((item) => (
-              <div  key={item.id}>
+              <div key={item.id}>
                 <ProductCard item={item} />
               </div>
             ))}
+            
           </div>
-
+          <div>
+            {filteredProducts.length == 0 && (
+              <div className="sm:pt-10 md:pt-20 flex flex-col items-center w-[screen]">
+                <div className="sm:w-[60%] md:w-[27%]  text-center">
+                  <p className="font-bold mb-5">NO PRODUCTS FOUND</p>
+                  <p className="text-gray-500 mb-5">
+                    There are no products available for the applied filters.
+                  </p>
+                </div>
+                <InboxIcon className=" text-gray-400 h-20" />
+                
+              </div>
+            )}
+          </div>
         </main>
       </div>
       {isModalOpen && (
