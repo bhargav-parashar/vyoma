@@ -12,6 +12,7 @@ import useApplyFilter from "../../hooks/useApplyFilter";
 import { useContext } from "react";
 import { FilterContext } from "../../contexts/FiltersContext";
 import { InboxIcon } from "@heroicons/react/24/outline";
+import SortFilterFooter from "../../components/SortFilterFooter/SortFilterFooter";
 
 const ProductsPage = () => {
   //GET CONTEXT VARIABLES
@@ -155,7 +156,6 @@ const ProductsPage = () => {
                 <ProductCard item={item} />
               </div>
             ))}
-            
           </div>
           <div>
             {filteredProducts.length == 0 && (
@@ -167,10 +167,10 @@ const ProductsPage = () => {
                   </p>
                 </div>
                 <InboxIcon className=" text-gray-400 h-20" />
-                
               </div>
             )}
           </div>
+          <SortFilterFooter/>
         </main>
       </div>
       {isModalOpen && (
