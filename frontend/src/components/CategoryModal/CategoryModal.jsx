@@ -1,5 +1,6 @@
 import categories from "../../constants/categories.json";
 import {useNavigate} from "react-router-dom";
+import { useDispatch } from "react-redux";
 
 const getBgColor = (idx) => {
   switch (idx) {
@@ -28,25 +29,26 @@ const getBgColor = (idx) => {
 const CategoryModal = ({ hoveredTab, handleMouseEnter, handleMouseLeave, setIsModalOpen }) => {
 
   const navigate = useNavigate();
- 
+  const dispatch = useDispatch();
+
   const handleHeaderClick = (hoveredTab, category) =>{
     switch(hoveredTab){
       case 1 :
          navigate(`/products/men?category=${category}`);
-         handleMouseLeave();
+         dispatch(handleMouseLeave());
          break;
       case 2 :
          navigate(`/products/women?category=${category}`);
-         handleMouseLeave();
+         dispatch(handleMouseLeave());
          break;
       case 3 :
          navigate(`/products/kids?category=${category}`);
-         handleMouseLeave();
+         dispatch(handleMouseLeave());
          break;
         
       case 4 :
          navigate(`/products/home?category=${category}`);
-         handleMouseLeave();
+         dispatch(handleMouseLeave());
         break;
      
       default :
@@ -54,14 +56,14 @@ const CategoryModal = ({ hoveredTab, handleMouseEnter, handleMouseLeave, setIsMo
          break;
     }
 
-    setIsModalOpen(false);
+    dispatch(setIsModalOpen(false));
   }
 
   return (
     <div className="fixed inset-0 bg-black/50 z-10">
       <div
-        onMouseEnter={() => handleMouseEnter(hoveredTab)}
-        onMouseLeave={() => handleMouseLeave()}
+        onMouseEnter={() => dispatch(handleMouseEnter(hoveredTab))}
+        onMouseLeave={() => dispatch(handleMouseLeave())}
         className={`
           bg-white my-20 mx-auto w-[90%] h-[80%] z-20
           transition-opacity duration-700 delay-200

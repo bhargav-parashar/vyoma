@@ -4,13 +4,13 @@ import {createSlice} from "@reduxjs/toolkit";
 const modalSlice = createSlice({
     name: 'modal',
     initialState : {
-        hoverTab : -1,
+        hoveredTab : -1,
         isModalOpen : false,
         isCheckoutModalOpen : false
     },
     reducers: {
         setHoveredTab: (state,action) =>{
-            state.hoverTab = action.payload;
+            state.hoveredTab = action.payload;
         },
         setIsModalOpen : (state,action) =>{
             state.isModalOpen = action.payload;
@@ -21,11 +21,11 @@ const modalSlice = createSlice({
         handleMouseEnter: (state,action) =>{
             const tab = action.payload;
             state.isModalOpen = true;
-            state.hoverTab = tab;
+            state.hoveredTab = tab;
         },
         handleMouseLeave: (state) =>{
             state.isModalOpen = false;
-            state.hoverTab = -1;
+            state.hoveredTab = -1;
         }
     }
 });

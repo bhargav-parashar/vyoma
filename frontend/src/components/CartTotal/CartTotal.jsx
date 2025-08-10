@@ -1,9 +1,11 @@
 import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 const CartTotal = ({setIsCheckoutModalOpen}) => {
+  const dispatch = useDispatch();
   const cartItems = useSelector((store) => store.cart.items);
   const handlePlaceOrder = () =>{
-    setIsCheckoutModalOpen(true);
+    dispatch(setIsCheckoutModalOpen(true));
   }
   return (
     <div className="md:ml-5 my-2 bg-white rounded border border-gray-300 p-4">

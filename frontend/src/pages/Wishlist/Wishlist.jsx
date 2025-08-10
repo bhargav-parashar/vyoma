@@ -6,12 +6,16 @@ import { useDispatch } from "react-redux";
 import useSnackbar from "../../hooks/useSnackbar";
 import { InboxIcon } from "@heroicons/react/24/outline";
 import { useNavigate } from "react-router-dom";
-import { FilterContext } from "../../contexts/FiltersContext";
-import { useContext } from "react";
+//import { FilterContext } from "../../contexts/FiltersContext";
+//import { useContext } from "react";
 import CategoryModal from "../../components/CategoryModal/CategoryModal";
+import { setIsModalOpen, handleMouseEnter, handleMouseLeave} from "../../redux/slices/modalSlice";
 
 const Wishlist = () => {
   const wishlistItems = useSelector((store) => store.wishlist.items);
+  const hoveredTab = useSelector((store)=>store.modal.hoveredTab);
+  const isModalOpen = useSelector((store)=>store.modal.isModalOpen);
+
   const dispatch = useDispatch();
   const { showSnackbar } = useSnackbar();
 
@@ -43,13 +47,13 @@ const Wishlist = () => {
     navigate(`/`);
   };
   //GET CONTEXT VARIABLES
-  const {
-    hoveredTab,
-    setIsModalOpen,
-    handleMouseEnter,
-    handleMouseLeave,
-    isModalOpen,
-  } = useContext(FilterContext);
+  //const {
+      //hoveredTab,
+      //setIsModalOpen,
+      //handleMouseEnter,
+      //handleMouseLeave,
+      //isModalOpen,
+  //} = useContext(FilterContext);
 
   return (
     <div className={`min-h-screen  bg-gray-200 overflow-x-hidden`}>

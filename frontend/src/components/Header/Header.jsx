@@ -8,14 +8,22 @@ import { UserIcon } from "@heroicons/react/24/outline";
 import { HeartIcon } from "@heroicons/react/24/outline";
 import { ShoppingBagIcon } from "@heroicons/react/24/outline";
 import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { setIsModalOpen,handleMouseEnter,handleMouseLeave } from "../../redux/slices/modalSlice";
 
 const Header = () => {
+  
+  // Selector hook - gives access to store
+  const cartItems = useSelector((store) => store.cart.items);
+  const hoveredTab = useSelector((store) => store.modal.hoveredTab);
+  const dispatch = useDispatch();
+
   const {
     search,
-    hoveredTab,
-    setIsModalOpen,
-    handleMouseEnter,
-    handleMouseLeave,
+      //hoveredTab,
+      //setIsModalOpen,
+      //handleMouseEnter,
+      //handleMouseLeave,
     clearFilters,
     handleSearch,
     productsFilters
@@ -43,7 +51,8 @@ const Header = () => {
   };
 
   const handleSectionClick = (item) => {
-    setIsModalOpen(false);
+    //setIsModalOpen(false);
+    dispatch(setIsModalOpen(false));
     navigate(`/products/${item.toLowerCase()}`);
   };
 
@@ -63,8 +72,7 @@ const Header = () => {
     navigate(`/cart`);
   };
 
-  // Selector hook - gives access to store
-  const cartItems = useSelector((store) => store.cart.items);
+
 
   return (
     <div>
@@ -85,8 +93,8 @@ const Header = () => {
               <div key={item.id} className="h-[100%]">
                 <div
                   className={` cursor-pointer  flex justify-center items-center px-5 h-[96%] `}
-                  onMouseEnter={() => handleMouseEnter(item.id)}
-                  onMouseLeave={() => handleMouseLeave()}
+                  onMouseEnter={() => dispatch(handleMouseEnter(item.id)) }
+                  onMouseLeave={() => dispatch(handleMouseLeave()) }
                 >
                   <p onClick={() => handleSectionClick(item.value)}>
                     {item.value}
@@ -94,8 +102,8 @@ const Header = () => {
                 </div>
 
                 <div
-                  onMouseEnter={() => handleMouseEnter(item.id)}
-                  onMouseLeave={() => handleMouseLeave()}
+                  onMouseEnter={() => dispatch(handleMouseEnter(item.id))}
+                  onMouseLeave={() => dispatch(handleMouseLeave())}
                   className={`${
                     item.id == hoveredTab ? getBgColor(item.id) : ``
                   } h-[4%]`}

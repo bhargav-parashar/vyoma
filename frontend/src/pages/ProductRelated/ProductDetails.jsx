@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
-import { FilterContext } from "../../contexts/FiltersContext";
-import { useContext, useState } from "react";
+//import { FilterContext } from "../../contexts/FiltersContext";
+import { useState } from "react";
 import CategoryModal from "../../components/CategoryModal/CategoryModal";
 import { allProducts } from "../../constants/productList.json";
 import Rating from "../../components/ProductCard/Rating";
@@ -20,6 +20,7 @@ import { addItemToWishlist, removeItemFromWishlist } from "../../redux/slices/wi
 import { useSelector } from "react-redux";
 import useSnackbar from "../../hooks/useSnackbar";
 import ProductCarousel from "../../components/Carousel/ProductCarousel";
+import { setIsModalOpen, handleMouseEnter, handleMouseLeave} from "../../redux/slices/modalSlice";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -47,16 +48,18 @@ const ProductDetails = () => {
   const { showSnackbar } = useSnackbar();
 
   //GET FILTER CONTEXT VARIABLES
-  const {
-    hoveredTab,
-    setIsModalOpen,
-    handleMouseEnter,
-    handleMouseLeave,
-    isModalOpen,
-  } = useContext(FilterContext);
+ // const {
+      //hoveredTab,
+      //setIsModalOpen,
+      //handleMouseEnter,
+      //handleMouseLeave,
+      //isModalOpen,
+ // } = useContext(FilterContext);
 
   const cartItems = useSelector((store) => store.cart.items);
   const wishlistItems = useSelector((store)=>store.wishlist.items);
+  const hoveredTab = useSelector((store)=>store.modal.hoveredTab);
+  const isModalOpen = useSelector((store)=>store.modal.isModalOpen);
 
   const handleGoToBagClick = () =>{
     navigate(`/cart`);

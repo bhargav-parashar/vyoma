@@ -13,19 +13,24 @@ import { useContext } from "react";
 import { FilterContext } from "../../contexts/FiltersContext";
 import { InboxIcon } from "@heroicons/react/24/outline";
 import SortFilterFooter from "../../components/SortFilterFooter/SortFilterFooter";
+import { useSelector } from "react-redux";
+import { setIsModalOpen, handleMouseEnter, handleMouseLeave} from "../../redux/slices/modalSlice";
 
 const ProductsPage = () => {
+  const hoveredTab = useSelector((store) => store.modal.hoveredTab);
+  const isModalOpen = useSelector((store) => store.modal.isModalOpen);
+
   //GET CONTEXT VARIABLES
   const {
     section,
     search,
     productsFilters,
     setProductsFilters,
-    hoveredTab,
-    setIsModalOpen,
-    handleMouseEnter,
-    handleMouseLeave,
-    isModalOpen,
+      //hoveredTab,
+      //setIsModalOpen,
+      //handleMouseEnter,
+      //handleMouseLeave,
+      //isModalOpen,
     clearFilters,
   } = useContext(FilterContext);
 
@@ -170,7 +175,7 @@ const ProductsPage = () => {
               </div>
             )}
           </div>
-          <SortFilterFooter/>
+          <SortFilterFooter />
         </main>
       </div>
       {isModalOpen && (

@@ -12,7 +12,7 @@ const CheckoutModal = ({setIsCheckoutModalOpen}) => {
   const { showSnackbar } = useSnackbar();
   const dispatch = useDispatch();
   const onClose = () =>{
-    setIsCheckoutModalOpen(false);
+    dispatch(setIsCheckoutModalOpen(false));
     dispatch(clearCart());
      showSnackbar("Ordered all items from bag.", 3000, "success");
   }

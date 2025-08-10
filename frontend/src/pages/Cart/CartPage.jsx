@@ -3,27 +3,32 @@ import CartCard from "../../components/ProductCard/CartCard";
 import CartTotal from "../../components/CartTotal/CartTotal";
 import { useNavigate } from "react-router-dom";
 import { InboxIcon } from "@heroicons/react/24/outline";
-import { FilterContext } from "../../contexts/FiltersContext";
-import { useContext } from "react";
+//import { FilterContext } from "../../contexts/FiltersContext";
+//import { useContext } from "react";
 import CategoryModal from "../../components/CategoryModal/CategoryModal";
 import CheckoutModal from "../../components/CheckoutModal/CheckoutModal";
+import { setIsModalOpen, handleMouseEnter, handleMouseLeave, setIsCheckoutModalOpen} from "../../redux/slices/modalSlice";
 
 const CartPage = () => {
   const cartItems = useSelector((store) => store.cart.items);
+  const hoveredTab = useSelector((store)=>store.modal.hoveredTab);
+  const isModalOpen = useSelector((store)=>store.modal.isModalOpen);
+  const isCheckoutModalOpen = useSelector((store)=>store.modal.isCheckoutModalOpen);
+
   const navigate = useNavigate();
   const handleGoToWishlist = () => {
     navigate(`/wishlist`);
   };
   //GET CONTEXT VARIABLES
-  const {
-    hoveredTab,
-    setIsModalOpen, 
-    handleMouseEnter,
-    handleMouseLeave,
-    isModalOpen,
-    isCheckoutModalOpen,
-    setIsCheckoutModalOpen
-  } = useContext(FilterContext);
+  //const {
+      // hoveredTab,
+      // setIsModalOpen, 
+      // handleMouseEnter,
+      // handleMouseLeave,
+      // isModalOpen,
+      // isCheckoutModalOpen,
+      //setIsCheckoutModalOpen
+  //} = useContext(FilterContext);
 
  
 
