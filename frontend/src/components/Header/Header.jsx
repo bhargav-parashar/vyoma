@@ -13,17 +13,13 @@ import { setIsModalOpen,handleMouseEnter,handleMouseLeave } from "../../redux/sl
 
 const Header = () => {
   
-  // Selector hook - gives access to store
+  // Selector hook 
   const cartItems = useSelector((store) => store.cart.items);
   const hoveredTab = useSelector((store) => store.modal.hoveredTab);
   const dispatch = useDispatch();
 
   const {
     search,
-      //hoveredTab,
-      //setIsModalOpen,
-      //handleMouseEnter,
-      //handleMouseLeave,
     clearFilters,
     handleSearch,
     productsFilters
@@ -51,7 +47,6 @@ const Header = () => {
   };
 
   const handleSectionClick = (item) => {
-    //setIsModalOpen(false);
     dispatch(setIsModalOpen(false));
     navigate(`/products/${item.toLowerCase()}`);
   };

@@ -26,11 +26,6 @@ const ProductsPage = () => {
     search,
     productsFilters,
     setProductsFilters,
-      //hoveredTab,
-      //setIsModalOpen,
-      //handleMouseEnter,
-      //handleMouseLeave,
-      //isModalOpen,
     clearFilters,
   } = useContext(FilterContext);
 

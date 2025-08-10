@@ -1,5 +1,4 @@
 import { useParams } from "react-router-dom";
-//import { FilterContext } from "../../contexts/FiltersContext";
 import { useState } from "react";
 import CategoryModal from "../../components/CategoryModal/CategoryModal";
 import { allProducts } from "../../constants/productList.json";
@@ -46,15 +45,6 @@ const ProductDetails = () => {
     setSelectedSize(size);
   };
   const { showSnackbar } = useSnackbar();
-
-  //GET FILTER CONTEXT VARIABLES
- // const {
-      //hoveredTab,
-      //setIsModalOpen,
-      //handleMouseEnter,
-      //handleMouseLeave,
-      //isModalOpen,
- // } = useContext(FilterContext);
 
   const cartItems = useSelector((store) => store.cart.items);
   const wishlistItems = useSelector((store)=>store.wishlist.items);
