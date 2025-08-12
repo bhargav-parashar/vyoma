@@ -4,8 +4,8 @@ import filters from "../../constants/filters.json";
 const Filters = ({ section, productsFilters, updateParams }) => {
   
   return (
-    <div className="h-screen flex flex-col">
-      <hr className="text-gray-300 " />
+    <div className="h-screen flex flex-col dark:text-primary">
+      <hr className="text-gray-300 dark:text-gray-500" />
 
       <FilterGroup
         section={section}
@@ -15,7 +15,7 @@ const Filters = ({ section, productsFilters, updateParams }) => {
         selectedValues={productsFilters.category}
         updateParams={updateParams}
       />
-      <hr className="text-gray-300 " />
+      <hr className="text-gray-300 dark:text-gray-500" />
       <FilterGroup
         section={section}
         title={"BRANDS"}
@@ -24,7 +24,7 @@ const Filters = ({ section, productsFilters, updateParams }) => {
         selectedValues={productsFilters.brand}
         updateParams={updateParams}
       />
-      <hr className="text-gray-300 " />
+      <hr className="text-gray-300 dark:text-gray-500" />
       <FilterGroup
         section={section}
         title={"COLORS"}

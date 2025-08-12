@@ -43,18 +43,18 @@ const ProductsPage = () => {
   const { selectedPill, handlePillClick } = usePill();
 
   return (
-    <div className="h-screen flex flex-col overflow-y-auto bg-gray-200">
+    <div className="h-screen flex flex-col overflow-y-auto bg-primary dark:bg-primary-dark">
       <div className="sm:mt-28 md:mt-20 sm:px-[1%] md:px-[5%] flex  overflow-hidden z-10 w-[100%]  h-screen overflow-y-auto ">
-        <aside className=" sm:hidden md:block w-1/6 h-screen border-r border-gray-300 ">
-          <div className="h-13 flex justify-between">
-            <h2 className="text-sm font-bold  p-4 ">FILTERS</h2>
+        <aside className=" sm:hidden md:block w-1/6 h-screen border-r border-gray-300 dark:border-gray-500 ">
+          <div className="h-13 flex justify-between ">
+            <h2 className="text-sm font-bold  p-4 dark:text-primary">FILTERS</h2>
             {(productsFilters.category.length > 0 ||
               productsFilters.brand.length > 0 ||
               productsFilters.color.length > 0 ||
               productsFilters.origin.length > 0 ||
               productsFilters.size.length > 0) && (
               <h2
-                className="text-xs font-bold p-4 cursor-pointer text-red-400"
+                className="text-xs font-bold p-4 cursor-pointer text-red-400 "
                 onClick={() => clearFilters()}
               >
                 CLEAR ALL

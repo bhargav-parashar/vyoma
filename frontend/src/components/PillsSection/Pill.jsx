@@ -14,24 +14,24 @@ const Pill = ({
 }) => {
   return (
     <div
-      className={` flex items-center justify-start gap-2 rounded-full  px-3 py-1   ${
+      className={` flex items-center justify-start gap-2 rounded-full  px-3 py-1 dark:text-primary    ${
         secondary
-          ? `mt-2 mb-7 box-border border border-gray-400 hover:border-gray-600 cursor-default`
-          : `box-border border border-transparent hover:bg-gray-200 cursor-pointer`
+          ? `mt-2 mb-7 box-border border border-gray-400  hover:border-gray-600 dark:hover:border-primary  cursor-default`
+          : `box-border border border-transparent hover:bg-gray-300 dark:hover:bg-gray-500 cursor-pointer`
       } `}
       onClick={ () =>{ 
         if(!secondary)
           handlePillClick(itemKey)
       } }
     >
-      <p className={secondary ? "text-xs font-thin" : "text-sm"}>{value}</p>
+      <p className={`${secondary ? `text-xs font-thin` : `text-sm`} `}>{value}</p>
       {itemKey === selectedPill && !secondary ? (
-        <ChevronUpIcon className="w-3 h-3 text-gray-600" />
+        <ChevronUpIcon className="w-3 h-3 text-gray-600 dark:text-primary" />
       ) : !secondary ? (
-        <ChevronDownIcon className="w-3 h-3 text-gray-600" />
+        <ChevronDownIcon className="w-3 h-3 text-gray-600 dark:text-primary" />
       ) : (
         <XMarkIcon
-          className=" h-3 text-gray-600 cursor-pointer"
+          className=" h-3 text-gray-600 cursor-pointer dark:text-primary"
           onClick={() => updateParams(itemKey, value)}
         />
       )}

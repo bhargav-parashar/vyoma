@@ -72,7 +72,7 @@ const Header = () => {
   return (
     <div>
      {/* DESKTOP HEADER*/}
-      <div className=" sm:hidden md:flex items-center justify-between bg-white h-20 px-10 shadow-lg z-20 fixed w-[100%]  ">
+      <div className=" sm:hidden md:flex items-center justify-between bg-primary-extra-light dark:bg-primary-extra-dark h-20 px-10 shadow-lg z-20 fixed w-[100%]  ">
         <div className="h-[100%] flex justify-start items-center gap-10 w-[40%] ">
           {/*HOME IMAGE*/}
           <div
@@ -91,7 +91,7 @@ const Header = () => {
                   onMouseEnter={() => dispatch(handleMouseEnter(item.id)) }
                   onMouseLeave={() => dispatch(handleMouseLeave()) }
                 >
-                  <p onClick={() => handleSectionClick(item.value)}>
+                  <p className="dark:text-primary-extra-light" onClick={() => handleSectionClick(item.value)}>
                     {item.value}
                   </p>
                 </div>
@@ -121,22 +121,22 @@ const Header = () => {
           />
 
           <div className="h-[100%] flex items-center justify-end w-[30%] gap-7 ">
-            <div className="flex flex-col items-center justify-end hover:cursor-default">
-              <UserIcon className="h-5 w-5" />
-              <p className="text-xs font-bold">Guest</p>
+            <div className="flex flex-col items-center justify-end hover:cursor-default dark:text-primary">
+              <UserIcon className="h-5 w-5 " />
+              <p className="text-xs font-bold ">Guest</p>
             </div>
             <div
-              className="flex flex-col items-center justify-end hover:cursor-pointer "
+              className="flex flex-col items-center justify-end hover:cursor-pointer dark:text-primary"
               onClick={handleWishlistClick}
             >
-              <HeartIcon className="h-5 w-5" />
+              <HeartIcon className="h-5 w-5 " />
               <p className="text-xs font-bold">Wishlist</p>
             </div>
             <div
-              className="relative flex flex-col items-center justify-end hover:cursor-pointer"
+              className="relative flex flex-col items-center justify-end hover:cursor-pointer dark:text-primary"
               onClick={handleCartClick}
             >
-              <ShoppingBagIcon className="h-5 w-5" />
+              <ShoppingBagIcon className="h-5 w-5 " />
               <p className="text-xs font-bold ">Bag</p>
               {cartItems.length > 0 && (
                 <div className="absolute bottom-6 left-3 flex items-center justify-center rounded-full bg-rose-400  h-5 w-5 text-xs font-bold text-white">

@@ -1,9 +1,18 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 @theme{
     --breakpoint-*: initial;
     --breakpoint-sm : 0px;
     --breakpoint-md : 1190px;
     --breakpoint-lg : 1191px;
+
+    --color-primary: #e5e7eb;
+    --color-primary-extra-light :  #ffffff;
+    --color-secondary-light: #f3f4f6;
+
+    --color-primary-dark : #364153;
+    --color-primary-extra-dark :  #101828;
+    --color-secondary-dark: #1e2939;
 }
 
 

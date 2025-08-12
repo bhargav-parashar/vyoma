@@ -60,12 +60,12 @@ const SearchBar = ({
   return (
     <div className="relative inline-block text-left w-[70%]">
       <div className="relative h-[100%] flex items-center w-[100%]">
-        <MagnifyingGlassIcon className="w-5 h-5 text-gray-400 absolute left-3 top-1/2 transform -translate-y-1/2" />
+        <MagnifyingGlassIcon className="w-5 h-5 text-gray-400 dark:text-gray-500 absolute left-3 top-1/2 transform -translate-y-1/2" />
         {
           inputValue.length > 0 && 
           <XMarkIcon
             onClick={handleClearSearchClick}
-            className="w-5 h-5 text-gray-400 absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer"
+            className="w-5 h-5 text-gray-400 dark:text-gray-500  absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer"
           />
         }
         <input
@@ -73,10 +73,10 @@ const SearchBar = ({
           value={inputValue}
           onChange={handleInputChange}
           placeholder={placeholder}
-          className={`w-full pl-10 pr-4 py-2 border border-gray-300  bg-gray-100 text-sm focus:outline-none focus:bg-transparent rounded-sm ${
+          className={`w-full pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-600 dark:placeholder-gray-500   bg-secondary-light dark:bg-secondary-dark  text-sm focus:outline-none focus:bg-transparent rounded-sm ${
             suggestions.length > 0 &&
             `border-b-transparent rounded-b-none bg-transparent`
-          }`}
+          } focus:border-blue-500 focus:border-3 dark:text-primary`}
         />
       </div>
       {suggestions.length > 0 && (

@@ -11,8 +11,10 @@ function App() {
     <Provider store={appStore}>
       <SnackbarProvider>
         <FilterContextProvider>
-          <Header />
-          <Outlet />
+          <div className="" >
+            <Header />
+            <Outlet />
+          </div>
         </FilterContextProvider>
       </SnackbarProvider>
     </Provider>
