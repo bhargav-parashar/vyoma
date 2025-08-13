@@ -121,6 +121,10 @@ const Header = () => {
           />
 
           <div className="h-[100%] flex items-center justify-end w-[30%] gap-7 ">
+             <div className="flex flex-col items-center justify-end hover:cursor-default dark:text-primary">
+              <UserIcon className="h-5 w-5 " />
+              <p className="text-xs font-bold ">Guest</p>
+            </div>
              <div
               className="flex flex-col items-center justify-end hover:cursor-pointer dark:text-primary"
               onClick={handleWishlistClick}
@@ -140,10 +144,7 @@ const Header = () => {
                 </div>
               )}
             </div>
-            <div className="flex flex-col items-center justify-end hover:cursor-default dark:text-primary">
-              <UserIcon className="h-5 w-5 " />
-              <p className="text-xs font-bold ">Guest</p>
-            </div>
+            
           </div>
         </div>
       </div>
