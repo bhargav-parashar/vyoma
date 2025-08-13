@@ -65,7 +65,7 @@ const CategoryModal = ({ hoveredTab, handleMouseEnter, handleMouseLeave, setIsMo
         onMouseEnter={() => dispatch(handleMouseEnter(hoveredTab))}
         onMouseLeave={() => dispatch(handleMouseLeave())}
         className={`
-          bg-white my-20 mx-auto w-[90%] h-[80%] z-20
+          bg-white  my-20 mx-auto w-[90%] h-[80%] z-20
           transition-opacity duration-700 delay-200
          opacity-100 flex justify-between gap-0
         `}
@@ -75,13 +75,13 @@ const CategoryModal = ({ hoveredTab, handleMouseEnter, handleMouseLeave, setIsMo
           .items.map((item, index) => (
             <div
               key={index}
-              className={` ${ item.id % 2 === 0 ? `bg-gray-100` : `bg-white`} h-[100%] w-[20%] p-5`}
+              className={` ${ item.id % 2 === 0 ? `bg-gray-100 dark:bg-primary-dark` : `bg-white dark:bg-gray-600`} h-[100%] w-[20%] p-5`}
             >
               <p className={`${getBgColor(hoveredTab)} text-sm font-bold mb-2`} >
                 {item.header}
               </p>
               {item.categories.map((category, idx) => (
-                <p key={idx} className="text-sm font-light cursor-pointer hover:font-bold" onClick={()=>handleHeaderClick(hoveredTab, category.key)} >
+                <p key={idx} className="dark:text-primary text-sm font-light cursor-pointer hover:font-bold" onClick={()=>handleHeaderClick(hoveredTab, category.key)} >
                   {category.value}
                 </p>
               ))}

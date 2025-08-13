@@ -8,8 +8,8 @@ const CartTotal = ({setIsCheckoutModalOpen}) => {
     dispatch(setIsCheckoutModalOpen(true));
   }
   return (
-    <div className="md:ml-5 my-2 bg-white rounded border border-gray-300 p-4">
-      <p className="text-sm font-semibold text-gray-600">{`PRICE DETAILS (${cartItems.length} Items) `}</p>
+    <div className="md:ml-5 my-2 bg-white dark:bg-gray-600 rounded border border-gray-300 dark:border-gray-600 p-4 dark:text-primary">
+      <p className="text-sm font-semibold text-gray-600 dark:text-primary">{`PRICE DETAILS (${cartItems.length} Items) `}</p>
       <p className="my-4 text-sm  flex justify-between">
         <span>{`Total MRP`}</span>
         <span>{`₹ ${cartItems.reduce(
@@ -27,7 +27,7 @@ const CartTotal = ({setIsCheckoutModalOpen}) => {
           0
         )}`}</span>
       </p>
-      <p className="pb-4 my-4 text-sm border-gray-300 border-b-1 flex justify-between">
+      <p className="pb-4 my-4 text-sm border-gray-300 dark:border-gray-400 border-b-1 flex justify-between">
         <span>{`Platform Fee`}</span>
         <span>{`₹ 20`}</span>
       </p>
@@ -46,7 +46,7 @@ const CartTotal = ({setIsCheckoutModalOpen}) => {
         }  `}</span>
       </p>
       <button
-        className="border rounded px-5 py-2 w-[100%] cursor-pointer flex items-center justify-center gap-2 bg-rose-400 text-white font-bold hover:brightness-90"
+        className="border dark:border-rose-400 rounded px-5 py-2 w-[100%] cursor-pointer flex items-center justify-center gap-2 bg-rose-400 text-white font-bold hover:brightness-90"
         onClick={handlePlaceOrder}
       >
         <span>PLACE ORDER</span>

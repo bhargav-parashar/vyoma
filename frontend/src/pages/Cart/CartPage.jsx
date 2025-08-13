@@ -19,21 +19,10 @@ const CartPage = () => {
   const handleGoToWishlist = () => {
     navigate(`/wishlist`);
   };
-  //GET CONTEXT VARIABLES
-  //const {
-      // hoveredTab,
-      // setIsModalOpen, 
-      // handleMouseEnter,
-      // handleMouseLeave,
-      // isModalOpen,
-      // isCheckoutModalOpen,
-      //setIsCheckoutModalOpen
-  //} = useContext(FilterContext);
-
  
 
   return (
-    <div className={`md:pt-25 sm:pt-30 md:px-20 sm:px-5 bg-gray-200 min-h-screen pb-1 ` }>
+    <div className={`md:pt-25 sm:pt-30 md:px-20 sm:px-5 bg-gray-200 dark:bg-primary-dark min-h-screen pb-1 ` }>
       {cartItems.length > 0 && (
 
         //DESKTOP
@@ -44,7 +33,7 @@ const CartPage = () => {
                 <CartCard key={item.id} item={item} />
               ))}
             </div>
-            <div className="w-[40%]  border-gray-300 border-l-1">
+            <div className="w-[40%]  border-gray-300 dark:border-gray-500 border-l-1">
               <CartTotal setIsCheckoutModalOpen={setIsCheckoutModalOpen} />
             </div>
           </div>
@@ -61,7 +50,7 @@ const CartPage = () => {
                 <CartCard key={item.id} item={item} />
               ))}
             </div>
-            <div className="w-[100%]  border-gray-300 border-t-1">
+            <div className="w-[100%]  border-gray-300 dark:border-gray-500 border-t-1">
               <CartTotal setIsCheckoutModalOpen={setIsCheckoutModalOpen} />
             </div>
           </div>
@@ -71,15 +60,15 @@ const CartPage = () => {
 
       {cartItems.length == 0 && (
         <div className=" sm:pt-10 md:pt-20 flex flex-col items-center ">
-          <div className="sm:w-[60%] md:w-[27%]  text-center">
+          <div className="sm:w-[60%] md:w-[27%]  text-center dark:text-primary">
             <p className="font-bold mb-5">YOUR BAG IS EMPTY</p>
-            <p className="text-gray-500 text-justify mb-5">
+            <p className="text-gray-500 dark:text-gray-400 text-justify mb-5">
               There is nothing in your bag. Let's add some items.   
             </p>
           </div>
           <InboxIcon className=" text-gray-400 h-20" />
           <button
-            className="my-4 border  border-red-400 rounded px-5 py-4 cursor-pointer  hover:brightness-115 font-bold text-red-400 "
+            className="dark:text-primary my-4 border  border-red-400 dark:border-primary rounded px-5 py-4 cursor-pointer  hover:brightness-115 font-bold text-red-400 "
             onClick={() => handleGoToWishlist()}
           >
             <span>ADD ITEMS FROM WISHLIST</span>

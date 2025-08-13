@@ -49,7 +49,7 @@ const PincodeInput = () => {
           inputMode="numeric"
           pattern="[0-9]*"
           placeholder="Enter pincode"
-          className="outline-none text-sm text-gray-700 placeholder-gray-400 w-32"
+          className="outline-none text-sm text-gray-700 dark:text-primary placeholder-gray-400 w-32"
           value={pin}
           onChange={(e) => handlePinChange(e.target.value)}
           onWheel={(e) => e.target.blur()}
@@ -64,7 +64,7 @@ const PincodeInput = () => {
           {showDetails ? `Change` : `Check`}
         </button>
       </div>
-      <p className=" mt-2 mb-5 text-xs text-gray-600">
+      <p className=" mt-2 mb-5 text-xs text-gray-600 dark:text-gray-400">
         Please enter PIN code to check delivery time & Pay on Delivery
         Availability
       </p>
@@ -86,7 +86,7 @@ const PincodeInput = () => {
           </div>
         </div>
       ) : (
-        <div className=" text-gray-600">
+        <div className=" text-gray-600 dark:text-primary">
           <p>100% Original Products</p>
           <p>Pay on delivery might be available</p>
           <p>Easy 14 days returns and exchanges</p>

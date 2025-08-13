@@ -105,7 +105,7 @@ const ProductDetails = () => {
   }
 
   return (
-    <div className="sm:pt-30 md:pt-25 pb-5">
+    <div className="sm:pt-30 md:pt-25 pb-15 dark:bg-primary-dark">
       <div className=" h-[80%]  flex sm:flex-col md:flex-row md:gap-2 sm:px-5 md:px-15 ">  
         {/* IMAGES  */}
         <div className="sm:hidden md:block h-[80%] w-[60%] flex flex-col gap-2">
@@ -147,9 +147,9 @@ const ProductDetails = () => {
          </div> 
 
         {/* PRODUCT DETAILS SECTION */}
-        <div className=" h-[80%] sm:w-[100%] md:w-[40%]">
+        <div className=" h-[80%] sm:w-[100%] md:w-[40%] dark:text-primary">
           {/* Product Header and rating */}
-          <div className="border-b-1 border-gray-300 p-2">
+          <div className="border-b-1 border-gray-300 dark:border-gray-500 p-2">
             <p className="text-2xl font-semibold">{selectedProduct.brand}</p>
             <p className="text-gray-400 sm:text-l 2xl:text-xl ">
               {selectedProduct.name}
@@ -190,7 +190,7 @@ const ProductDetails = () => {
           </div>
 
           {/* Size selector and add to bag buttons */}
-          <div className=" pt-2 px-2 border-b-1 border-gray-300">
+          <div className=" pt-2 px-2 border-b-1 border-gray-300 dark:border-gray-500">
             <SizeSelector
               selectedProduct={selectedProduct}
               selectedSize={selectedSize}
@@ -201,7 +201,7 @@ const ProductDetails = () => {
 
               {cartItems.find((item) => item.id == selectedProduct.id) ? (
                 <button
-                  className="border rounded px-5 py-4 w-[50%] cursor-pointer flex items-center justify-center gap-2 bg-rose-400 text-white font-bold hover:brightness-115"
+                  className="border dark:border-rose-400  rounded px-5 py-4 w-[50%] cursor-pointer flex items-center justify-center gap-2 bg-rose-400 text-white font-bold hover:brightness-115"
                   onClick={() =>
                     handleGoToBagClick()
                   }
@@ -211,7 +211,7 @@ const ProductDetails = () => {
                 </button>
               ) : (
                 <button
-                  className="border rounded px-5 py-4   w-[50%] cursor-pointer flex items-center justify-center gap-2 bg-rose-400 text-white font-bold hover:brightness-115"
+                  className="border dark:border-rose-400 rounded px-5 py-4   w-[50%] cursor-pointer flex items-center justify-center gap-2 bg-rose-400 text-white font-bold hover:brightness-115"
                   onClick={
                     //handleToggleCart(selectedProduct)
                     handleAddToBag
@@ -225,7 +225,7 @@ const ProductDetails = () => {
               {/* BUTTON : Add to wishlist */}
               {wishlistItems.find((item) => item.id == selectedProduct.id) ? (
                 <button
-                  className={`border border-gray-300 rounded px-5 py-4  sm:w-[45%] md:w-[37%] cursor-pointer flex items-center justify-center gap-2 hover:border-black bg-gray-600`}
+                  className={`border border-gray-300 rounded px-5 py-4  sm:w-[45%] md:w-[37%] cursor-pointer flex items-center justify-center gap-2 hover:border-black dark:hover:border-white bg-gray-600`}
                   onClick={handleRemoveWishlistItem}
                 >
                   <HeartSolidIcon className="sm:h-3 md:h-5 sm:w-3 md:w-5 text-rose-400" />
@@ -233,7 +233,7 @@ const ProductDetails = () => {
                 </button>
               ) : (
                 <button
-                  className={`border border-gray-300 rounded px-5 py-4 sm:w-[45%] md:w-[37%] cursor-pointer flex items-center justify-center gap-2 hover:border-black`}
+                  className={`border border-gray-300 rounded px-5 py-4 sm:w-[45%] md:w-[37%] cursor-pointer flex items-center justify-center gap-2 hover:border-black dark:hover:border-white`}
                   onClick={handleAddToWishlist}
                 >
                   <HeartOutlineIcon className="sm:h-3 md:h-5 sm:w-3 md:w-5" />

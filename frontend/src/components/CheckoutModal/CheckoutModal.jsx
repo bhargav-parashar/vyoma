@@ -19,13 +19,13 @@ const CheckoutModal = ({setIsCheckoutModalOpen}) => {
   
   return (
     <div className="fixed inset-0 bg-black/60 bg-opacity-40 flex justify-center items-center z-50">
-      <div className="bg-white rounded-2xl shadow-xl p-8 w-[90%] max-w-md text-center relative ">
+      <div className="bg-white dark:bg-gray-600  rounded-2xl shadow-xl p-8 w-[90%] max-w-md text-center relative ">
         <CheckCircleIcon className="w-16 h-16 text-green-500 mx-auto mb-4" />
 
-        <h2 className="text-xl font-bold text-gray-800 mb-2">
+        <h2 className="text-xl font-bold text-gray-800 dark:text-primary mb-2">
           Order Placed Successfully!
         </h2>
-        <p className="text-gray-600 mb-6">
+        <p className="text-gray-600 dark:text-gray-400 mb-6">
           Expect delivery by{" "}
           <span className="font-semibold">{expectedDelivery}</span>
         </p>

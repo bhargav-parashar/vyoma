@@ -20,7 +20,7 @@ const ProductCard = ({
  return (
     <div
       onClick={() => handleItemClick()}
-      className=" hover:shadow-xl w-[100%] h-[cover] bg-white dark:bg-gray-500 cursor-pointer relative border border-gray-300 dark:border-gray-500"
+      className=" hover:shadow-xl w-[100%] h-[cover] bg-white dark:bg-gray-600 cursor-pointer relative border border-gray-300 dark:border-gray-600"
     >
       <img alt="product" src={imageSrc} className="h-[77%]" />
       <div className="px-4 py-2 dark:text-primary">
@@ -46,10 +46,10 @@ const ProductCard = ({
       </div>
       {isForWishlist && (
         <div
-          className="cursor-pointer flex justify-center items-center p-2 border border-gray-300"
+          className="cursor-pointer flex justify-center items-center p-2 border border-gray-300 dark:border-gray-500"
           onClick={(e) => handleMoveToCart(e, item)}
         >
-          <p className="text-rose-400 font-bold text-sm">MOVE TO BAG</p>
+          <p className="text-rose-400 dark:text-primary font-bold text-sm">MOVE TO BAG</p>
         </div>
       )}
       {isForWishlist && (
