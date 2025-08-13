@@ -11,7 +11,7 @@ function App() {
     <Provider store={appStore}>
       <SnackbarProvider>
         <FilterContextProvider>
-          <div className="" >
+          <div className="dark" >
             <Header />
             <Outlet />
           </div>

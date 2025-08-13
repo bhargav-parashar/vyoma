@@ -150,9 +150,9 @@ const Header = () => {
 
 
       {/* MOBILE HEADER*/}
-      <div className=" md:hidden sm:flex-col  bg-white h-25 shadow-lg z-22 fixed w-[100%] " >
+      <div className=" md:hidden sm:flex-col  bg-white dark:bg-primary-extra-dark h-25 shadow-lg z-22 fixed w-[100%] " >
       
-        <div className="flex items-center justify-between bg-white h-15 px-5 mt-2 w-[100%] ">
+        <div className="flex items-center justify-between bg-white dark:bg-primary-extra-dark h-15 px-5 mt-2 w-[100%] ">
           {/*SEARCH BAR*/}
 
           <div className="h-[100%] flex items-center justify-start w-[70%] gap-7 ">
@@ -167,7 +167,7 @@ const Header = () => {
             />
           </div>
 
-          <div className="h-[100%] flex items-center justify-end w-[30%] gap-4 ">
+          <div className="h-[100%] flex items-center justify-end w-[30%] gap-4 dark:text-primary-extra-light">
             <div className="flex flex-col items-center justify-end hover:cursor-default">
               <UserIcon className="h-5 w-5" />
               <p className="text-xs font-bold">Guest</p>
@@ -202,7 +202,7 @@ const Header = () => {
                     className={` cursor-pointer  flex justify-center items-center px-5 h-[96%] `}
                    
                   >
-                    <p className={`${item.value.toLowerCase() == productsFilters.section[0] ? getBgColor(item.id).replace("bg","text") : ``}`}  onClick={() => handleSectionClick(item.value)}>
+                    <p className={`${item.value.toLowerCase() == productsFilters.section[0] ? getBgColor(item.id).replace("bg","text") : `dark:text-primary-extra-light`} `}  onClick={() => handleSectionClick(item.value)}>
                       {item.value}
                     </p>
                   </div>
