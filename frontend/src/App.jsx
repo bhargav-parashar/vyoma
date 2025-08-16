@@ -3,21 +3,20 @@ import { Outlet } from "react-router-dom";
 import Header from "./components/Header/Header";
 import { FilterContextProvider } from "./contexts/FiltersContext";
 import { SnackbarProvider } from "./contexts/SnackbarContext";
-import { Provider } from "react-redux";
-import appStore from "./redux/stores/appStore";
+import { useSelector } from "react-redux";
 
 function App() {
+  const currTheme = useSelector((store) => store.theme.currTheme);
+
   return (
-    <Provider store={appStore}>
-      <SnackbarProvider>
-        <FilterContextProvider>
-          <div className="" >
-            <Header />
-            <Outlet />
-          </div>
-        </FilterContextProvider>
-      </SnackbarProvider>
-    </Provider>
+    <SnackbarProvider>
+      <FilterContextProvider>
+        <div className={`${currTheme == `dark` ? `dark` : ``}`}>
+          <Header />
+          <Outlet />
+        </div>
+      </FilterContextProvider>
+    </SnackbarProvider>
   );
 }
 

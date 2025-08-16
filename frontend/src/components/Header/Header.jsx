@@ -9,24 +9,26 @@ import { HeartIcon } from "@heroicons/react/24/outline";
 import { ShoppingBagIcon } from "@heroicons/react/24/outline";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { setIsModalOpen,handleMouseEnter,handleMouseLeave } from "../../redux/slices/modalSlice";
+import {
+  setIsModalOpen,
+  handleMouseEnter,
+  handleMouseLeave,
+} from "../../redux/slices/modalSlice";
+
+import Toggler from "../Toggler/Toggler";
 
 const Header = () => {
-  
-  // Selector hook 
+  // Selector hook
   const cartItems = useSelector((store) => store.cart.items);
+  const currTheme = useSelector((store) => store.theme.currTheme);
   const hoveredTab = useSelector((store) => store.modal.hoveredTab);
   const dispatch = useDispatch();
 
-  const {
-    search,
-    clearFilters,
-    handleSearch,
-    productsFilters
-  } = useContext(FilterContext);
- 
+  const { search, clearFilters, handleSearch, productsFilters } =
+    useContext(FilterContext);
+
   const navigate = useNavigate();
-  
+
   const getBgColor = (id) => {
     switch (id) {
       case 1:
@@ -67,11 +69,9 @@ const Header = () => {
     navigate(`/cart`);
   };
 
-
-
   return (
     <div>
-     {/* DESKTOP HEADER*/}
+      {/* DESKTOP HEADER*/}
       <div className=" sm:hidden md:flex items-center justify-between bg-primary-extra-light dark:bg-primary-extra-dark h-20 px-10 shadow-lg z-20 fixed w-[100%]  ">
         <div className="h-[100%] flex justify-start items-center gap-10 w-[40%] ">
           {/*HOME IMAGE*/}
@@ -79,7 +79,11 @@ const Header = () => {
             className="cursor-pointer h-[100%] flex justify-center items-center p-3"
             onClick={() => handleSectionClick("men")}
           >
-            <img src={"/assets/logo.png"} className="h-[100%]" />
+            {currTheme == "dark" ? (
+              <img src={"/assets/logoDark.png"} className="h-[100%]" />
+            ) : (
+              <img src={"/assets/logo.png"} className="h-[100%]" />
+            )}
           </div>
 
           {/*SECTION TABS*/}
@@ -88,10 +92,13 @@ const Header = () => {
               <div key={item.id} className="h-[100%]">
                 <div
                   className={` cursor-pointer  flex justify-center items-center px-5 h-[96%] `}
-                  onMouseEnter={() => dispatch(handleMouseEnter(item.id)) }
-                  onMouseLeave={() => dispatch(handleMouseLeave()) }
+                  onMouseEnter={() => dispatch(handleMouseEnter(item.id))}
+                  onMouseLeave={() => dispatch(handleMouseLeave())}
                 >
-                  <p className="dark:text-primary-extra-light" onClick={() => handleSectionClick(item.value)}>
+                  <p
+                    className="dark:text-primary-extra-light"
+                    onClick={() => handleSectionClick(item.value)}
+                  >
                     {item.value}
                   </p>
                 </div>
@@ -121,19 +128,15 @@ const Header = () => {
           />
 
           <div className="h-[100%] flex items-center justify-end w-[30%] gap-7 ">
-             <div className="flex flex-col items-center justify-end hover:cursor-default dark:text-primary">
-              <UserIcon className="h-5 w-5 " />
-              <p className="text-xs font-bold ">Guest</p>
-            </div>
-             <div
-              className="flex flex-col items-center justify-end hover:cursor-pointer dark:text-primary"
+            <div
+              className="flex flex-col items-center justify-end hover:cursor-pointer dark:text-primary gap-0.5"
               onClick={handleWishlistClick}
             >
               <HeartIcon className="h-5 w-5 " />
               <p className="text-xs font-bold">Wishlist</p>
             </div>
             <div
-              className="relative flex flex-col items-center justify-end hover:cursor-pointer dark:text-primary"
+              className="relative flex flex-col items-center justify-end hover:cursor-pointer dark:text-primary gap-0.5"
               onClick={handleCartClick}
             >
               <ShoppingBagIcon className="h-5 w-5 " />
@@ -144,15 +147,16 @@ const Header = () => {
                 </div>
               )}
             </div>
-            
+            <div className="flex flex-col items-center justify-end cursor-pointer dark:text-primary gap-0.5">
+              <Toggler />
+              <p className="text-xs font-bold ">Dark</p>
+            </div>
           </div>
         </div>
       </div>
 
-
       {/* MOBILE HEADER*/}
-      <div className=" md:hidden sm:flex-col  bg-white dark:bg-primary-extra-dark h-25 shadow-lg z-22 fixed w-[100%] " >
-      
+      <div className=" md:hidden sm:flex-col  bg-white dark:bg-primary-extra-dark h-25 shadow-lg z-22 fixed w-[100%] ">
         <div className="flex items-center justify-between bg-white dark:bg-primary-extra-dark h-15 px-5 mt-2 w-[100%] ">
           {/*SEARCH BAR*/}
 
@@ -168,11 +172,7 @@ const Header = () => {
             />
           </div>
 
-          <div className="h-[100%] flex items-center justify-end w-[30%] gap-4 dark:text-primary-extra-light">
-            <div className="flex flex-col items-center justify-end hover:cursor-default">
-              <UserIcon className="h-5 w-5" />
-              <p className="text-xs font-bold">Guest</p>
-            </div>
+          <div className="h-[100%] flex items-center justify-end w-[30%] gap-4 dark:text-primary-extra-light ">
             <div
               className="flex flex-col items-center justify-end hover:cursor-pointer "
               onClick={handleWishlistClick}
@@ -192,35 +192,41 @@ const Header = () => {
                 </div>
               )}
             </div>
+            <div className="flex flex-col items-center justify-end hover:cursor-default">
+              <Toggler />
+              <p className="text-xs font-bold ">Dark</p>
+            </div>
           </div>
-          
         </div>
-        
-        <div className="flex justify-center  gap-3 text-sm font-bold text-gray-700">
-              {tabs.map((item) => (
-                <div key={item.id} className="h-[100%]">
-                  <div
-                    className={` cursor-pointer  flex justify-center items-center px-5 h-[96%] `}
-                   
-                  >
-                    <p className={`${item.value.toLowerCase() == productsFilters.section[0] ? getBgColor(item.id).replace("bg","text") : `dark:text-primary-extra-light`} `}  onClick={() => handleSectionClick(item.value)}>
-                      {item.value}
-                    </p>
-                  </div>
 
-                  <div
-                   
-                    className={`${
-                      item.id == hoveredTab ? getBgColor(item.id) : ``
-                    } h-[4%]`}
-                  ></div>
-                </div>
-              ))}
+        <div className="flex justify-center  gap-3 text-sm font-bold text-gray-700">
+          {tabs.map((item) => (
+            <div key={item.id} className="h-[100%]">
+              <div
+                className={` cursor-pointer  flex justify-center items-center px-5 h-[96%] `}
+              >
+                <p
+                  className={`${
+                    item.value.toLowerCase() == productsFilters.section[0]
+                      ? getBgColor(item.id).replace("bg", "text")
+                      : `dark:text-primary-extra-light`
+                  } `}
+                  onClick={() => handleSectionClick(item.value)}
+                >
+                  {item.value}
+                </p>
+              </div>
+
+              <div
+                className={`${
+                  item.id == hoveredTab ? getBgColor(item.id) : ``
+                } h-[4%]`}
+              ></div>
+            </div>
+          ))}
         </div>
-      
       </div>
-      
-    </div>  
+    </div>
   );
 };
 

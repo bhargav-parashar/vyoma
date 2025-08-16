@@ -11,13 +11,14 @@ const getTheme = ()=>{
 const themeSlice = createSlice({
     name: 'theme',
     initialState : {
-        theme : getTheme()
+        currTheme : getTheme()
     },
     reducers: {
        
         updateTheme : (state,action) =>{
             const newTheme =  action.payload;
-            state.theme = newTheme;
+            state.currTheme = newTheme;
+            localStorage.setItem('theme', JSON.stringify(newTheme) );
         }
     }
 });
