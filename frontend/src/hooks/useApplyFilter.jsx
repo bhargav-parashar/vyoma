@@ -6,7 +6,7 @@ import { applySearch } from "../utilities/applySearch";
 import {allProducts} from "../constants/productList.json";
 
 const useApplyFilter = ({
-  section = "men",
+  section,
   productsFilters,
   setProductsFilters,
   search
@@ -23,10 +23,11 @@ const useApplyFilter = ({
 
   //UPDATE FILTERED PRODUCTS ON SECTION CHANGE
   useEffect(() => {
-   
-    setFilteredProducts(
-      allProducts.filter((product)=>product.section === section)
-    );
+    if(section != "all"){
+      setFilteredProducts(
+        allProducts.filter((product)=>product.section === section)
+      );
+    }
   }, [section]);
 
 

@@ -4,7 +4,8 @@ import {useState} from "react";
 const useGetFilter = () => {
 
   //GET REQUEST PARAM FROM URL
-  const { section ="men" } = useParams();
+  //const { section ="men" } = useParams();
+  const { section = "all" } = useParams();
   
   //MAINTAIN STATE FOR SEARCH PARAMS
   const [searchParams, setSearchParams] = useSearchParams();

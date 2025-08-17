@@ -2,6 +2,7 @@ const applyFilter = (products, appliedFilters) => {
   const filteredProducts = products.filter((product) => {
     const matchSection =
       appliedFilters.section.length == 0 ||
+      appliedFilters.section == "all" ||
       appliedFilters.section[0] === product.section;
     
       const matchColor =

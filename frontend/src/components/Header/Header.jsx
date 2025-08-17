@@ -4,7 +4,6 @@ import SearchBar from "../SearchBar/SearchBar";
 import { allProducts } from "../../constants/productList.json";
 import { useContext } from "react";
 import { FilterContext } from "../../contexts/FiltersContext";
-import { UserIcon } from "@heroicons/react/24/outline";
 import { HeartIcon } from "@heroicons/react/24/outline";
 import { ShoppingBagIcon } from "@heroicons/react/24/outline";
 import { useSelector } from "react-redux";
@@ -50,7 +49,11 @@ const Header = () => {
 
   const handleSectionClick = (item) => {
     dispatch(setIsModalOpen(false));
-    navigate(`/products/${item.toLowerCase()}`);
+    if(item =="/"){
+      navigate(`/`);
+    }else{
+      navigate(`/products/${item.toLowerCase()}`);
+    }
   };
 
   const handleSelect = (val) => {
@@ -77,7 +80,7 @@ const Header = () => {
           {/*HOME IMAGE*/}
           <div
             className="cursor-pointer h-[100%] flex justify-center items-center p-3"
-            onClick={() => handleSectionClick("men")}
+            onClick={() => handleSectionClick("/")}
           >
             {currTheme == "dark" ? (
               <img src={"/assets/logoDark.png"} className="h-[100%]" />

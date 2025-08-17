@@ -88,6 +88,46 @@
         
         ]
 
+    },
+    "all":{
+        "category" : [
+            { "id" : 1, "key" : "tshirt", "value" : "T-Shirt"}, 
+            { "id" : 2, "key" : "casualtrousers", "value" : "Casual Trousers"},
+            { "id" : 3, "key" : "kurtis", "value" : "Kurtis, Tunics & Tops"}, 
+            { "id" : 4, "key" : "heels", "value" : "Heels"},
+            { "id" : 5, "key" : "flats", "value" : "Flats"},
+            { "id" : 6, "key" : "dress", "value" : "Dresses"},
+            { "id" : 7, "key" : "blanket", "value" : "Blankets & Quilts"}, 
+            { "id" : 8, "key" : "floor-lamp", "value" : "Floor Lamps"}
+        ],
+
+        "brand" : [
+            { "id" : 1, "key" : "allensolly", "value": "Allen Solly"}, 
+            { "id" : 2, "key" : "adidas", "value": "ADIDAS"}, 
+            { "id" : 3, "key" : "blackberrys", "value": "Blackberrys"}, 
+            { "id" : 4, "key" : "beinghuman", "value": "Being Human"}, 
+            { "id" : 5, "key" : "cult", "value": "CULT"},
+            { "id" : 6, "key" : "aurelia", "value": "AURELIA"}, 
+            { "id" : 7, "key" : "elle", "value": "ELLE"}, 
+            { "id" : 8, "key" : "inc5", "value": "Inc 5"},
+            { "id" : 9, "key" : "h&m", "value": "H&M"}, 
+            { "id" : 10, "key" : "miss&chief", "value": "Miss & Chief"},
+            { "id" : 11, "key" : "sleepwell", "value": "Sleep Well"}, 
+            { "id" : 12, "key" : "crosscut", "value": "Crosscut"}
+            
+        ],
+
+        "color" : [
+            {"id" : 1, "key" : "black", "value": "Black"}, 
+            {"id" : 2, "key" : "blue", "value": "Blue"}, 
+            {"id" : 3, "key" : "white", "value": "White"}, 
+            {"id" : 4, "key" : "green", "value": "Green"}, 
+            {"id" : 5, "key" : "gray", "value": "Gray"},
+            {"id" : 6, "key" : "orange", "value": "Orange"}, 
+            {"id" : 7, "key" : "pink", "value": "Pink"}, 
+            {"id" : 8, "key" : "yellow", "value": "Yellow"}
+        
+        ]
     }
     
 }
