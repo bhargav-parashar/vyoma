@@ -49,9 +49,9 @@ const Header = () => {
 
   const handleSectionClick = (item) => {
     dispatch(setIsModalOpen(false));
-    if(item =="/"){
+    if (item == "/") {
       navigate(`/`);
-    }else{
+    } else {
       navigate(`/products/${item.toLowerCase()}`);
     }
   };
@@ -99,7 +99,12 @@ const Header = () => {
                   onMouseLeave={() => dispatch(handleMouseLeave())}
                 >
                   <p
-                    className="dark:text-primary-extra-light"
+                    className={`${
+                      item.value.toLowerCase() == productsFilters.section[0]
+                        ? getBgColor(item.id).replace("bg", "text")
+                        : `dark:text-primary-extra-light`
+                    } `}
+
                     onClick={() => handleSectionClick(item.value)}
                   >
                     {item.value}
