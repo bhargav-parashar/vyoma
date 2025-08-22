@@ -14,20 +14,20 @@ import { FilterContext } from "../../contexts/FiltersContext";
 import { InboxIcon } from "@heroicons/react/24/outline";
 import SortFilterFooter from "../../components/SortFilterFooter/SortFilterFooter";
 import { useSelector } from "react-redux";
-import { setIsModalOpen, handleMouseEnter, handleMouseLeave} from "../../redux/slices/modalSlice";
+import {
+  setIsModalOpen,
+  handleMouseEnter,
+  handleMouseLeave,
+} from "../../redux/slices/modalSlice";
+import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
 
 const ProductsPage = () => {
   const hoveredTab = useSelector((store) => store.modal.hoveredTab);
   const isModalOpen = useSelector((store) => store.modal.isModalOpen);
 
   //GET CONTEXT VARIABLES
-  const {
-    section,
-    search,
-    productsFilters,
-    setProductsFilters,
-    clearFilters,
-  } = useContext(FilterContext);
+  const { section, search, productsFilters, setProductsFilters, clearFilters } =
+    useContext(FilterContext);
 
   //APPLY FILTERS
   const {
@@ -44,134 +44,139 @@ const ProductsPage = () => {
 
   return (
     <div className="h-screen flex flex-col overflow-y-auto bg-primary dark:bg-primary-dark">
-      <div className="sm:mt-28 md:mt-20 sm:px-[1%] md:px-[5%] flex  overflow-hidden z-10 w-[100%]  h-screen overflow-y-auto ">
-        <aside className=" sm:hidden md:block w-1/6 h-screen border-r border-gray-300 dark:border-gray-500 ">
-          <div className="h-13 flex justify-between ">
-            <h2 className="text-sm font-bold  p-4 dark:text-primary">FILTERS</h2>
-            {(productsFilters.category.length > 0 ||
-              productsFilters.brand.length > 0 ||
-              productsFilters.color.length > 0 ||
-              productsFilters.origin.length > 0 ||
-              productsFilters.size.length > 0) && (
-              <h2
-                className="text-xs font-bold p-4 cursor-pointer text-red-400 "
-                onClick={() => clearFilters()}
-              >
-                CLEAR ALL
+      <div className="sm:mt-28 md:mt-20 sm:px-[1%] md:px-[5%]   overflow-hidden z-10 w-[100%]  h-screen overflow-y-auto ">
+        <Breadcrumbs/>
+        <div className="h-[100%] flex">
+          <aside className=" sm:hidden md:block w-1/6 h-screen border-r border-gray-300 dark:border-gray-500 ">
+            <div className="h-13 flex justify-between ">
+              <h2 className="text-sm font-bold  p-4 dark:text-primary">
+                FILTERS
               </h2>
-            )}
-          </div>
-          <Filters
-            products={products}
-            setFilteredProducts={setFilteredProducts}
-            section={section}
-            productsFilters={productsFilters}
-            updateParams={updateParams}
-          />
-        </aside>
+              {(productsFilters.category.length > 0 ||
+                productsFilters.brand.length > 0 ||
+                productsFilters.color.length > 0 ||
+                productsFilters.origin.length > 0 ||
+                productsFilters.size.length > 0) && (
+                <h2
+                  className="text-xs font-bold p-4 cursor-pointer text-red-400 "
+                  onClick={() => clearFilters()}
+                >
+                  CLEAR ALL
+                </h2>
+              )}
+            </div>
+            <Filters
+              products={products}
+              setFilteredProducts={setFilteredProducts}
+              section={section}
+              productsFilters={productsFilters}
+              updateParams={updateParams}
+            />
+          </aside>
 
-        <main className=" sm:w-6/6 md:w-5/6 h-cover">
-          <div className="h-13 flex justify-start items-center gap-1 px-4">
-            <div className="flex justify-start w-[100%] gap-2">
-              {Pills.filterPills.map((pill) => (
+          <main className=" sm:w-6/6 md:w-5/6 h-cover">
+            <div className="h-13 flex justify-start items-center gap-1 px-4">
+              <div className="flex justify-start w-[100%] gap-2">
+                {Pills.filterPills.map((pill) => (
+                  <Pill
+                    key={pill.id}
+                    itemKey={pill.id}
+                    value={pill.value}
+                    selectedPill={selectedPill}
+                    handlePillClick={handlePillClick}
+                  />
+                ))}
+              </div>
+              <SortHover
+                handleSort={handleSort}
+                sortBy={sortBy}
+                products={products}
+              />
+            </div>
+            {
+              //ORIGIN COUNTRY FILTER SECTION
+              selectedPill == 1 && (
+                <div
+                  className="grid grid-cols-[repeat(auto-fit,_minmax(100px,100px))] pt-1 pb-5 px-4 gap-x-8 gap-y-1"
+                  style={{ boxShadow: "0 4px 4px -4px rgba(0, 0, 0, 0.2)" }}
+                >
+                  {CountryList.originCountries.map((country) => (
+                    <FilterSection
+                      key={country.id}
+                      itemKey={country.key}
+                      value={country.value}
+                      updateParams={updateParams}
+                      group="origin"
+                      selectedValues={productsFilters.origin}
+                    />
+                  ))}
+                </div>
+              )
+            }
+            {
+              //SIZE FILTER SECTION
+              selectedPill == 2 && (
+                <div
+                  className=" grid grid-cols-[repeat(auto-fit,_minmax(100px,100px))] pt-1 pb-5  px-4 gap-x-8 gap-y-1 shadow-b-lg"
+                  style={{ boxShadow: "0 4px 4px -4px rgba(0, 0, 0, 0.2)" }}
+                >
+                  {SizeList.availableSizes.map((size) => (
+                    <FilterSection
+                      key={size.id}
+                      itemKey={size.key}
+                      value={size.value}
+                      updateParams={updateParams}
+                      group="size"
+                      selectedValues={productsFilters.size}
+                    />
+                  ))}
+                </div>
+              )
+            }
+            <div className="flex justify-start w-[100%] gap-2 px-4">
+              {productsFilters.origin.map((pill, idx) => (
                 <Pill
-                  key={pill.id}
-                  itemKey={pill.id}
-                  value={pill.value}
-                  selectedPill={selectedPill}
-                  handlePillClick={handlePillClick}
+                  key={idx}
+                  itemKey={"origin"}
+                  value={pill}
+                  updateParams={updateParams}
+                  secondary
+                />
+              ))}
+              {productsFilters.size.map((pill, idx) => (
+                <Pill
+                  key={idx}
+                  itemKey={"size"}
+                  value={pill}
+                  updateParams={updateParams}
+                  secondary
                 />
               ))}
             </div>
-            <SortHover
-              handleSort={handleSort}
-              sortBy={sortBy}
-              products={products}
-            />
-          </div>
-          {
-            //ORIGIN COUNTRY FILTER SECTION
-            selectedPill == 1 && (
-              <div
-                className="grid grid-cols-[repeat(auto-fit,_minmax(100px,100px))] pt-1 pb-5 px-4 gap-x-8 gap-y-1"
-                style={{ boxShadow: "0 4px 4px -4px rgba(0, 0, 0, 0.2)" }}
-              >
-                {CountryList.originCountries.map((country) => (
-                  <FilterSection
-                    key={country.id}
-                    itemKey={country.key}
-                    value={country.value}
-                    updateParams={updateParams}
-                    group="origin"
-                    selectedValues={productsFilters.origin}
-                  />
-                ))}
-              </div>
-            )
-          }
-          {
-            //SIZE FILTER SECTION
-            selectedPill == 2 && (
-              <div
-                className=" grid grid-cols-[repeat(auto-fit,_minmax(100px,100px))] pt-1 pb-5  px-4 gap-x-8 gap-y-1 shadow-b-lg"
-                style={{ boxShadow: "0 4px 4px -4px rgba(0, 0, 0, 0.2)" }}
-              >
-                {SizeList.availableSizes.map((size) => (
-                  <FilterSection
-                    key={size.id}
-                    itemKey={size.key}
-                    value={size.value}
-                    updateParams={updateParams}
-                    group="size"
-                    selectedValues={productsFilters.size}
-                  />
-                ))}
-              </div>
-            )
-          }
-          <div className="flex justify-start w-[100%] gap-2 px-4">
-            {productsFilters.origin.map((pill, idx) => (
-              <Pill
-                key={idx}
-                itemKey={"origin"}
-                value={pill}
-                updateParams={updateParams}
-                secondary
-              />
-            ))}
-            {productsFilters.size.map((pill, idx) => (
-              <Pill
-                key={idx}
-                itemKey={"size"}
-                value={pill}
-                updateParams={updateParams}
-                secondary
-              />
-            ))}
-          </div>
 
-          <div className=" grid sm:grid-cols-[repeat(auto-fit,_minmax(160px,160px))] md:grid-cols-[repeat(auto-fit,_minmax(200px,200px))] sm:gap-2 md:gap-7 sm:p-1 md:p-4 sm:justify-center md:justify-start ">
-            {filteredProducts.map((item) => (
-              <div key={item.id}>
-                <ProductCard item={item} />
-              </div>
-            ))}
-          </div>
-          <div>
-            {filteredProducts.length == 0 && (
-              <div className="sm:pt-10 md:pt-20 flex flex-col items-center w-[screen]">
-                <div className="sm:w-[60%] md:w-[27%]  text-center">
-                  <p className="font-bold mb-5">NO PRODUCTS FOUND</p>
-                  <p className="text-gray-500 mb-5">
-                    There are no products available for the applied filters.
-                  </p>
+            <div className=" grid sm:grid-cols-[repeat(auto-fit,_minmax(160px,160px))] md:grid-cols-[repeat(auto-fit,_minmax(200px,200px))] sm:gap-2 md:gap-7 sm:p-1 md:p-4 sm:justify-center md:justify-start ">
+              {filteredProducts.map((item) => (
+                <div key={item.id}>
+                  <ProductCard item={item} />
                 </div>
-                <InboxIcon className=" text-gray-400 h-20" />
-              </div>
-            )}
-          </div>
-          <SortFilterFooter />
-        </main>
+              ))}
+            </div>
+            <div>
+              {filteredProducts.length == 0 && (
+                <div className="sm:pt-10 md:pt-20 flex flex-col items-center w-[screen]">
+                  <div className="sm:w-[60%] md:w-[27%]  text-center">
+                    <p className="font-bold mb-5">NO PRODUCTS FOUND</p>
+                    <p className="text-gray-500 mb-5">
+                      There are no products available for the applied filters.
+                    </p>
+                  </div>
+                  <InboxIcon className=" text-gray-400 h-20" />
+                </div>
+              )}
+            </div>
+            <SortFilterFooter />
+          </main>
+        </div>
       </div>
       {isModalOpen && (
         <CategoryModal

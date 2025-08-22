@@ -4,7 +4,6 @@ import Header from "./components/Header/Header";
 import { FilterContextProvider } from "./contexts/FiltersContext";
 import { SnackbarProvider } from "./contexts/SnackbarContext";
 import { useSelector } from "react-redux";
-import Breadcrumbs from "./components/Breadcrumbs/Breadcrumbs";
 
 function App() {
   const currTheme = useSelector((store) => store.theme.currTheme);
@@ -14,7 +13,6 @@ function App() {
       <FilterContextProvider>
         <div className={`${currTheme == `dark` ? `dark` : ``}`}>
           <Header />
-          <Breadcrumbs/>
           <Outlet />
         </div>
       </FilterContextProvider>
