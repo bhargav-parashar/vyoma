@@ -20,11 +20,11 @@ const appRouter = createBrowserRouter([
         element: <Products />,
       },
       {
-        path: "/products/:section",
+        path: "/:section",
         element: <Products />,
       },
       {
-        path: "/products/details/:id",
+        path: "/:section/:id",
         element: <ProductDetails />,
       },
       {

@@ -34,25 +34,25 @@ const CategoryModal = ({ hoveredTab, handleMouseEnter, handleMouseLeave, setIsMo
   const handleHeaderClick = (hoveredTab, category) =>{
     switch(hoveredTab){
       case 1 :
-         navigate(`/products/men?category=${category}`);
+         navigate(`/men?category=${category}`);
          dispatch(handleMouseLeave());
          break;
       case 2 :
-         navigate(`/products/women?category=${category}`);
+         navigate(`/women?category=${category}`);
          dispatch(handleMouseLeave());
          break;
       case 3 :
-         navigate(`/products/kids?category=${category}`);
+         navigate(`/kids?category=${category}`);
          dispatch(handleMouseLeave());
          break;
         
       case 4 :
-         navigate(`/products/home?category=${category}`);
+         navigate(`/home?category=${category}`);
          dispatch(handleMouseLeave());
         break;
      
       default :
-         navigate(`/products/men`);
+         navigate(`/men`);
          break;
     }
 

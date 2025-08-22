@@ -3,8 +3,6 @@ import CartCard from "../../components/ProductCard/CartCard";
 import CartTotal from "../../components/CartTotal/CartTotal";
 import { useNavigate } from "react-router-dom";
 import { InboxIcon } from "@heroicons/react/24/outline";
-//import { FilterContext } from "../../contexts/FiltersContext";
-//import { useContext } from "react";
 import CategoryModal from "../../components/CategoryModal/CategoryModal";
 import CheckoutModal from "../../components/CheckoutModal/CheckoutModal";
 import { setIsModalOpen, handleMouseEnter, handleMouseLeave, setIsCheckoutModalOpen} from "../../redux/slices/modalSlice";
@@ -19,7 +17,7 @@ const CartPage = () => {
   const handleGoToWishlist = () => {
     navigate(`/wishlist`);
   };
- 
+
 
   return (
     <div className={`md:pt-25 sm:pt-30 md:px-20 sm:px-5 bg-gray-200 dark:bg-primary-dark min-h-screen pb-1 ` }>
@@ -30,7 +28,7 @@ const CartPage = () => {
           <div className="flex gap-5">
             <div className="w-[60%]">
               {cartItems.map((item) => (
-                <CartCard key={item.id} item={item} />
+                <CartCard key={item.id} item={item}/>
               ))}
             </div>
             <div className="w-[40%]  border-gray-300 dark:border-gray-500 border-l-1">
@@ -47,7 +45,7 @@ const CartPage = () => {
           <div className="flex-col">
             <div className="w-[100%]">
               {cartItems.map((item) => (
-                <CartCard key={item.id} item={item} />
+                <CartCard key={item.id} item={item}  />
               ))}
             </div>
             <div className="w-[100%]  border-gray-300 dark:border-gray-500 border-t-1">

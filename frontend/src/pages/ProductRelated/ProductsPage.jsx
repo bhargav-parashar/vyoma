@@ -157,7 +157,7 @@ const ProductsPage = () => {
             <div className=" grid sm:grid-cols-[repeat(auto-fit,_minmax(160px,160px))] md:grid-cols-[repeat(auto-fit,_minmax(200px,200px))] sm:gap-2 md:gap-7 sm:p-1 md:p-4 sm:justify-center md:justify-start ">
               {filteredProducts.map((item) => (
                 <div key={item.id}>
-                  <ProductCard item={item} />
+                  <ProductCard item={item}  />
                 </div>
               ))}
             </div>

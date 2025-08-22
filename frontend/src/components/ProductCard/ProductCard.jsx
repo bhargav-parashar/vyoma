@@ -12,7 +12,7 @@ const ProductCard = ({
   const navigate = useNavigate();
   
   const handleItemClick = () => {
-    navigate(`/products/details/${item.id}`);
+    navigate(`/${item.section}/${item.id}`);
   };
 
   const imageSrc = `/assets/${item.images[0]}`;

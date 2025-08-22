@@ -36,7 +36,7 @@ const CartCard = ({ item }) => {
   };
   
   const handleItemClick = () =>{
-     navigate(`/products/details/${item.id}`);
+     navigate(`/${item.section}/${item.id}`);
   }
 
   return (

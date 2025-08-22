@@ -7,24 +7,25 @@ const Breadcrumbs = () => {
   const currLocation = useLocation();
   const crumbs = currLocation.pathname.split("/").filter((item) => item != "");
   const navigate = useNavigate();
-  const handleSectionClick = (item) => {
+  const handleSectionClick = (item, idx) => {
 
       if (item == "/") {
         navigate(`/`);
-      } else {
-        navigate(`/products/${item.toLowerCase()}`);
+      } else if(idx !== crumbs.length - 1) {
+        let section = item.split("/")[0].trim();
+        navigate(`/${section.toLowerCase()}`);
       }
     };
 
   return (
-    <div className=" bg-primary dark:bg-primary-dark  flex gap-1 pt-[1%] px-[1%] ">
-      <p className={` ${crumbs.length == 0 ? `text-primary dark:text-primary-dark` : ``  } cursor-pointer`} onClick={()=>handleSectionClick("/")} >Home / </p>
+    <div className="   flex gap-1 pt-[1%] px-[1%] ">
+      <p className={` ${crumbs.length == 0 ? `text-primary dark:text-primary-dark` : ` dark:text-primary  `  } cursor-pointer`} onClick={()=>handleSectionClick("/")} >Home / </p>
       {crumbs.map((item, idx) => {
        
         if (idx < crumbs.length - 1) {
           item += ` /`;
         }
-       return <p key={idx} className={`${idx == crumbs.length - 1 ? `font-bold` : `cursor-pointer` }`}>{item}</p>;
+       return <p key={idx} className={`dark:text-primary ${idx == crumbs.length - 1 ? `font-bold` : `cursor-pointer` }`} onClick={()=>handleSectionClick(item,idx)} >{item}</p>;
       })}
     </div>
   );

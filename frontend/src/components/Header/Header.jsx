@@ -52,7 +52,7 @@ const Header = () => {
     if (item == "/") {
       navigate(`/`);
     } else {
-      navigate(`/products/${item.toLowerCase()}`);
+      navigate(`/${item.toLowerCase()}`);
     }
   };
 

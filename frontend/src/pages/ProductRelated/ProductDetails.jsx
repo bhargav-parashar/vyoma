@@ -20,6 +20,7 @@ import { useSelector } from "react-redux";
 import useSnackbar from "../../hooks/useSnackbar";
 import ProductCarousel from "../../components/Carousel/ProductCarousel";
 import { setIsModalOpen, handleMouseEnter, handleMouseLeave} from "../../redux/slices/modalSlice";
+import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -66,7 +67,8 @@ const ProductDetails = () => {
       size : selectedSize,
       price : selectedProduct.price,
       quantity : 1,
-      image : selectedProduct.images[0]
+      image : selectedProduct.images[0],
+      section : selectedProduct.section
     }
 
     dispatch(addItem(productToAdd));
@@ -91,7 +93,8 @@ const ProductDetails = () => {
         price : selectedProduct.price,
         quantity : 1,
         images : selectedProduct.images,
-        rating : selectedProduct.rating
+        rating : selectedProduct.rating,
+        section : selectedProduct.section
       }
       dispatch(addItemToWishlist(productToAdd));
       showSnackbar("Added item to wishlist", 3000, "success");
@@ -106,7 +109,9 @@ const ProductDetails = () => {
 
   return (
     <div className="sm:pt-30 md:pt-25 pb-15 dark:bg-primary-dark">
+      <div className="sm:px-5 md:px-15 pb-5"><Breadcrumbs/></div>
       <div className=" h-[80%]  flex sm:flex-col md:flex-row md:gap-2 sm:px-5 md:px-15 ">  
+        
         {/* IMAGES  */}
         <div className="sm:hidden md:block h-[80%] w-[60%] flex flex-col gap-2">
           <div className=" h-[100%] w-[100%] flex gap-2 pb-2">

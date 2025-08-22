@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 import CategoryModal from "../../components/CategoryModal/CategoryModal";
 import { setIsModalOpen, handleMouseEnter, handleMouseLeave} from "../../redux/slices/modalSlice";
 
+
 const Wishlist = () => {
   const wishlistItems = useSelector((store) => store.wishlist.items);
   const hoveredTab = useSelector((store)=>store.modal.hoveredTab);
@@ -44,6 +45,7 @@ const Wishlist = () => {
   const handleGoToProducts = () => {
     navigate(`/`);
   };
+  
 
   return (
     <div className={`min-h-screen  bg-gray-200 dark:bg-primary-dark overflow-x-hidden`}>
@@ -67,6 +69,7 @@ const Wishlist = () => {
                 handleRemoveFromWishlist(e, item)
               }
               handleMoveToCart={(e) => handleAddToBag(e, item)}
+              
             />
           </div>
         ))}
