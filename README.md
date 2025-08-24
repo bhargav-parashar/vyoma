@@ -28,6 +28,9 @@ The search bar autocompletes highlighting the typed part of the search string.
 ### 2.Light and Dark Mode
 Persistent light and dark mode across app facilitated by local storage and redux store.
 
+<img src="./frontend/public/assets/vyoma-dark.png" alt="Dashboard" width="100%"/>
+<img src="./frontend/public/assets/vyoma-light.png" alt="Dashboard" width="100%"/>
+
 ### 3. Multiple Filters  
 Products can be filtered by multiple parameters - brand, category, section, color, country of origin, size using interactive radio buttons and accordions.  
 
