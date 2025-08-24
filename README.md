@@ -25,25 +25,28 @@ The search bar autocompletes highlighting the typed part of the search string.
 
 <img src="./frontend/public/assets/autoFillSearch.png" alt="Dashboard" width="100%"/>
 
-### 2. Multiple Filters  
+### 2.Light and Dark Mode
+Persistent light and dark mode across app facilitated by local storage and redux store.
+
+### 3. Multiple Filters  
 Products can be filtered by multiple parameters - brand, category, section, color, country of origin, size using interactive radio buttons and accordions.  
 
-### 3. Pills show applied filters
+### 4. Pills show applied filters
 Selected Country of Origin and Size appears on dynamically created pills. These filters can be removed by clicking the 'X' button on pills itself.
 
 <img src="./frontend/public/assets/pills.png" alt="Dashboard" width="100%"/>
 
-### 4. Hover category select Menu Modal
+### 5. Hover category select Menu Modal
 Section hover menu that shows categories within section on mouseEnter.
 
 <img src="./frontend/public/assets/hoverMenu.png" alt="Dashboard" width="100%"/>
 
-### 5. Sort by feature
+### 6. Sort by feature
 Products can be sorted based on - recommended, launch date, popularity, discount high to low, price high to low, price low to high and customer ratings.
 
 <img src="./frontend/public/assets/sort.png" alt="Dashboard" width="100%"/>
 
-### 4.Add to Cart & wishlist
+### 7.Add to Cart & wishlist
 Easy movement of items into cart and wishlist from products page. Items can also be moved from wishlist to cart. 
 
 <img src="./frontend/public/assets/wishlist.png" alt="Dashboard" width="100%"/>
@@ -51,7 +54,7 @@ Easy movement of items into cart and wishlist from products page. Items can also
 <img src="./frontend/public/assets/cart.png" alt="Dashboard" width="100%"/>
 
 
-### 5.Local Storage Cart and Wishlist Persistance
+### 8.Local Storage Cart and Wishlist Persistance
 Cart and wishlist are persisted in local storage for improved UX.
 
 
