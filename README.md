@@ -1,5 +1,5 @@
 # Vyoma
-Inspired by Myntra, Vyoma is an e-commerce application with products search, filter, sort, add to wishlist and add to cart features.
+ Vyoma is an e-commerce application with products search, filter, sort, add to wishlist and add to cart features.
 
 <img src="./frontend/public/assets/vyomaCoverImg.png" alt="Dashboard" width="100%"/>
 
